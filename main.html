@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Labs - Design Studio</title>
+
+	<meta charset="UTF-8">
+	<meta name="description" content="Labs - Design Studio">
+	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader">
+			<img src="img/logo.png" alt="">
+			<h2>Loading.....</h2>
+		</div>
+	</div>
+
+
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="logo">
+			<h3>Movie Data Visualization</h3>
+			<!-- <img src="img/logo.png" alt=""> -->
+			<!-- Logo -->
+		</div>
+		<!-- Navigation -->
+		<div class="responsive"><i class="fa fa-bars"></i></div>
+		<nav>
+			<ul class="menu-list">
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="main.html">Main</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Header section end -->
+	<!-- SVG for the main page-->
+
+	<svg width="600" height = "1000" font-family="sans-serif" font-size="10" position: relative left: 50%></svg>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="src/js/d3-scale-radial.js"></script>
+	<script>
+
+		var svg = d3.select("svg"),
+		width = +svg.attr("width"),
+		height = +svg.attr("height"),
+		innerRadius = 250,
+		outerRadius = Math.min(width, height) * 0.6,
+		g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
+
+		var x = d3.scaleBand()
+		.range([0, 2 * Math.PI])
+		.align(0);
+
+		var y = d3.scaleRadial()
+		.range([innerRadius, outerRadius]);
+
+		var z = d3.scaleOrdinal()
+		.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+		d3.csv("data.csv", function(d, i, columns) {
+			for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+				d.total = t;
+			return d;
+		}, function(error, data) {
+			if (error) throw error;
+			data.sort(function(a, b) { return b[data.columns[6]] -  a[data.columns[6]]; });
+			x.domain(data.map(function(d) { return d.State; }));
+			y.domain([0, d3.max(data, function(d) { return d.total; })]);
+			z.domain(data.columns.slice(1));
+
+			g.append("g")
+			.selectAll("g")
+    .data(d3.stack().keys(data.columns.slice(1))(data)) // data key; the category it belongs to 
+    .enter().append("g")
+    .attr("fill", function(d) { return z(d.key); })
+    .selectAll("path")
+    .data(function(d) { return d; })
+    .enter().append("path")
+    .attr("d", d3.arc()
+    	.innerRadius(function(d) { return y(d[0]); })
+    	.outerRadius(function(d) { return y(d[1]); })
+    	.startAngle(function(d) { return x(d.data.State); })
+    	.endAngle(function(d) { return x(d.data.State) + x.bandwidth(); })
+    	.padAngle(0.01)
+    	.padRadius(innerRadius));
+
+    var label = g.append("g")
+    .selectAll("g")
+    .data(data)
+    .enter().append("g")
+      .attr("text-anchor", "middle")// the transformed function here
+      .attr("transform", function(d) { return "rotate(" + ((x(d.State) + x.bandwidth() / 2) * 180 / Math.PI - 90) + ")translate(" + innerRadius + ",0)"; });
+
+      label.append("text")
+      .attr("transform", function(d) { return (x(d.State) + x.bandwidth() / 2 + Math.PI / 2) % (2 * Math.PI) < Math.PI ? "rotate(90)translate(0,16)" : "rotate(-90)translate(0,-9)"; })// appending the State label here
+      .text(function(d) { return d.State; });
+
+      var yAxis = g.append("g")
+      .attr("text-anchor", "end");
+  });
+
+</script>
+
+
+<script>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var color = d3.scaleOrdinal(d3.schemeCategory20);
+
+var simulation = d3.forceSimulation()
+    .force("link", d3.forceLink().id(function(d) { return d.id; }))
+    .force("charge", d3.forceManyBody())
+    .force("center", d3.forceCenter(width / 2, height / 2));
+
+d3.json("relationship.json", function(error, graph) {
+  if (error) throw error;
+
+  var link = svg.append("g")
+      .attr("class", "links")
+    .selectAll("line")
+    .data(graph.links)
+    .enter().append("line")
+      .attr("stroke-width", function(d) { return Math.sqrt(d.value)
+      .attr("fill",function(d){return color(d.group);})
+
+  var node = svg.append("g")
+      .attr("class", "nodes")
+    .selectAll("circle")
+    .data(graph.nodes)
+    .enter().append("circle")
+      .attr("r", 5)
+      .attr("fill", function(d) { return color(d.group); })
+      .call(d3.drag()
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended));
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  simulation
+      .nodes(graph.nodes)
+      .on("tick", ticked);
+
+  simulation.force("link")
+      .links(graph.links);
+
+  function ticked() {
+    link
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  }
+});
+
+function dragstarted(d) {
+  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+  d.fx = d.x;
+  d.fy = d.y;
+}
+
+function dragged(d) {
+  d.fx = d3.event.x;
+  d.fy = d3.event.y;
+}
+
+function dragended(d) {
+  if (!d3.event.active) simulation.alphaTarget(0);
+  d.fx = null;
+  d.fy = null;
+}
+
+</script>
+
+
+<!-- Footer section -->
+<footer class="footer-section">
+	<h2>HKUST Data Visualization Project by Vizitors</h2>
+	<!-- <h2>2018. HTML template by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2> -->
+</footer>
+<!-- Footer section end -->
+
+
+
+
+<!--====== Javascripts & Jquery ======-->
+<script src="src/js/jquery-2.1.4.min.js"></script>
+<script src="src/js/bootstrap.min.js"></script>
+<script src="src/js/magnific-popup.min.js"></script>
+<script src="src/js/owl.carousel.min.js"></script>
+<script src="src/js/circle-progress.min.js"></script>
+<script src="src/js/main.js"></script>
+</body>
+</html>
