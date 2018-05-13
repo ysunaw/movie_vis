@@ -53,7 +53,7 @@ class table_loader():
             return ','.join(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue != 0].groupby(
                 pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue != 0]["relative_position"],
                        np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].sum().values.astype(str))
-
+    # return the JSON file of the actors' network
     def return_actor_network(self,actor_id):
         pd.merge(pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id], self.metaDataDF), self.movie_to_genreDF)
         DF = pd.merge(
@@ -65,21 +65,20 @@ class table_loader():
         DF4 = DF3.sort_values('all_time_final_score', ascending=False).iloc[:50]
         actor_dictionary = self.actorDF[['name', 'gender', 'all_time_final_score']].to_dict(orient='index')
         actor_set = set()
-        actor_dict_list = [{'name': actor_dictionary[actor_id]['name'], 'gender': actor_dictionary[actor_id]['gender'],
-                            'score': actor_dictionary[actor_id]['all_time_final_score']}]
+        actor_dict_list = [{'id': actor_dictionary[actor_id]['name'], 'gender': actor_dictionary[actor_id]['gender']}]
         links_list = []
         skip = 0
         for index, (index_row, row) in enumerate(DF4.iterrows()):
 
-            links_list.append({'source': 0, "target": len(links_list) - skip, 'value': row.genre_id})
+            # links_list.append({'source': 0, "target": len(links_list) - skip, 'value': row.genre_id})
+            links_list.append({'source': actor_dictionary[actor_id]['name'], "target": actor_dictionary[row.actor_id]['name'], 'value': row.genre_id %10})
             if row.actor_id in actor_set:
                 skip += 1
                 continue
             actor_set.add(row.actor_id)
             actor_dict_list.append(
-                {'name': actor_dictionary[row.actor_id]['name'], 'gender': actor_dictionary[row.actor_id]['gender'],
-                 'score': actor_dictionary[row.actor_id]['all_time_final_score']})
-        return json.dumps({"actors":actor_dict_list, "movies":links_list})
+                {'id': actor_dictionary[row.actor_id]['name'], 'gender': actor_dictionary[row.actor_id]['gender']})
+        return json.dumps({"nodes":actor_dict_list, "links":links_list})
 
 if __name__ == '__main__':
     loader = table_loader()

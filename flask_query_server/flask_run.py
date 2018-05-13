@@ -42,7 +42,7 @@ def api_message():
     else:
         return "415 Unsupported Media Type ;)"
 
-@app.route('/getAcstorNetwork', methods = ['POST'])
+@app.route('/getActorNetwork', methods = ['POST'])
 def api_message3():
 
     if request.headers['Content-Type'] == 'application/json':
