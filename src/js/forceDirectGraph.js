@@ -14,7 +14,7 @@ function forceDirectGraph(inputdata){
   var linkColor = d3.scaleOrdinal()
     .range([]);
   var genderColor = d3.scaleOrdinal()
-    .range(['#4F57AA', '#FE3942', '#4F57AA']);
+    .range(['#4F57AA', '#FE3942']);
   var graph = inputdata;
   // d3.json(inputdata, function(error, graph) {
     console.log(graph);
@@ -106,9 +106,10 @@ function forceDirectGraph(inputdata){
   //the function to jump to the next actor
   //on clicking
   function nextActor(d){
-    svg.remove();
+    svg.selectAll("*").remove();
     scaleRadialGraph();
     postActorData(d.actor_id);
+
   }  
 
 }
