@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 100%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button onclick = actorDisplay(2) id="actorDisplayBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div onclick = actorDisplay(2) id="actorDisplayModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span onclick = actorDisplay(2) class="close">&times;</span>
+    <img src="http://h.hiphotos.baidu.com/image/pic/item/c2cec3fdfc039245a92696b68b94a4c27c1e25f3.jpg" id = "actorImg" class="img-rounded" alt="actor image" style="float:left;width:30%;height:30%;">
+    <p id = "actorDescription"> description of fasjfklasjfaslkfjaslfjlaksjf
+    fsa'fjkasflaskfasf
+  klasjflkajslkfjalksf
+kflsajflkajslfkjakls
+sjfklajflaskfjllkjkjllkj</p>
+  </div>
+
+</div>
+<script src="jquery-csv.js"></script>
+<script src="actorDisplay.js"></script>
+
+
+</body>
+</html>
