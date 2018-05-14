@@ -19,6 +19,16 @@ class table_loader():
         self.metaDataDF['release_date'] = pd.to_datetime(self.metaDataDF['release_date'])
         self.movie_to_genreDF = pd.read_csv('final_MovieToGenre.csv', index_col=0)
         self.Mean = 1
+        max_num=200
+        start_t = return_time(0)
+        end_t = return_time(1)
+        time_contrainedMetaFD = self.metaDataDF[(self.metaDataDF['release_date'] > start_t) & (self.metaDataDF['release_date'] < end_t)]
+        start_d = pd.to_datetime(start_t)
+        end_d = pd.to_datetime(end_t)
+        scoreDF = pd.merge(self.movie_actorDF, time_contrainedMetaFD)[['actor_id', 'final_score']].groupby('actor_id').sum()
+        scoreDF = scoreDF / scoreDF.sort_values('final_score', ascending=False).iloc[:max_num].sum()
+        time_contrainedMetaFD = (time_contrainedMetaFD.assign(relative_position=(time_contrainedMetaFD.release_date - start_d) / (end_d - start_d)))
+        self.time_contrainedMetaFD=time_contrainedMetaFD
 
     def return_filtered(self, start_float, end_float, max_num=50, genres='All'):
 
@@ -30,16 +40,17 @@ class table_loader():
         else:
             table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
             table = table[table.name==len(genres)]
-            table['id'] = table.index
+            table = table.assign(id= table.index)
             time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)
         scoreDF = pd.merge(self.movie_actorDF, time_contrainedMetaFD)[['actor_id', 'final_score']].groupby('actor_id').sum()
         scoreDF = scoreDF / scoreDF.sort_values('final_score', ascending=False).iloc[:max_num].sum()
-        time_contrainedMetaFD['relative_position'] = (time_contrainedMetaFD.release_date - start_d) / (end_d - start_d)
+        time_contrainedMetaFD = (time_contrainedMetaFD.assign(relative_position=(time_contrainedMetaFD.release_date - start_d) / (end_d - start_d)))
         self.time_contrainedMetaFD=time_contrainedMetaFD
         final_table = pd.merge(self.movie_actorDF, time_contrainedMetaFD)[['actor_id', 'relative_position']].groupby(
             'actor_id').mean().join(self.actorDF).join(scoreDF).sort_values('final_score', ascending=False).iloc[:max_num]
+        final_table = final_table.assign(actor_id=final_table.index)
         #columns_table = self.return_revenue_chart(num_columns,self.Mean)
         return final_table.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
 
@@ -60,27 +71,28 @@ class table_loader():
             pd.merge(pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id], self.metaDataDF), self.movie_to_genreDF)[
                 ['id', 'genre_id']], self.movie_actorDF)
         DF2 = DF[DF.actor_id != actor_id].drop_duplicates(['id', 'actor_id'])
-        self.actorDF['actor_id'] = self.actorDF.index
+        self.actorDF.loc[:,'actor_id'] = self.actorDF.index
         DF3 = pd.merge(DF2, self.actorDF)
         DF4 = DF3.sort_values('all_time_final_score', ascending=False).iloc[:50]
-        actor_dictionary = self.actorDF[['name', 'gender', 'all_time_final_score']].to_dict(orient='index')
+        actor_dictionary = self.actorDF[['name', 'gender', 'all_time_final_score','actor_id']].to_dict(orient='index')
         actor_set = set()
         actor_dict_list = [{'name': actor_dictionary[actor_id]['name'], 'gender': actor_dictionary[actor_id]['gender'],
-                            'score': actor_dictionary[actor_id]['all_time_final_score']}]
+                            'score': actor_dictionary[actor_id]['all_time_final_score'], 'actor_id':actor_dictionary[actor_id]['actor_id']}]
         links_list = []
         skip = 0
         for index, (index_row, row) in enumerate(DF4.iterrows()):
 
-            links_list.append({'source': 0, "target": len(links_list) - skip, 'value': row.genre_id})
+            links_list.append({'source': actor_dictionary[actor_id]['name'], "target": actor_dictionary[row.actor_id]['name'], 'value': row.genre_id})
             if row.actor_id in actor_set:
                 skip += 1
                 continue
+            #print(row)
             actor_set.add(row.actor_id)
             actor_dict_list.append(
                 {'name': actor_dictionary[row.actor_id]['name'], 'gender': actor_dictionary[row.actor_id]['gender'],
-                 'score': actor_dictionary[row.actor_id]['all_time_final_score']})
+                 'score': actor_dictionary[row.actor_id]['all_time_final_score'], 'actor_id':actor_dictionary[row.actor_id]['actor_id']})
         return json.dumps({"actors":actor_dict_list, "movies":links_list})
-
+        
 if __name__ == '__main__':
     loader = table_loader()
     print(loader.return_filtered('1960','2018',10,['Comedy']))
