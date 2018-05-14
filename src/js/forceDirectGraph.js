@@ -4,7 +4,7 @@ function forceDirectGraph(inputdata){
       height = +svg.attr("height")
 
   var simulation = d3.forceSimulation()
-  .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(160)) // the length of the link
+  .force("link", d3.forceLink().id(function(d) { return d.name; }).distance(160)) // the length of the link
   .force("charge", d3.forceManyBody())
   .force("center", d3.forceCenter(width / 2, height / 2));
   //parse input array to JSON format
@@ -23,28 +23,28 @@ function forceDirectGraph(inputdata){
     var link = svg.append("g")
     .attr("class", "links")
     .selectAll("line")
-    .data(graph.links)
+    .data(graph.movies)
     .enter().append("line")
     .attr("stroke-width", 4)
-    .attr("stroke", function(d){return color(d.value);})
+    .attr("stroke", function(d){return color(d.value);});
+   
 
     // the first node lying in the center
     //representing the actor whose network is currently showing
     var node0 = svg.append("g")
     .attr("class", "nodes")
     .selectAll("circle")
-    .data(graph.nodes)
+    .data(graph.actors)
     .enter().append("circle")
     .attr("r", 30)
     .attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
-    .filter(function (d, i) { return i === 0;})
-    .attr("id","node0");
+    .filter(function (d, i) { return i === 0;});
 
     //rest of the nodes; can be dragged
     var node = svg.append("g")
     .attr("class", "nodes")
     .selectAll("circle")
-    .data(graph.nodes)
+    .data(graph.actors)
     .enter().append("circle")
     .attr("r", 15)
     .attr("fill", function(d) { return genderColor(d.gender); })
@@ -60,15 +60,15 @@ function forceDirectGraph(inputdata){
     
     // append the title of each node
     node.append("title")
-    .text(function(d) { return d.id; });
+    .text(function(d) { return d.name; });
 
 
     simulation
-    .nodes(graph.nodes)
+    .nodes(graph.actors)
     .on("tick", ticked);
 
     simulation.force("link")
-    .links(graph.links);
+    .links(graph.movies);
 
     function ticked() {
       link
@@ -107,8 +107,8 @@ function forceDirectGraph(inputdata){
   //on clicking
   function nextActor(d){
     svg.remove();
-    scaleRadialGraph;
-    postActorData(d.id);
+    scaleRadialGraph();
+    postActorData(d.actor_id);
   }  
 
 }
