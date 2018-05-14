@@ -35,12 +35,13 @@ class table_loader():
         start_t = return_time(start_float)
         end_t = return_time(end_float)
         time_contrainedMetaFD = self.metaDataDF[(self.metaDataDF['release_date'] > start_t) & (self.metaDataDF['release_date'] < end_t)]
+        print('eeee')
         if genres == 'All':
             pass
         else:
             table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
             table = table[table.name==len(genres)]
-            table = table.assign(id= table.index)
+            table = table['id']= table.index
             time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)
@@ -52,7 +53,7 @@ class table_loader():
             'actor_id').mean().join(self.actorDF).join(scoreDF).sort_values('final_score', ascending=False).iloc[:max_num]
         final_table = final_table.assign(actor_id=final_table.index)
         #columns_table = self.return_revenue_chart(num_columns,self.Mean)
-        return final_table.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
+        return final_table.to_csv()#.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
 
     def return_revenue_chart(self, num_columns, Mean = 1):
         self.mean = Mean

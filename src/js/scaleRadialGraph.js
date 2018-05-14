@@ -17,13 +17,18 @@
 		var z = d3.scaleOrdinal()
 		.range(["#72818B", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
+
 		d3.csv("data.csv", function(d, i, columns) {
+			console.log(d.relative_position);
 			for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
 				d.total = t;
 			return d;
+
 		}, function(error, data) {
 			if (error) throw error;
-			data.sort(function(a, b) { return b[data.columns[6]] -  a[data.columns[6]]; });
+			console.log(data.columns.slice(1));
+			data.sort(function(a, b) { return b[data.columns[2]] -  a[data.columns[2]]; });
+			//console.log( b[data.columns[6]] -  a[data.columns[6]]);
 			x.domain(data.map(function(d) { return d.State; }));
 			y.domain([0, d3.max(data, function(d) { return d.total; })]);
 			z.domain(data.columns.slice(1));
@@ -60,3 +65,10 @@
   });
 
 }
+
+
+
+
+
+
+

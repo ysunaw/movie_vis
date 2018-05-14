@@ -69,6 +69,7 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="src/js/d3-scale-radial.js"></script>
 	<script src="src/js/scaleRadialGraph.js"></script>
+	<script src="src/js/bubbleRadialGraph.js"></script>
 
 	<!-- ---------------------------------------------- -->
 	<!-- the Relationship Network for a selected actor --->
@@ -76,9 +77,12 @@
 
 
 	<script src= "src/js/forceDirectGraph.js"></script>
+
+
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
 	scaleRadialGraph();
+	bubbleRadialGraph();
 	//input: actorid 
 	postActorData(10990);
 	function postActorData(actor){
