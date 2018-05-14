@@ -14,12 +14,12 @@ function forceDirectGraph(inputdata){
   var linkColor = d3.scaleOrdinal()
     .range([]);
   var genderColor = d3.scaleOrdinal()
+    .domain([1,2])
     .range(['#4F57AA', '#FE3942']);
   var graph = inputdata;
   // d3.json(inputdata, function(error, graph) {
     console.log(graph);
     //if (error) throw error;
-
     var link = svg.append("g")
     .attr("class", "links")
     .selectAll("line")
@@ -27,7 +27,6 @@ function forceDirectGraph(inputdata){
     .enter().append("line")
     .attr("stroke-width", 4)
     .attr("stroke", function(d){return color(d.value);});
-   
 
     // the first node lying in the center
     //representing the actor whose network is currently showing

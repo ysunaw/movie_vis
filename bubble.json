@@ -1,0 +1,1602 @@
+{
+    "3": {
+        "relative_position": 0.7320934406,
+        "name": "Harrison Ford",
+        "gender": 2,
+        "all_time_final_score": 297.6883434969,
+        "final_score": 0.0076115708,
+        "actor_id": 3
+    },
+    "19": {
+        "relative_position": 0.8769563834,
+        "name": "Allison Janney",
+        "gender": 1,
+        "all_time_final_score": 234.7095923134,
+        "final_score": 0.0060012719,
+        "actor_id": 19
+    },
+    "31": {
+        "relative_position": 0.8248423662,
+        "name": "Tom Hanks",
+        "gender": 2,
+        "all_time_final_score": 392.2690386241,
+        "final_score": 0.0100298975,
+        "actor_id": 31
+    },
+    "32": {
+        "relative_position": 0.8449921238,
+        "name": "Robin Wright",
+        "gender": 1,
+        "all_time_final_score": 242.6772488285,
+        "final_score": 0.0062049963,
+        "actor_id": 32
+    },
+    "62": {
+        "relative_position": 0.8288303073,
+        "name": "Bruce Willis",
+        "gender": 2,
+        "all_time_final_score": 365.4230823739,
+        "final_score": 0.0093434752,
+        "actor_id": 62
+    },
+    "64": {
+        "relative_position": 0.8200707574,
+        "name": "Gary Oldman",
+        "gender": 2,
+        "all_time_final_score": 286.8029561679,
+        "final_score": 0.0073332431,
+        "actor_id": 64
+    },
+    "85": {
+        "relative_position": 0.8475844058,
+        "name": "Johnny Depp",
+        "gender": 2,
+        "all_time_final_score": 390.5018982428,
+        "final_score": 0.0099847136,
+        "actor_id": 85
+    },
+    "103": {
+        "relative_position": 0.8809326168,
+        "name": "Mark Ruffalo",
+        "gender": 2,
+        "all_time_final_score": 193.4991852014,
+        "final_score": 0.0049475661,
+        "actor_id": 103
+    },
+    "109": {
+        "relative_position": 0.8533481057,
+        "name": "Elijah Wood",
+        "gender": 2,
+        "all_time_final_score": 173.6355127259,
+        "final_score": 0.0044396733,
+        "actor_id": 109
+    },
+    "110": {
+        "relative_position": 0.8020585975,
+        "name": "Viggo Mortensen",
+        "gender": 2,
+        "all_time_final_score": 137.0226967955,
+        "final_score": 0.003503523,
+        "actor_id": 110
+    },
+    "112": {
+        "relative_position": 0.8779662696,
+        "name": "Cate Blanchett",
+        "gender": 1,
+        "all_time_final_score": 176.0636638618,
+        "final_score": 0.0045017585,
+        "actor_id": 112
+    },
+    "113": {
+        "relative_position": 0.578495847,
+        "name": "Christopher Lee",
+        "gender": 2,
+        "all_time_final_score": 160.8488364645,
+        "final_score": 0.0041127318,
+        "actor_id": 113
+    },
+    "114": {
+        "relative_position": 0.8923741415,
+        "name": "Orlando Bloom",
+        "gender": 2,
+        "all_time_final_score": 169.5098892172,
+        "final_score": 0.0043341856,
+        "actor_id": 114
+    },
+    "116": {
+        "relative_position": 0.8867845118,
+        "name": "Keira Knightley",
+        "gender": 1,
+        "all_time_final_score": 177.1299503098,
+        "final_score": 0.0045290223,
+        "actor_id": 116
+    },
+    "118": {
+        "relative_position": 0.8636052517,
+        "name": "Geoffrey Rush",
+        "gender": 2,
+        "all_time_final_score": 296.0345223741,
+        "final_score": 0.0075692844,
+        "actor_id": 118
+    },
+    "131": {
+        "relative_position": 0.8806515844,
+        "name": "Jake Gyllenhaal",
+        "gender": 2,
+        "all_time_final_score": 168.5848811978,
+        "final_score": 0.0043105341,
+        "actor_id": 131
+    },
+    "134": {
+        "relative_position": 0.873173811,
+        "name": "Jamie Foxx",
+        "gender": 2,
+        "all_time_final_score": 202.85380543,
+        "final_score": 0.0051867536,
+        "actor_id": 134
+    },
+    "139": {
+        "relative_position": 0.8196887183,
+        "name": "Uma Thurman",
+        "gender": 1,
+        "all_time_final_score": 173.7098513098,
+        "final_score": 0.0044415741,
+        "actor_id": 139
+    },
+    "190": {
+        "relative_position": 0.6043958703,
+        "name": "Clint Eastwood",
+        "gender": 2,
+        "all_time_final_score": 224.2932101344,
+        "final_score": 0.0057349362,
+        "actor_id": 190
+    },
+    "192": {
+        "relative_position": 0.8347158016,
+        "name": "Morgan Freeman",
+        "gender": 2,
+        "all_time_final_score": 339.4367479126,
+        "final_score": 0.0086790326,
+        "actor_id": 192
+    },
+    "193": {
+        "relative_position": 0.6307823905,
+        "name": "Gene Hackman",
+        "gender": 2,
+        "all_time_final_score": 195.1496425245,
+        "final_score": 0.0049897665,
+        "actor_id": 193
+    },
+    "204": {
+        "relative_position": 0.868455351,
+        "name": "Kate Winslet",
+        "gender": 1,
+        "all_time_final_score": 150.6244842064,
+        "final_score": 0.0038513061,
+        "actor_id": 204
+    },
+    "205": {
+        "relative_position": 0.8377920201,
+        "name": "Kirsten Dunst",
+        "gender": 1,
+        "all_time_final_score": 142.4003525491,
+        "final_score": 0.0036410239,
+        "actor_id": 205
+    },
+    "206": {
+        "relative_position": 0.7985331461,
+        "name": "Jim Carrey",
+        "gender": 2,
+        "all_time_final_score": 150.6491348529,
+        "final_score": 0.0038519364,
+        "actor_id": 206
+    },
+    "207": {
+        "relative_position": 0.8646212655,
+        "name": "Tom Wilkinson",
+        "gender": 2,
+        "all_time_final_score": 136.3363677853,
+        "final_score": 0.0034859743,
+        "actor_id": 207
+    },
+    "227": {
+        "relative_position": 0.8102867057,
+        "name": "William Hurt",
+        "gender": 2,
+        "all_time_final_score": 151.0203738915,
+        "final_score": 0.0038614285,
+        "actor_id": 227
+    },
+    "228": {
+        "relative_position": 0.8025312507,
+        "name": "Ed Harris",
+        "gender": 2,
+        "all_time_final_score": 167.443565828,
+        "final_score": 0.0042813519,
+        "actor_id": 228
+    },
+    "287": {
+        "relative_position": 0.8179899612,
+        "name": "Brad Pitt",
+        "gender": 2,
+        "all_time_final_score": 327.7081315426,
+        "final_score": 0.0083791445,
+        "actor_id": 287
+    },
+    "290": {
+        "relative_position": 0.7272185694,
+        "name": "Christopher Plummer",
+        "gender": 2,
+        "all_time_final_score": 150.6384068312,
+        "final_score": 0.0038516621,
+        "actor_id": 290
+    },
+    "380": {
+        "relative_position": 0.7753167435,
+        "name": "Robert De Niro",
+        "gender": 2,
+        "all_time_final_score": 387.9057361089,
+        "final_score": 0.0099183325,
+        "actor_id": 380
+    },
+    "388": {
+        "relative_position": 0.8333680351,
+        "name": "Jim Broadbent",
+        "gender": 2,
+        "all_time_final_score": 135.0612754456,
+        "final_score": 0.0034533716,
+        "actor_id": 388
+    },
+    "500": {
+        "relative_position": 0.7940773456,
+        "name": "Tom Cruise",
+        "gender": 2,
+        "all_time_final_score": 258.4844785334,
+        "final_score": 0.0066091701,
+        "actor_id": 500
+    },
+    "504": {
+        "relative_position": 0.7871303064,
+        "name": "Tim Robbins",
+        "gender": 2,
+        "all_time_final_score": 143.9752034279,
+        "final_score": 0.0036812911,
+        "actor_id": 504
+    },
+    "514": {
+        "relative_position": 0.6165016642,
+        "name": "Jack Nicholson",
+        "gender": 2,
+        "all_time_final_score": 205.4927248215,
+        "final_score": 0.005254228,
+        "actor_id": 514
+    },
+    "515": {
+        "relative_position": 0.797606846,
+        "name": "Glenn Close",
+        "gender": 1,
+        "all_time_final_score": 140.5962629863,
+        "final_score": 0.0035948952,
+        "actor_id": 515
+    },
+    "517": {
+        "relative_position": 0.8296129109,
+        "name": "Pierce Brosnan",
+        "gender": 2,
+        "all_time_final_score": 142.8976631976,
+        "final_score": 0.0036537396,
+        "actor_id": 517
+    },
+    "518": {
+        "relative_position": 0.7676349801,
+        "name": "Danny DeVito",
+        "gender": 2,
+        "all_time_final_score": 140.1895958705,
+        "final_score": 0.0035844972,
+        "actor_id": 518
+    },
+    "524": {
+        "relative_position": 0.8739219713,
+        "name": "Natalie Portman",
+        "gender": 1,
+        "all_time_final_score": 160.2192394214,
+        "final_score": 0.0040966336,
+        "actor_id": 524
+    },
+    "529": {
+        "relative_position": 0.8891147666,
+        "name": "Guy Pearce",
+        "gender": 2,
+        "all_time_final_score": 142.891792984,
+        "final_score": 0.0036535895,
+        "actor_id": 529
+    },
+    "569": {
+        "relative_position": 0.8560543291,
+        "name": "Ethan Hawke",
+        "gender": 2,
+        "all_time_final_score": 177.6881792575,
+        "final_score": 0.0045432957,
+        "actor_id": 569
+    },
+    "585": {
+        "relative_position": 0.779849278,
+        "name": "Rutger Hauer",
+        "gender": 2,
+        "all_time_final_score": 141.2218661223,
+        "final_score": 0.0036108912,
+        "actor_id": 585
+    },
+    "738": {
+        "relative_position": 0.5731064304,
+        "name": "Sean Connery",
+        "gender": 2,
+        "all_time_final_score": 191.6268512656,
+        "final_score": 0.0048996925,
+        "actor_id": 738
+    },
+    "776": {
+        "relative_position": 0.7834174803,
+        "name": "Eddie Murphy",
+        "gender": 2,
+        "all_time_final_score": 140.0457737813,
+        "final_score": 0.0035808198,
+        "actor_id": 776
+    },
+    "819": {
+        "relative_position": 0.8642403644,
+        "name": "Edward Norton",
+        "gender": 2,
+        "all_time_final_score": 174.2546094609,
+        "final_score": 0.004455503,
+        "actor_id": 819
+    },
+    "854": {
+        "relative_position": 0.2833522079,
+        "name": "James Stewart",
+        "gender": 2,
+        "all_time_final_score": 157.7873803087,
+        "final_score": 0.0040344536,
+        "actor_id": 854
+    },
+    "880": {
+        "relative_position": 0.838981103,
+        "name": "Ben Affleck",
+        "gender": 2,
+        "all_time_final_score": 278.7561190859,
+        "final_score": 0.0071274942,
+        "actor_id": 880
+    },
+    "884": {
+        "relative_position": 0.8192562583,
+        "name": "Steve Buscemi",
+        "gender": 2,
+        "all_time_final_score": 183.8095425423,
+        "final_score": 0.0046998123,
+        "actor_id": 884
+    },
+    "887": {
+        "relative_position": 0.8783486514,
+        "name": "Owen Wilson",
+        "gender": 2,
+        "all_time_final_score": 147.5468908133,
+        "final_score": 0.0037726153,
+        "actor_id": 887
+    },
+    "934": {
+        "relative_position": 0.8510253841,
+        "name": "Russell Crowe",
+        "gender": 2,
+        "all_time_final_score": 151.658622705,
+        "final_score": 0.0038777479,
+        "actor_id": 934
+    },
+    "935": {
+        "relative_position": 0.8734332916,
+        "name": "Connie Nielsen",
+        "gender": 1,
+        "all_time_final_score": 144.8564961382,
+        "final_score": 0.0037038248,
+        "actor_id": 935
+    },
+    "976": {
+        "relative_position": 0.8931714602,
+        "name": "Jason Statham",
+        "gender": 2,
+        "all_time_final_score": 158.9936814359,
+        "final_score": 0.0040652974,
+        "actor_id": 976
+    },
+    "1037": {
+        "relative_position": 0.7442424106,
+        "name": "Harvey Keitel",
+        "gender": 2,
+        "all_time_final_score": 199.9444531126,
+        "final_score": 0.0051123646,
+        "actor_id": 1037
+    },
+    "1100": {
+        "relative_position": 0.7504704125,
+        "name": "Arnold Schwarzenegger",
+        "gender": 2,
+        "all_time_final_score": 170.9108733847,
+        "final_score": 0.0043700072,
+        "actor_id": 1100
+    },
+    "1158": {
+        "relative_position": 0.7577829748,
+        "name": "Al Pacino",
+        "gender": 2,
+        "all_time_final_score": 258.2571762552,
+        "final_score": 0.0066033583,
+        "actor_id": 1158
+    },
+    "1204": {
+        "relative_position": 0.8199150125,
+        "name": "Julia Roberts",
+        "gender": 1,
+        "all_time_final_score": 159.6869906272,
+        "final_score": 0.0040830246,
+        "actor_id": 1204
+    },
+    "1229": {
+        "relative_position": 0.734583157,
+        "name": "Jeff Bridges",
+        "gender": 2,
+        "all_time_final_score": 199.4865854782,
+        "final_score": 0.0051006575,
+        "actor_id": 1229
+    },
+    "1230": {
+        "relative_position": 0.8302051399,
+        "name": "John Goodman",
+        "gender": 2,
+        "all_time_final_score": 228.9424972864,
+        "final_score": 0.0058538134,
+        "actor_id": 1230
+    },
+    "1231": {
+        "relative_position": 0.8407901476,
+        "name": "Julianne Moore",
+        "gender": 1,
+        "all_time_final_score": 206.79335845,
+        "final_score": 0.0052874838,
+        "actor_id": 1231
+    },
+    "1233": {
+        "relative_position": 0.8381404217,
+        "name": "Philip Seymour Hoffman",
+        "gender": 2,
+        "all_time_final_score": 181.8719415017,
+        "final_score": 0.00465027,
+        "actor_id": 1233
+    },
+    "1241": {
+        "relative_position": 0.8006623387,
+        "name": "John Turturro",
+        "gender": 2,
+        "all_time_final_score": 134.2364675457,
+        "final_score": 0.0034322821,
+        "actor_id": 1241
+    },
+    "1243": {
+        "relative_position": 0.7222792608,
+        "name": "Woody Allen",
+        "gender": 2,
+        "all_time_final_score": 165.5103959466,
+        "final_score": 0.0042319228,
+        "actor_id": 1243
+    },
+    "1245": {
+        "relative_position": 0.8851450854,
+        "name": "Scarlett Johansson",
+        "gender": 1,
+        "all_time_final_score": 283.0527941037,
+        "final_score": 0.0072373555,
+        "actor_id": 1245
+    },
+    "1248": {
+        "relative_position": 0.8387224799,
+        "name": "Brian Cox",
+        "gender": 2,
+        "all_time_final_score": 162.8660970005,
+        "final_score": 0.0041643109,
+        "actor_id": 1248
+    },
+    "1269": {
+        "relative_position": 0.7818314806,
+        "name": "Kevin Costner",
+        "gender": 2,
+        "all_time_final_score": 184.8211766096,
+        "final_score": 0.0047256787,
+        "actor_id": 1269
+    },
+    "1283": {
+        "relative_position": 0.8379308049,
+        "name": "Helena Bonham Carter",
+        "gender": 1,
+        "all_time_final_score": 176.4801540619,
+        "final_score": 0.0045124077,
+        "actor_id": 1283
+    },
+    "1327": {
+        "relative_position": 0.7976981406,
+        "name": "Ian McKellen",
+        "gender": 2,
+        "all_time_final_score": 215.7158580791,
+        "final_score": 0.0055156225,
+        "actor_id": 1327
+    },
+    "1333": {
+        "relative_position": 0.8704354609,
+        "name": "Andy Serkis",
+        "gender": 2,
+        "all_time_final_score": 238.9205508062,
+        "final_score": 0.0061089415,
+        "actor_id": 1333
+    },
+    "1461": {
+        "relative_position": 0.8528848713,
+        "name": "George Clooney",
+        "gender": 2,
+        "all_time_final_score": 170.4557589969,
+        "final_score": 0.0043583704,
+        "actor_id": 1461
+    },
+    "1532": {
+        "relative_position": 0.7960711276,
+        "name": "Bill Murray",
+        "gender": 2,
+        "all_time_final_score": 171.3237936063,
+        "final_score": 0.0043805652,
+        "actor_id": 1532
+    },
+    "1640": {
+        "relative_position": 0.8108021382,
+        "name": "Stellan Skarsgård",
+        "gender": 2,
+        "all_time_final_score": 162.9372243107,
+        "final_score": 0.0041661296,
+        "actor_id": 1640
+    },
+    "1771": {
+        "relative_position": 0.8568519315,
+        "name": "Giovanni Ribisi",
+        "gender": 2,
+        "all_time_final_score": 143.4731579893,
+        "final_score": 0.0036684544,
+        "actor_id": 1771
+    },
+    "1892": {
+        "relative_position": 0.8578862269,
+        "name": "Matt Damon",
+        "gender": 2,
+        "all_time_final_score": 274.1200484192,
+        "final_score": 0.0070089548,
+        "actor_id": 1892
+    },
+    "1896": {
+        "relative_position": 0.8315129538,
+        "name": "Don Cheadle",
+        "gender": 2,
+        "all_time_final_score": 156.7852706847,
+        "final_score": 0.0040088308,
+        "actor_id": 1896
+    },
+    "1979": {
+        "relative_position": 0.8217824698,
+        "name": "Kevin Spacey",
+        "gender": 2,
+        "all_time_final_score": 264.2391080881,
+        "final_score": 0.0067563098,
+        "actor_id": 1979
+    },
+    "2039": {
+        "relative_position": 0.8727238282,
+        "name": "Brendan Gleeson",
+        "gender": 2,
+        "all_time_final_score": 165.2531881416,
+        "final_score": 0.0042253463,
+        "actor_id": 2039
+    },
+    "2047": {
+        "relative_position": 0.8510556773,
+        "name": "Danny Glover",
+        "gender": 2,
+        "all_time_final_score": 138.0678096357,
+        "final_score": 0.0035302454,
+        "actor_id": 2047
+    },
+    "2053": {
+        "relative_position": 0.7766336669,
+        "name": "Bill Paxton",
+        "gender": 2,
+        "all_time_final_score": 138.1501962365,
+        "final_score": 0.0035323519,
+        "actor_id": 2053
+    },
+    "2157": {
+        "relative_position": 0.7974658186,
+        "name": "Robin Williams",
+        "gender": 2,
+        "all_time_final_score": 237.0014609717,
+        "final_score": 0.0060598725,
+        "actor_id": 2157
+    },
+    "2176": {
+        "relative_position": 0.7792907399,
+        "name": "Tommy Lee Jones",
+        "gender": 2,
+        "all_time_final_score": 161.7619098757,
+        "final_score": 0.0041360781,
+        "actor_id": 2176
+    },
+    "2178": {
+        "relative_position": 0.8291760508,
+        "name": "Forest Whitaker",
+        "gender": 2,
+        "all_time_final_score": 157.2967474239,
+        "final_score": 0.0040219087,
+        "actor_id": 2178
+    },
+    "2227": {
+        "relative_position": 0.8530017838,
+        "name": "Nicole Kidman",
+        "gender": 1,
+        "all_time_final_score": 188.8126111963,
+        "final_score": 0.0048277354,
+        "actor_id": 2227
+    },
+    "2228": {
+        "relative_position": 0.7947026736,
+        "name": "Sean Penn",
+        "gender": 2,
+        "all_time_final_score": 154.3977050035,
+        "final_score": 0.0039477833,
+        "actor_id": 2228
+    },
+    "2231": {
+        "relative_position": 0.8291645883,
+        "name": "Samuel L. Jackson",
+        "gender": 2,
+        "all_time_final_score": 457.3431166789,
+        "final_score": 0.0116937716,
+        "actor_id": 2231
+    },
+    "2232": {
+        "relative_position": 0.7975311088,
+        "name": "Michael Keaton",
+        "gender": 2,
+        "all_time_final_score": 312.8876298604,
+        "final_score": 0.0080002002,
+        "actor_id": 2232
+    },
+    "2282": {
+        "relative_position": 0.8541054766,
+        "name": "Ben Kingsley",
+        "gender": 2,
+        "all_time_final_score": 221.4481022666,
+        "final_score": 0.0056621898,
+        "actor_id": 2282
+    },
+    "2283": {
+        "relative_position": 0.8457166835,
+        "name": "Stanley Tucci",
+        "gender": 2,
+        "all_time_final_score": 212.4888415664,
+        "final_score": 0.0054331112,
+        "actor_id": 2283
+    },
+    "2387": {
+        "relative_position": 0.8209957204,
+        "name": "Patrick Stewart",
+        "gender": 2,
+        "all_time_final_score": 138.6578517419,
+        "final_score": 0.0035453322,
+        "actor_id": 2387
+    },
+    "2440": {
+        "relative_position": 0.8720789203,
+        "name": "Bill Nighy",
+        "gender": 2,
+        "all_time_final_score": 134.0855725238,
+        "final_score": 0.0034284239,
+        "actor_id": 2440
+    },
+    "2461": {
+        "relative_position": 0.7414650679,
+        "name": "Mel Gibson",
+        "gender": 2,
+        "all_time_final_score": 196.7919333075,
+        "final_score": 0.0050317581,
+        "actor_id": 2461
+    },
+    "2505": {
+        "relative_position": 0.8013591474,
+        "name": "James Cromwell",
+        "gender": 2,
+        "all_time_final_score": 154.2612345798,
+        "final_score": 0.0039442939,
+        "actor_id": 2505
+    },
+    "2524": {
+        "relative_position": 0.8979395006,
+        "name": "Tom Hardy",
+        "gender": 2,
+        "all_time_final_score": 140.0081736851,
+        "final_score": 0.0035798584,
+        "actor_id": 2524
+    },
+    "2888": {
+        "relative_position": 0.8546350125,
+        "name": "Will Smith",
+        "gender": 2,
+        "all_time_final_score": 160.2473466154,
+        "final_score": 0.0040973523,
+        "actor_id": 2888
+    },
+    "2963": {
+        "relative_position": 0.8285272973,
+        "name": "Nicolas Cage",
+        "gender": 2,
+        "all_time_final_score": 255.144356846,
+        "final_score": 0.0065237668,
+        "actor_id": 2963
+    },
+    "2975": {
+        "relative_position": 0.7929565352,
+        "name": "Laurence Fishburne",
+        "gender": 2,
+        "all_time_final_score": 184.2599411478,
+        "final_score": 0.0047113285,
+        "actor_id": 2975
+    },
+    "3036": {
+        "relative_position": 0.8126329833,
+        "name": "John Cusack",
+        "gender": 2,
+        "all_time_final_score": 186.9739013811,
+        "final_score": 0.0047807216,
+        "actor_id": 3036
+    },
+    "3061": {
+        "relative_position": 0.8745199326,
+        "name": "Ewan McGregor",
+        "gender": 2,
+        "all_time_final_score": 281.1123102312,
+        "final_score": 0.0071877395,
+        "actor_id": 3061
+    },
+    "3084": {
+        "relative_position": 0.4858375552,
+        "name": "Marlon Brando",
+        "gender": 2,
+        "all_time_final_score": 144.5918375425,
+        "final_score": 0.0036970578,
+        "actor_id": 3084
+    },
+    "3087": {
+        "relative_position": 0.6890357817,
+        "name": "Robert Duvall",
+        "gender": 2,
+        "all_time_final_score": 190.0850647534,
+        "final_score": 0.0048602707,
+        "actor_id": 3087
+    },
+    "3129": {
+        "relative_position": 0.8327064277,
+        "name": "Tim Roth",
+        "gender": 2,
+        "all_time_final_score": 139.4628473311,
+        "final_score": 0.003565915,
+        "actor_id": 3129
+    },
+    "3131": {
+        "relative_position": 0.8365137167,
+        "name": "Antonio Banderas",
+        "gender": 2,
+        "all_time_final_score": 175.6518961321,
+        "final_score": 0.0044912301,
+        "actor_id": 3131
+    },
+    "3223": {
+        "relative_position": 0.8057379308,
+        "name": "Robert Downey Jr.",
+        "gender": 2,
+        "all_time_final_score": 349.8669678281,
+        "final_score": 0.0089457221,
+        "actor_id": 3223
+    },
+    "3392": {
+        "relative_position": 0.7718236738,
+        "name": "Michael Douglas",
+        "gender": 2,
+        "all_time_final_score": 151.6976449881,
+        "final_score": 0.0038787456,
+        "actor_id": 3392
+    },
+    "3489": {
+        "relative_position": 0.8758622452,
+        "name": "Naomi Watts",
+        "gender": 1,
+        "all_time_final_score": 164.6150675944,
+        "final_score": 0.0042090302,
+        "actor_id": 3489
+    },
+    "3636": {
+        "relative_position": 0.5475983063,
+        "name": "Paul Newman",
+        "gender": 2,
+        "all_time_final_score": 146.6140957784,
+        "final_score": 0.0037487648,
+        "actor_id": 3636
+    },
+    "3894": {
+        "relative_position": 0.8326377592,
+        "name": "Christian Bale",
+        "gender": 2,
+        "all_time_final_score": 289.024661219,
+        "final_score": 0.0073900498,
+        "actor_id": 3894
+    },
+    "3895": {
+        "relative_position": 0.6767969974,
+        "name": "Michael Caine",
+        "gender": 2,
+        "all_time_final_score": 374.4041514207,
+        "final_score": 0.0095731115,
+        "actor_id": 3895
+    },
+    "3896": {
+        "relative_position": 0.8405987303,
+        "name": "Liam Neeson",
+        "gender": 2,
+        "all_time_final_score": 283.1876764549,
+        "final_score": 0.0072408043,
+        "actor_id": 3896
+    },
+    "4038": {
+        "relative_position": 0.8054577108,
+        "name": "Susan Sarandon",
+        "gender": 1,
+        "all_time_final_score": 172.5854887885,
+        "final_score": 0.0044128253,
+        "actor_id": 4038
+    },
+    "4135": {
+        "relative_position": 0.701974986,
+        "name": "Robert Redford",
+        "gender": 2,
+        "all_time_final_score": 169.7176035361,
+        "final_score": 0.0043394966,
+        "actor_id": 4135
+    },
+    "4165": {
+        "relative_position": 0.2276067153,
+        "name": "John Wayne",
+        "gender": 2,
+        "all_time_final_score": 168.0498523148,
+        "final_score": 0.0042822999,
+        "actor_id": 4165
+    },
+    "4173": {
+        "relative_position": 0.7702103167,
+        "name": "Anthony Hopkins",
+        "gender": 2,
+        "all_time_final_score": 201.682840035,
+        "final_score": 0.0051568133,
+        "actor_id": 4173
+    },
+    "4483": {
+        "relative_position": 0.7670050689,
+        "name": "Dustin Hoffman",
+        "gender": 2,
+        "all_time_final_score": 210.6848356267,
+        "final_score": 0.0053869847,
+        "actor_id": 4483
+    },
+    "4495": {
+        "relative_position": 0.9005040134,
+        "name": "Steve Carell",
+        "gender": 2,
+        "all_time_final_score": 226.4630262074,
+        "final_score": 0.005790416,
+        "actor_id": 4495
+    },
+    "4566": {
+        "relative_position": 0.8212701968,
+        "name": "Alan Rickman",
+        "gender": 2,
+        "all_time_final_score": 147.5951031481,
+        "final_score": 0.0037738481,
+        "actor_id": 4566
+    },
+    "4581": {
+        "relative_position": 0.9056186718,
+        "name": "Steve Coogan",
+        "gender": 2,
+        "all_time_final_score": 212.2010225938,
+        "final_score": 0.0054257519,
+        "actor_id": 4581
+    },
+    "4690": {
+        "relative_position": 0.7772799867,
+        "name": "Christopher Walken",
+        "gender": 2,
+        "all_time_final_score": 196.5345504039,
+        "final_score": 0.0050251771,
+        "actor_id": 4690
+    },
+    "4724": {
+        "relative_position": 0.7869358954,
+        "name": "Kevin Bacon",
+        "gender": 2,
+        "all_time_final_score": 147.503848969,
+        "final_score": 0.0037715148,
+        "actor_id": 4724
+    },
+    "4764": {
+        "relative_position": 0.8541536416,
+        "name": "John C. Reilly",
+        "gender": 2,
+        "all_time_final_score": 138.8866118119,
+        "final_score": 0.0035511813,
+        "actor_id": 4764
+    },
+    "5049": {
+        "relative_position": 0.7686375579,
+        "name": "John Hurt",
+        "gender": 2,
+        "all_time_final_score": 170.8625670419,
+        "final_score": 0.0043687721,
+        "actor_id": 5049
+    },
+    "5064": {
+        "relative_position": 0.8030255891,
+        "name": "Meryl Streep",
+        "gender": 1,
+        "all_time_final_score": 191.3257384046,
+        "final_score": 0.0048919934,
+        "actor_id": 5064
+    },
+    "5292": {
+        "relative_position": 0.7970406063,
+        "name": "Denzel Washington",
+        "gender": 2,
+        "all_time_final_score": 205.8405299407,
+        "final_score": 0.005263121,
+        "actor_id": 5292
+    },
+    "5293": {
+        "relative_position": 0.832178973,
+        "name": "Willem Dafoe",
+        "gender": 2,
+        "all_time_final_score": 267.6248649432,
+        "final_score": 0.00684288,
+        "actor_id": 5293
+    },
+    "5469": {
+        "relative_position": 0.8637632046,
+        "name": "Ralph Fiennes",
+        "gender": 2,
+        "all_time_final_score": 195.1892996042,
+        "final_score": 0.0049907805,
+        "actor_id": 5469
+    },
+    "5472": {
+        "relative_position": 0.8453503205,
+        "name": "Colin Firth",
+        "gender": 2,
+        "all_time_final_score": 134.5297212128,
+        "final_score": 0.0034397803,
+        "actor_id": 5472
+    },
+    "5530": {
+        "relative_position": 0.9034013129,
+        "name": "James McAvoy",
+        "gender": 2,
+        "all_time_final_score": 134.8818743061,
+        "final_score": 0.0034487845,
+        "actor_id": 5530
+    },
+    "5576": {
+        "relative_position": 0.8462870121,
+        "name": "Val Kilmer",
+        "gender": 2,
+        "all_time_final_score": 147.6155689065,
+        "final_score": 0.0037743713,
+        "actor_id": 5576
+    },
+    "5723": {
+        "relative_position": 0.8602236526,
+        "name": "John Leguizamo",
+        "gender": 2,
+        "all_time_final_score": 185.6753893721,
+        "final_score": 0.00474752,
+        "actor_id": 5723
+    },
+    "6065": {
+        "relative_position": 0.7786908885,
+        "name": "Dennis Quaid",
+        "gender": 2,
+        "all_time_final_score": 157.5562572363,
+        "final_score": 0.0040285441,
+        "actor_id": 6065
+    },
+    "6193": {
+        "relative_position": 0.8335559782,
+        "name": "Leonardo DiCaprio",
+        "gender": 2,
+        "all_time_final_score": 217.5310730607,
+        "final_score": 0.0055620356,
+        "actor_id": 6193
+    },
+    "6283": {
+        "relative_position": 0.8916534441,
+        "name": "Michael Nyqvist",
+        "gender": 2,
+        "all_time_final_score": 144.0576544403,
+        "final_score": 0.0036833993,
+        "actor_id": 6283
+    },
+    "6383": {
+        "relative_position": 0.8723423736,
+        "name": "Aaron Eckhart",
+        "gender": 2,
+        "all_time_final_score": 148.9743462091,
+        "final_score": 0.0038091138,
+        "actor_id": 6383
+    },
+    "6384": {
+        "relative_position": 0.8160428723,
+        "name": "Keanu Reeves",
+        "gender": 2,
+        "all_time_final_score": 367.5102367554,
+        "final_score": 0.0093968415,
+        "actor_id": 6384
+    },
+    "6413": {
+        "relative_position": 0.8812866988,
+        "name": "Danny Huston",
+        "gender": 2,
+        "all_time_final_score": 171.1758391964,
+        "final_score": 0.0043767821,
+        "actor_id": 6413
+    },
+    "6856": {
+        "relative_position": 0.6983318343,
+        "name": "Kurt Russell",
+        "gender": 2,
+        "all_time_final_score": 198.5206183125,
+        "final_score": 0.0050759587,
+        "actor_id": 6856
+    },
+    "6885": {
+        "relative_position": 0.859134997,
+        "name": "Charlize Theron",
+        "gender": 1,
+        "all_time_final_score": 155.2347278824,
+        "final_score": 0.003969185,
+        "actor_id": 6885
+    },
+    "6941": {
+        "relative_position": 0.8519417308,
+        "name": "Cameron Diaz",
+        "gender": 1,
+        "all_time_final_score": 143.4809352462,
+        "final_score": 0.0036686532,
+        "actor_id": 6941
+    },
+    "6949": {
+        "relative_position": 0.8204177602,
+        "name": "John Malkovich",
+        "gender": 2,
+        "all_time_final_score": 155.3049014768,
+        "final_score": 0.0039709793,
+        "actor_id": 6949
+    },
+    "6968": {
+        "relative_position": 0.9008414583,
+        "name": "Hugh Jackman",
+        "gender": 2,
+        "all_time_final_score": 168.9951715157,
+        "final_score": 0.0043210248,
+        "actor_id": 6968
+    },
+    "7056": {
+        "relative_position": 0.8525750758,
+        "name": "Emma Thompson",
+        "gender": 1,
+        "all_time_final_score": 175.4204128255,
+        "final_score": 0.0044853113,
+        "actor_id": 7056
+    },
+    "7399": {
+        "relative_position": 0.8476419542,
+        "name": "Ben Stiller",
+        "gender": 2,
+        "all_time_final_score": 169.0418762702,
+        "final_score": 0.004322219,
+        "actor_id": 7399
+    },
+    "7447": {
+        "relative_position": 0.8406575395,
+        "name": "Alec Baldwin",
+        "gender": 2,
+        "all_time_final_score": 176.2908722685,
+        "final_score": 0.004507568,
+        "actor_id": 7447
+    },
+    "8691": {
+        "relative_position": 0.9092464688,
+        "name": "Zoe Saldana",
+        "gender": 1,
+        "all_time_final_score": 317.7054808208,
+        "final_score": 0.0081233875,
+        "actor_id": 8691
+    },
+    "8891": {
+        "relative_position": 0.7735903609,
+        "name": "John Travolta",
+        "gender": 2,
+        "all_time_final_score": 258.6168868598,
+        "final_score": 0.0066125557,
+        "actor_id": 8891
+    },
+    "8945": {
+        "relative_position": 0.7896496288,
+        "name": "Kevin Kline",
+        "gender": 2,
+        "all_time_final_score": 212.2688433144,
+        "final_score": 0.005427486,
+        "actor_id": 8945
+    },
+    "9281": {
+        "relative_position": 0.9055110069,
+        "name": "Elizabeth Banks",
+        "gender": 1,
+        "all_time_final_score": 140.249059258,
+        "final_score": 0.0035860176,
+        "actor_id": 9281
+    },
+    "9642": {
+        "relative_position": 0.8678712052,
+        "name": "Jude Law",
+        "gender": 2,
+        "all_time_final_score": 159.8586397725,
+        "final_score": 0.0040874135,
+        "actor_id": 9642
+    },
+    "10182": {
+        "relative_position": 0.8482137975,
+        "name": "Ving Rhames",
+        "gender": 2,
+        "all_time_final_score": 172.9767033206,
+        "final_score": 0.0044228283,
+        "actor_id": 10182
+    },
+    "10205": {
+        "relative_position": 0.8307577433,
+        "name": "Sigourney Weaver",
+        "gender": 1,
+        "all_time_final_score": 280.7026353156,
+        "final_score": 0.0071772645,
+        "actor_id": 10205
+    },
+    "10297": {
+        "relative_position": 0.8662331736,
+        "name": "Matthew McConaughey",
+        "gender": 2,
+        "all_time_final_score": 168.8183206785,
+        "final_score": 0.0043165029,
+        "actor_id": 10297
+    },
+    "10859": {
+        "relative_position": 0.8903311323,
+        "name": "Ryan Reynolds",
+        "gender": 2,
+        "all_time_final_score": 249.9607916979,
+        "final_score": 0.0063912286,
+        "actor_id": 10859
+    },
+    "10882": {
+        "relative_position": 0.9161293874,
+        "name": "Rosamund Pike",
+        "gender": 1,
+        "all_time_final_score": 151.2791185262,
+        "final_score": 0.0038680444,
+        "actor_id": 10882
+    },
+    "10980": {
+        "relative_position": 0.915137939,
+        "name": "Daniel Radcliffe",
+        "gender": 2,
+        "all_time_final_score": 190.4819618457,
+        "final_score": 0.0048704189,
+        "actor_id": 10980
+    },
+    "10989": {
+        "relative_position": 0.8965381561,
+        "name": "Rupert Grint",
+        "gender": 2,
+        "all_time_final_score": 135.6358750577,
+        "final_score": 0.0034680635,
+        "actor_id": 10989
+    },
+    "10990": {
+        "relative_position": 0.9174174469,
+        "name": "Emma Watson",
+        "gender": 1,
+        "all_time_final_score": 321.4423842499,
+        "final_score": 0.0082189361,
+        "actor_id": 10990
+    },
+    "11207": {
+        "relative_position": 0.8462860719,
+        "name": "David Thewlis",
+        "gender": 2,
+        "all_time_final_score": 220.9855427686,
+        "final_score": 0.0056503627,
+        "actor_id": 11207
+    },
+    "11701": {
+        "relative_position": 0.8377146724,
+        "name": "Angelina Jolie",
+        "gender": 1,
+        "all_time_final_score": 147.3269307947,
+        "final_score": 0.0037669912,
+        "actor_id": 11701
+    },
+    "12052": {
+        "relative_position": 0.8256133295,
+        "name": "Gwyneth Paltrow",
+        "gender": 1,
+        "all_time_final_score": 144.8633021967,
+        "final_score": 0.0037039988,
+        "actor_id": 12052
+    },
+    "12094": {
+        "relative_position": 0.8826837851,
+        "name": "Jennifer Saunders",
+        "gender": 1,
+        "all_time_final_score": 138.9806227344,
+        "final_score": 0.0035535851,
+        "actor_id": 12094
+    },
+    "12132": {
+        "relative_position": 0.8110359366,
+        "name": "Michael Rooker",
+        "gender": 2,
+        "all_time_final_score": 135.9099815091,
+        "final_score": 0.0034750721,
+        "actor_id": 12132
+    },
+    "12835": {
+        "relative_position": 0.8718509531,
+        "name": "Vin Diesel",
+        "gender": 2,
+        "all_time_final_score": 220.8091006002,
+        "final_score": 0.0056458512,
+        "actor_id": 12835
+    },
+    "13240": {
+        "relative_position": 0.8798256349,
+        "name": "Mark Wahlberg",
+        "gender": 2,
+        "all_time_final_score": 210.0337514452,
+        "final_score": 0.0053703371,
+        "actor_id": 13240
+    },
+    "13242": {
+        "relative_position": 0.8798236471,
+        "name": "Paul Giamatti",
+        "gender": 2,
+        "all_time_final_score": 150.4965179667,
+        "final_score": 0.0038480341,
+        "actor_id": 13242
+    },
+    "15735": {
+        "relative_position": 0.7804546492,
+        "name": "Helen Mirren",
+        "gender": 1,
+        "all_time_final_score": 148.9130749991,
+        "final_score": 0.0038075472,
+        "actor_id": 15735
+    },
+    "15831": {
+        "relative_position": 0.8145594578,
+        "name": "Frank Welker",
+        "gender": 2,
+        "all_time_final_score": 148.1462387912,
+        "final_score": 0.00378794,
+        "actor_id": 15831
+    },
+    "16483": {
+        "relative_position": 0.718722277,
+        "name": "Sylvester Stallone",
+        "gender": 2,
+        "all_time_final_score": 235.6587665516,
+        "final_score": 0.0060255412,
+        "actor_id": 16483
+    },
+    "16828": {
+        "relative_position": 0.9123074823,
+        "name": "Chris Evans",
+        "gender": 2,
+        "all_time_final_score": 265.0166456391,
+        "final_score": 0.0067761906,
+        "actor_id": 16828
+    },
+    "16927": {
+        "relative_position": 0.7510919149,
+        "name": "Gérard Depardieu",
+        "gender": 2,
+        "all_time_final_score": 140.7003635235,
+        "final_score": 0.003597557,
+        "actor_id": 16927
+    },
+    "16940": {
+        "relative_position": 0.8101453646,
+        "name": "Jeremy Irons",
+        "gender": 2,
+        "all_time_final_score": 144.6303988632,
+        "final_score": 0.0036980438,
+        "actor_id": 16940
+    },
+    "17051": {
+        "relative_position": 0.9209449426,
+        "name": "James Franco",
+        "gender": 2,
+        "all_time_final_score": 189.6935581172,
+        "final_score": 0.0048502603,
+        "actor_id": 17051
+    },
+    "17288": {
+        "relative_position": 0.9340477036,
+        "name": "Michael Fassbender",
+        "gender": 2,
+        "all_time_final_score": 174.4389335824,
+        "final_score": 0.0044602159,
+        "actor_id": 17288
+    },
+    "17604": {
+        "relative_position": 0.9051604339,
+        "name": "Jeremy Renner",
+        "gender": 2,
+        "all_time_final_score": 186.7133434231,
+        "final_score": 0.0047740594,
+        "actor_id": 17604
+    },
+    "17605": {
+        "relative_position": 0.9290629449,
+        "name": "Idris Elba",
+        "gender": 2,
+        "all_time_final_score": 135.6957910605,
+        "final_score": 0.0034695954,
+        "actor_id": 17605
+    },
+    "18277": {
+        "relative_position": 0.8229845194,
+        "name": "Sandra Bullock",
+        "gender": 1,
+        "all_time_final_score": 390.5348017357,
+        "final_score": 0.0099855549,
+        "actor_id": 18277
+    },
+    "18324": {
+        "relative_position": 0.8492666187,
+        "name": "Steve Zahn",
+        "gender": 2,
+        "all_time_final_score": 138.4463372417,
+        "final_score": 0.003539924,
+        "actor_id": 18324
+    },
+    "18897": {
+        "relative_position": 0.7156466559,
+        "name": "Jackie Chan",
+        "gender": 2,
+        "all_time_final_score": 260.9832526162,
+        "final_score": 0.0066730611,
+        "actor_id": 18897
+    },
+    "18999": {
+        "relative_position": 0.8967988641,
+        "name": "J.K. Simmons",
+        "gender": 2,
+        "all_time_final_score": 182.0799780414,
+        "final_score": 0.0046555892,
+        "actor_id": 18999
+    },
+    "19292": {
+        "relative_position": 0.8644326969,
+        "name": "Adam Sandler",
+        "gender": 2,
+        "all_time_final_score": 141.0318030426,
+        "final_score": 0.0036060315,
+        "actor_id": 19292
+    },
+    "21088": {
+        "relative_position": 0.9061584092,
+        "name": "Alan Tudyk",
+        "gender": 2,
+        "all_time_final_score": 140.8641585455,
+        "final_score": 0.003601745,
+        "actor_id": 21088
+    },
+    "22226": {
+        "relative_position": 0.8834787376,
+        "name": "Paul Rudd",
+        "gender": 2,
+        "all_time_final_score": 135.3033619042,
+        "final_score": 0.0034595615,
+        "actor_id": 22226
+    },
+    "24045": {
+        "relative_position": 0.8758617189,
+        "name": "Joseph Gordon-Levitt",
+        "gender": 2,
+        "all_time_final_score": 143.7162736147,
+        "final_score": 0.0036746706,
+        "actor_id": 24045
+    },
+    "27972": {
+        "relative_position": 0.9141648608,
+        "name": "Josh Hutcherson",
+        "gender": 2,
+        "all_time_final_score": 152.2359755597,
+        "final_score": 0.0038925102,
+        "actor_id": 27972
+    },
+    "37917": {
+        "relative_position": 0.9049784018,
+        "name": "Kristen Stewart",
+        "gender": 1,
+        "all_time_final_score": 147.6848866551,
+        "final_score": 0.0037761437,
+        "actor_id": 37917
+    },
+    "51329": {
+        "relative_position": 0.9211856761,
+        "name": "Bradley Cooper",
+        "gender": 2,
+        "all_time_final_score": 214.9718120502,
+        "final_score": 0.005496598,
+        "actor_id": 51329
+    },
+    "51990": {
+        "relative_position": 0.94048421,
+        "name": "T.J. Miller",
+        "gender": 2,
+        "all_time_final_score": 204.6155025154,
+        "final_score": 0.0052317983,
+        "actor_id": 51990
+    },
+    "55636": {
+        "relative_position": 0.7099890452,
+        "name": "Donald Sutherland",
+        "gender": 2,
+        "all_time_final_score": 208.7305153796,
+        "final_score": 0.0053370148,
+        "actor_id": 55636
+    },
+    "57755": {
+        "relative_position": 0.8521202575,
+        "name": "Woody Harrelson",
+        "gender": 2,
+        "all_time_final_score": 312.2772156417,
+        "final_score": 0.0079845926,
+        "actor_id": 57755
+    },
+    "62064": {
+        "relative_position": 0.9317763004,
+        "name": "Chris Pine",
+        "gender": 2,
+        "all_time_final_score": 245.230719105,
+        "final_score": 0.0062702858,
+        "actor_id": 62064
+    },
+    "65717": {
+        "relative_position": 0.9228411903,
+        "name": "Jon Hamm",
+        "gender": 2,
+        "all_time_final_score": 346.2606963449,
+        "final_score": 0.0088535136,
+        "actor_id": 65717
+    },
+    "65731": {
+        "relative_position": 0.915594457,
+        "name": "Sam Worthington",
+        "gender": 2,
+        "all_time_final_score": 191.9019272564,
+        "final_score": 0.0049067259,
+        "actor_id": 65731
+    },
+    "66580": {
+        "relative_position": 0.9065589897,
+        "name": "Scott Adsit",
+        "gender": 2,
+        "all_time_final_score": 174.7449236849,
+        "final_score": 0.0044680398,
+        "actor_id": 66580
+    },
+    "70851": {
+        "relative_position": 0.8524666112,
+        "name": "Jack Black",
+        "gender": 2,
+        "all_time_final_score": 133.9704454183,
+        "final_score": 0.0034254802,
+        "actor_id": 70851
+    },
+    "72129": {
+        "relative_position": 0.9450637202,
+        "name": "Jennifer Lawrence",
+        "gender": 1,
+        "all_time_final_score": 191.4914411368,
+        "final_score": 0.0048962302,
+        "actor_id": 72129
+    },
+    "72466": {
+        "relative_position": 0.8856900628,
+        "name": "Colin Farrell",
+        "gender": 2,
+        "all_time_final_score": 165.5453290919,
+        "final_score": 0.004232816,
+        "actor_id": 72466
+    },
+    "73457": {
+        "relative_position": 0.9362964346,
+        "name": "Chris Pratt",
+        "gender": 2,
+        "all_time_final_score": 246.0075771146,
+        "final_score": 0.0062901492,
+        "actor_id": 73457
+    },
+    "74568": {
+        "relative_position": 0.9506020161,
+        "name": "Chris Hemsworth",
+        "gender": 2,
+        "all_time_final_score": 148.1897267924,
+        "final_score": 0.0037890519,
+        "actor_id": 74568
+    },
+    "90633": {
+        "relative_position": 0.9532048127,
+        "name": "Gal Gadot",
+        "gender": 1,
+        "all_time_final_score": 209.5637293745,
+        "final_score": 0.0053583192,
+        "actor_id": 90633
+    },
+    "114019": {
+        "relative_position": 0.9474553889,
+        "name": "Luke Evans",
+        "gender": 2,
+        "all_time_final_score": 153.6554385348,
+        "final_score": 0.0039288043,
+        "actor_id": 114019
+    },
+    "221018": {
+        "relative_position": 0.94812002,
+        "name": "Dan Stevens",
+        "gender": 2,
+        "all_time_final_score": 164.6752898146,
+        "final_score": 0.0042105701,
+        "actor_id": 221018
+    },
+    "1016168": {
+        "relative_position": 0.9648629519,
+        "name": "Lily James",
+        "gender": 1,
+        "all_time_final_score": 139.361022443,
+        "final_score": 0.0035633115,
+        "actor_id": 1016168
+    },
+    "1159982": {
+        "relative_position": 0.9680208139,
+        "name": "Ansel Elgort",
+        "gender": 2,
+        "all_time_final_score": 175.8042904865,
+        "final_score": 0.0044951266,
+        "actor_id": 1159982
+    }
+}

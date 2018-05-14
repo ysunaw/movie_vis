@@ -19,6 +19,7 @@ class table_loader():
         self.metaDataDF['release_date'] = pd.to_datetime(self.metaDataDF['release_date'])
         self.movie_to_genreDF = pd.read_csv('final_MovieToGenre.csv', index_col=0)
         self.Mean = 1
+        self.actorDF['actor_id'] = self.actorDF.index
         max_num=200
         start_t = return_time(0)
         end_t = return_time(1)
@@ -35,12 +36,13 @@ class table_loader():
         start_t = return_time(start_float)
         end_t = return_time(end_float)
         time_contrainedMetaFD = self.metaDataDF[(self.metaDataDF['release_date'] > start_t) & (self.metaDataDF['release_date'] < end_t)]
+        print('eeee')
         if genres == 'All':
             pass
         else:
             table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
             table = table[table.name==len(genres)]
-            table = table.assign(id= table.index)
+            table = table['id']= table.index
             time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)
@@ -52,7 +54,7 @@ class table_loader():
             'actor_id').mean().join(self.actorDF).join(scoreDF).sort_values('final_score', ascending=False).iloc[:max_num]
         final_table = final_table.assign(actor_id=final_table.index)
         #columns_table = self.return_revenue_chart(num_columns,self.Mean)
-        return final_table.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
+        return final_table.to_csv()#.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
 
     def return_revenue_chart(self, num_columns, Mean = 1):
         self.mean = Mean
@@ -71,7 +73,7 @@ class table_loader():
             pd.merge(pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id], self.metaDataDF), self.movie_to_genreDF)[
                 ['id', 'genre_id']], self.movie_actorDF)
         DF2 = DF[DF.actor_id != actor_id].drop_duplicates(['id', 'actor_id'])
-        self.actorDF.loc[:,'actor_id'] = self.actorDF.index
+        #self.actorDF.loc[:,'actor_id'] = self.actorDF.index
         DF3 = pd.merge(DF2, self.actorDF)
         DF4 = DF3.sort_values('all_time_final_score', ascending=False).iloc[:50]
         actor_dictionary = self.actorDF[['name', 'gender', 'all_time_final_score','actor_id']].to_dict(orient='index')
@@ -92,6 +94,18 @@ class table_loader():
                 {'name': actor_dictionary[row.actor_id]['name'], 'gender': actor_dictionary[row.actor_id]['gender'],
                  'score': actor_dictionary[row.actor_id]['all_time_final_score'], 'actor_id':actor_dictionary[row.actor_id]['actor_id']})
         return json.dumps({"actors":actor_dict_list, "movies":links_list})
+        
+    def return_cloud_points(self,actor_id):
+        
+        start_t = return_time(0)
+        end_t = return_time(1)
+        start_d = pd.to_datetime(start_t)
+        end_d = pd.to_datetime(end_t)
+        DF = pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id],self.metaDataDF)#
+        DF.loc[:,'relative_position'] = (DF.release_date - start_d) / (end_d - start_d)
+        #DF.loc[:,'circle_size'] = DF['score']/DF['score'].sum()
+        return DF[['id','title','relative_position','vote_average','score']].to_json(orient='index')
+        
         
 if __name__ == '__main__':
     loader = table_loader()
