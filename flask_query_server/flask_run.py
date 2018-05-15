@@ -26,19 +26,9 @@ def api_message2():
 
 def api_message():
 
-    if request.headers['Content-Type'] == 'text/plain':
-        return "Text Message: " + request.data
-
-    elif request.headers['Content-Type'] == 'application/json':
+    if request.headers['Content-Type'] == 'application/json':
         req = request.json
-
         return loader.return_filtered(req['start_t'],req['end_t'],req['max_num'],req['genres'])
-
-    elif request.headers['Content-Type'] == 'application/octet-stream':
-        f = open('./binary', 'wb')
-        f.write(request.data)
-        f.close()
-        return "Binary message written!"
     else:
         return "415 Unsupported Media Type ;)"
 
@@ -50,8 +40,20 @@ def api_message3():
         return loader.return_actor_network(req['actor_id'])
     else:
         return "415 Unsupported Media Type ;)"
+    
+@app.route('/getCloudPoints', methods = ['POST'])
+def api_message4():
 
+    if request.headers['Content-Type'] == 'application/json':
+        req = request.json
+        return loader.return_cloud_points(req['actor_id'])
+    else:
+        return "415 Unsupported Media Type ;)"
 
 
 if __name__ == '__main__':
-    app.run(debug=True, threaded = True)
+#    app.run(debug=True, threaded = True)
+    app.run(host = app.config.get("HOST", "localhost"),
+            port = app.config.get("PORT", 9000)
+            )
+

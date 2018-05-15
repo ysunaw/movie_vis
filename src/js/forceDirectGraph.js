@@ -1,60 +1,55 @@
 function forceDirectGraph(inputdata){
-  var svg = d3.select("svg"),
-  width = +svg.attr("width"),
-  height = +svg.attr("height");
-  console.log(typeof inputdata);
-  var color = d3.scaleOrdinal(d3.schemeCategory20);
+      var svg = d3.select("svg"),
+      width = +svg.attr("width"),
+      height = +svg.attr("height")
+
   var simulation = d3.forceSimulation()
-  .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(150))
+  .force("link", d3.forceLink().id(function(d) { return d.name; }).distance(160)) // the length of the link
   .force("charge", d3.forceManyBody())
   .force("center", d3.forceCenter(width / 2, height / 2));
   //parse input array to JSON format
   //var data = JSON.parse(arraydata); 
-  console.log(typeof inputdata)
-  var haha = { "name":"John", "age":30, "car":null };
-  console.log(haha);
+  var color = d3.scaleOrdinal(d3.schemeCategory20);
+  //the color for links
+  var linkColor = d3.scaleOrdinal()
+    .range([]);
+  var genderColor = d3.scaleOrdinal()
+    .domain([1,2])
+    .range(['#4F57AA', '#FE3942']);
   var graph = inputdata;
   // d3.json(inputdata, function(error, graph) {
     console.log(graph);
     //if (error) throw error;
-
     var link = svg.append("g")
     .attr("class", "links")
     .selectAll("line")
-    .data(graph.links)
+    .data(graph.movies)
     .enter().append("line")
-    .attr("stroke-width", 1)
-    .attr("stroke", function(d){return color(d.value);})
+    .attr("stroke-width", 4)
+    .attr("stroke", function(d){return color(d.value);});
 
-
+    // the first node lying in the center
+    //representing the actor whose network is currently showing
     var node0 = svg.append("g")
     .attr("class", "nodes")
     .selectAll("circle")
-    .data(graph.nodes)
+    .data(graph.actors)
     .enter().append("circle")
-    .attr("r", 15)
-    .attr("fill", function(d) { return color(d.gender); })
-    .filter(function (d, i) { return i === 0;})
-         // put all your operations on the second element, e.g.
-    // .append('h1').text('foo'); 
-    // .on("click", nextActor)
-    .call(d3.drag()
-     .on("start", dragstarted0)
-     .on("drag", dragged0)
-     .on("end", dragended0));
+    .attr("r", 30)
+    .attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
+    .filter(function (d, i) { return i === 0;});
 
-
+    //rest of the nodes; can be dragged
     var node = svg.append("g")
     .attr("class", "nodes")
     .selectAll("circle")
-    .data(graph.nodes)
+    .data(graph.actors)
     .enter().append("circle")
     .attr("r", 15)
-    .attr("fill", function(d) { return color(d.gender); })
+    .attr("fill", function(d) { return genderColor(d.gender); })
     .filter(function (d, i) { return i != 0;})
-         // put all your operations on the second element, e.g.
-    // .append('h1').text('foo'); 
     .on("click", nextActor)
+    .attr("id","nodes")
     .call(d3.drag()
      .on("start", dragstarted)
      .on("drag", dragged)
@@ -62,18 +57,17 @@ function forceDirectGraph(inputdata){
 
 
     
-    
+    // append the title of each node
     node.append("title")
-    .text(function(d) { return d.id; });
-
+    .text(function(d) { return d.name; });
 
 
     simulation
-    .nodes(graph.nodes)
+    .nodes(graph.actors)
     .on("tick", ticked);
 
     simulation.force("link")
-    .links(graph.links);
+    .links(graph.movies);
 
     function ticked() {
       link
@@ -98,31 +92,23 @@ function forceDirectGraph(inputdata){
     d.fy = d.y;
   }
   function dragged(d) {
-    // if(a ===0) {
-    //   d.fx = d.x;
-    //   d.yx= d.y;
-
-
 
     d.fx = d3.event.x;
     d.fy = d3.event.y;
   
   }
-
-  function dragged0(d){}
-  function dragstarted0(d){}
-    function dragended0(d)   {}
-
-
-
   function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(0);
         d.fx = null;
     d.fy = null;
   }
   //the function to jump to the next actor
+  //on clicking
   function nextActor(d){
-    
-  }
+    svg.selectAll("*").remove();
+    scaleRadialGraph();
+    postActorData(d.actor_id);
+
+  }  
 
 }
