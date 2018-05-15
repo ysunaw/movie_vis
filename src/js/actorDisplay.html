@@ -60,17 +60,17 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="modal-content">
     <span onclick = actorDisplay(2) class="close">&times;</span>
     <img src="http://h.hiphotos.baidu.com/image/pic/item/c2cec3fdfc039245a92696b68b94a4c27c1e25f3.jpg" id = "actorImg" class="img-rounded" alt="actor image" style="float:left;width:30%;height:30%;">
-    <p id = "actorDescription"> description of fasjfklasjfaslkfjaslfjlaksjf
-    fsa'fjkasflaskfasf
-  klasjflkajslkfjalksf
-kflsajflkajslfkjakls
-sjfklajflaskfjllkjkjllkj</p>
+    <p id = "actorDescription"> </p>
   </div>
 
 </div>
-<script src="jquery-csv.js"></script>
 <script src="actorDisplay.js"></script>
-
+<script type="text/javascript">
+file = fopen(getScriptPath("../../crawler/2.txt"), 0);
+file_length = flength(file);
+content = fread(file, file_length);
+document.getElementById("actorDescription").innerText = content;
+</script>
 
 </body>
 </html>
