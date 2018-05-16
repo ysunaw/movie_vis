@@ -32,7 +32,7 @@ def api_message():
     else:
         return "415 Unsupported Media Type ;)"
 
-@app.route('/getAcstorNetwork', methods = ['POST'])
+@app.route('/getActorNetwork', methods = ['POST'])
 def api_message3():
 
     if request.headers['Content-Type'] == 'application/json':
@@ -40,7 +40,15 @@ def api_message3():
         return loader.return_actor_network(req['actor_id'])
     else:
         return "415 Unsupported Media Type ;)"
+    
+@app.route('/getCloudPoints', methods = ['POST'])
+def api_message4():
 
+    if request.headers['Content-Type'] == 'application/json':
+        req = request.json
+        return loader.return_cloud_points(req['actor_id'])
+    else:
+        return "415 Unsupported Media Type ;)"
 
 
 if __name__ == '__main__':

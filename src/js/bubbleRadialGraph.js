@@ -6,17 +6,50 @@
     height = +svg.attr("height"),
     innerRadius = 250,
     outerRadius = Math.min(width, height) * 0.6;
-  
+      var poolGradients = svg.append("defs").append("radialGradient")
+          .attr("id", "gradientpool" )
+          .attr("cx", "50%") //Move the x-center location towards the left
+          .attr("cy", "50%") //Move the y-center location towards the top
+          .attr("r", "50%"); //Increase the size of the "spread" of the gradient
+      poolGradients.append("stop")
+          .attr("offset", "0%")
+          .attr("stop-color", function(d) {
+              return d3.rgb("#281437");
+          });
+//Then the actual color almost halfway
+      poolGradients.append("stop")
+          .attr("offset", "50%")
+
+          .attr("stop-color", function(d) {
+              return d3.rgb("#281437").brighter(2);
+          })
+
+//Finally a darker color at the outside
+      poolGradients.append("stop")
+          .attr("offset",  "100%")
+          .style("opacity", 0)
+          .attr("stop-color", function(d) {
+              //return color(d.vote_average)
+              return d3.rgb("#281437").darker(1);
+          })
+
     
     var pool = svg.append('circle')
-    .style('stroke-width', 10)
-    .attr("fill","white")
+    .style('stroke-width', 0)
+    .attr("fill",function(){return "url(#gradientpool)"})//"#281437")
     .attr("r",innerRadius)
     .attr("cy", 0.5*height)
     .attr("cx", 0.5*width);
-    // radius = width / 2,
-    var hyp2 = Math.pow(innerRadius*2, 2);
+    radius = innerRadius;
 
+    // var g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
+    var star = svg.append('svg:image')
+        .attr('x', -50)
+        .attr('y', -50)
+        .attr('width', 100)
+        .attr('height', 100)
+        .attr("xlink:href", "star.png")
+        .attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
 
     //Outbound
 
@@ -26,13 +59,7 @@
     //     cy: 0.5* width,
     //     cx: 0.5* height
     //     // transform: 'translate(' + width / 2 + ',' + height / 2 + ')'
-    
-
-
-
-    var padding = 1.5, // separation between same-color nodes
-    clusterPadding = 10, // separation between different-color nodes
-    maxRadius = 100;
+    var padding = 1.5; // separation between same-color nodes
 
     var x = d3.scaleBand()
     .range([0, 2 * Math.PI])
@@ -48,9 +75,9 @@
     d3.csv("data_bubble.csv", function(d, i, columns) {
 
       var radius=d.final_score;
-          d.r = radius*1000;
-          d.x = innerRadius*0.7*Math.sin( 2 * Math.PI*d.relative_position);
-          d.y = innerRadius*0.7*Math.cos( 2 * Math.PI*d.relative_position);
+          d.r = radius*1500;
+          d.x = width/2+innerRadius*Math.sin( 2 * Math.PI*d.relative_position);
+          d.y = height/2+innerRadius*Math.cos( 2 * Math.PI*d.relative_position);
       return d;
       
     }, function(error, data) {
@@ -63,13 +90,36 @@
 
     var genderColor = d3.scaleOrdinal()
     .domain([1,2])
-    .range(['#4F57AA', '#FE3942']);
+    .range(['#9d0107', '#091592']);
 
-    var node = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height /2 + ")").selectAll("circle")
+        var defs = svg.append("defs");
+        defs.selectAll(".patterns")
+            .data(data, function(d) {
+                return d})
+            .enter().append("pattern")
+            .attr("id", function(d) {return "actorbubble-" + (d.actor_id)})
+            .attr("width", 1)
+            .attr("height", 1)
+            .append("svg:image")
+            .attr("xlink:href", function(d) {
+                return "crawler/"+d.actor_id+".jpg"
+            }).attr("x", function(d){return -d.r*0.4})
+            .attr("y", function(d){return -d.r*0.0833})
+            .attr("width", function(d){return d.r*2.667})
+            .attr("height", function(d){return d.r*2.667});
+
+
+    var node = svg.append("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
+     .selectAll("circle")
      .data(data)
      .enter().append("circle")
-     .style("fill", function(d) {return genderColor(d.gender); });
-
+        .style("fill", function(d) {
+            return "url(#actorbubble-"+d.actor_id+")"
+        })
+        .attr("stroke-width", 2)
+        .attr("stroke", function(d) { return genderColor(d.gender); });
+        node.append("title")
+            .text(function(d) { return d.name; });
 
   // bound force
   // var bound_force =  d3.forceSimulation()
@@ -82,47 +132,50 @@
 
   var force = d3.forceSimulation()
     .force('collide', d3.forceCollide(d => d.r + padding)
-    .strength(0.1))
-    .on('tick', layoutTick)
+    .strength(1))
+    .on('tick', boundTick)
    .nodes(data);
   
-  function boundtick(e) {
-    node.attr("cx", function (d) { return d.x = pythagy(d.r, d.y-height/2, d.x=width/2); })
-        .attr("cy", function (d) { return d.y = pythagx(d.r, d.x=width/2, d.y-height/2); })
+  function boundTick(e) {
+    node.attr("cx", function (d) { return d.x = pythagx(d.r, d.y, d.x); })
+        .attr("cy", function (d) { return d.y = pythagy(d.r, d.x, d.y); })
         .attr("r", function(d) { return d.r; });
   }
 
+        function pythagx(r, b, coord) {
+            var length = Math.sqrt(Math.pow(Math.abs(b-height/2)+r,2)+Math.pow(Math.abs(coord-width/2)+r,2));
 
-function pythagx(r, b, coord) {
-    
+            if (length>radius){
+                var angle = Math.acos((coord-width/2)/length);
+                if (b-height/2<0){
+                    if (coord-width/2<0){
+                        return width/2 - (radius-r-10) * Math.cos(angle+Math.PI) }
+                    else{return width/2 + (radius-r-10) * Math.cos(angle) }
+                }else{
+                    if (coord-width/2>0){
+                        return width/2 + (radius-r-10) * Math.cos(angle) }
+                    else{return width/2 + (radius-r-10) * Math.cos(angle) }}
+            }
+            return coord;
+        }
+        function pythagy(r, b, coord) {
+            var length = Math.sqrt(Math.pow(Math.abs(b-width/2)+r,2)+Math.pow(Math.abs(coord-height/2)+r,2));
 
-    // force use of b coord that exists in circle to avoid sqrt(x<0)
-    b = Math.min(width - r , Math.max(r , b));
+            if (length>radius){
 
-    var b2 = Math.pow((b - innerRadius), 2),
-        a = Math.sqrt(hyp2 - b2);
-
-    // radius - sqrt(hyp^2 - b^2) < coord < sqrt(hyp^2 - b^2) + radius
-    coord = Math.max(innerRadius - a + r ,
-                Math.min(a + innerRadius - r , coord));
-
-    return coord;
-}
-function pythagy(r, b, coord) {
-    
-
-    // force use of b coord that exists in circle to avoid sqrt(x<0)
-    b = Math.min(height - r , Math.max(r , b));
-
-    var b2 = Math.pow((b - innerRadius), 2),
-        a = Math.sqrt(hyp2 - b2);
-
-    // radius - sqrt(hyp^2 - b^2) < coord < sqrt(hyp^2 - b^2) + radius
-    coord = Math.max(innerRadius - a + r ,
-                Math.min(a + innerRadius - r , coord));
-
-    return coord;
-}
+                var angle = Math.acos((b-width/2)/length);
+                if (b-width/2<0){
+                    if (coord-height/2<0){
+                        return height/2 - (radius-r-10) * (Math.sin(angle)) }
+                    else{return height/2 + (radius-r-10) * (Math.sin(angle)) }
+                }else{
+                    if (coord-height/2>0){
+                        return height/2 + (radius-r-10) * (Math.sin(angle)) }
+                    else{return height/2 - (radius-r-10) * (Math.sin(angle)) }
+                }
+            }
+            return coord;
+        }
 
 
 function layoutTick(e) {

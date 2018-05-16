@@ -1,0 +1,856 @@
+[
+  {
+    "id": 1572,
+    "title": "Die Hard: With a Vengeance",
+    "relative_position": 0.7429220334764483,
+    "vote_average": 6.9,
+    "score": 8.95141992510529
+  },
+  {
+    "id": 21183,
+    "title": "Fluke",
+    "relative_position": 0.7433576006471284,
+    "vote_average": 6.6,
+    "score": 2.6383615749404563
+  },
+  {
+    "id": 6071,
+    "title": "Kiss of Death",
+    "relative_position": 0.742050899135088,
+    "vote_average": 5.7,
+    "score": 2.6895813188620483
+  },
+  {
+    "id": 28313,
+    "title": "Losing Isaiah",
+    "relative_position": 0.7409619812083877,
+    "vote_average": 6.4,
+    "score": 3.7855681075565233
+  },
+  {
+    "id": 680,
+    "title": "Pulp Fiction",
+    "relative_position": 0.7351129363449692,
+    "vote_average": 8.3,
+    "score": 114.32718761228462
+  },
+  {
+    "id": 13815,
+    "title": "Fresh",
+    "relative_position": 0.7345840333520005,
+    "vote_average": 7.6,
+    "score": 2.828485887086261
+  },
+  {
+    "id": 329,
+    "title": "Jurassic Park",
+    "relative_position": 0.7209258913571028,
+    "vote_average": 7.6,
+    "score": 6.314787819373487
+  },
+  {
+    "id": 9516,
+    "title": "Menace II Society",
+    "relative_position": 0.720428100304897,
+    "vote_average": 7.2,
+    "score": 3.3990891973504365
+  },
+  {
+    "id": 41588,
+    "title": "The New Age",
+    "relative_position": 0.7352996079895464,
+    "vote_average": 4.8,
+    "score": 0.1057264862907594
+  },
+  {
+    "id": 319,
+    "title": "True Romance",
+    "relative_position": 0.7237259660257607,
+    "vote_average": 7.5,
+    "score": 11.9736555833124
+  },
+  {
+    "id": 20759,
+    "title": "The Great White Hype",
+    "relative_position": 0.753811212743451,
+    "vote_average": 5.1,
+    "score": 0.7572032759726679
+  },
+  {
+    "id": 1645,
+    "title": "A Time to Kill",
+    "relative_position": 0.7563623918860058,
+    "vote_average": 7.0,
+    "score": 8.1188172858932
+  },
+  {
+    "id": 11412,
+    "title": "The Long Kiss Goodnight",
+    "relative_position": 0.7588202352062722,
+    "vote_average": 6.4,
+    "score": 7.121350678640388
+  },
+  {
+    "id": 27845,
+    "title": "Trees Lounge",
+    "relative_position": 0.7588202352062722,
+    "vote_average": 6.7,
+    "score": 1.9141321872970447
+  },
+  {
+    "id": 67365,
+    "title": "The Search for One-eye Jimmy",
+    "relative_position": 0.7371352124945554,
+    "vote_average": 6.3,
+    "score": 0.2905702187459545
+  },
+  {
+    "id": 769,
+    "title": "GoodFellas",
+    "relative_position": 0.6897206147719495,
+    "vote_average": 8.2,
+    "score": 12.311355828484974
+  },
+  {
+    "id": 31000,
+    "title": "Amos & Andrew",
+    "relative_position": 0.7178769211623421,
+    "vote_average": 5.0,
+    "score": 0.8291305913729601
+  },
+  {
+    "id": 6072,
+    "title": "One Eight Seven",
+    "relative_position": 0.7678738099682658,
+    "vote_average": 6.5,
+    "score": 3.3178684461405736
+  },
+  {
+    "id": 45153,
+    "title": "Eve's Bayou",
+    "relative_position": 0.7691182875987804,
+    "vote_average": 6.3,
+    "score": 0.6883918513951244
+  },
+  {
+    "id": 184,
+    "title": "Jackie Brown",
+    "relative_position": 0.7724783772011699,
+    "vote_average": 7.3,
+    "score": 10.890300895659092
+  },
+  {
+    "id": 10153,
+    "title": "Sphere",
+    "relative_position": 0.774065086180076,
+    "vote_average": 5.8,
+    "score": 2.605686744832848
+  },
+  {
+    "id": 1389,
+    "title": "Out of Sight",
+    "relative_position": 0.778202974301537,
+    "vote_average": 6.5,
+    "score": 3.7652645219975285
+  },
+  {
+    "id": 11587,
+    "title": "The Exorcist III",
+    "relative_position": 0.688911704312115,
+    "vote_average": 6.1,
+    "score": 2.513738767925339
+  },
+  {
+    "id": 9631,
+    "title": "The Negotiator",
+    "relative_position": 0.7792296683467115,
+    "vote_average": 6.8,
+    "score": 4.379547383473739
+  },
+  {
+    "id": 1893,
+    "title": "Star Wars: Episode I - The Phantom Menace",
+    "relative_position": 0.7883765789309937,
+    "vote_average": 6.4,
+    "score": 7.695070433203683
+  },
+  {
+    "id": 14283,
+    "title": "The Red Violin",
+    "relative_position": 0.7805674817995146,
+    "vote_average": 7.2,
+    "score": 4.991676268603288
+  },
+  {
+    "id": 8914,
+    "title": "Deep Blue Sea",
+    "relative_position": 0.7905544147843943,
+    "vote_average": 5.6,
+    "score": 2.430819578627162
+  },
+  {
+    "id": 8052,
+    "title": "Hard Eight",
+    "relative_position": 0.7517889365938647,
+    "vote_average": 6.8,
+    "score": 4.032010753449918
+  },
+  {
+    "id": 9644,
+    "title": "National Lampoon's Loaded Weapon 1",
+    "relative_position": 0.716974674880219,
+    "vote_average": 5.7,
+    "score": 3.9707034173800335
+  },
+  {
+    "id": 9869,
+    "title": "Patriot Games",
+    "relative_position": 0.7093522493933172,
+    "vote_average": 6.4,
+    "score": 5.446200774549958
+  },
+  {
+    "id": 36739,
+    "title": "School Daze",
+    "relative_position": 0.6603820546325679,
+    "vote_average": 6.1,
+    "score": 2.684710670990912
+  },
+  {
+    "id": 925,
+    "title": "Do the Right Thing",
+    "relative_position": 0.6760624727770518,
+    "vote_average": 7.6,
+    "score": 7.455829139774603
+  },
+  {
+    "id": 41823,
+    "title": "Mo' Better Blues",
+    "relative_position": 0.6884761371414349,
+    "vote_average": 6.3,
+    "score": 1.27863865652195
+  },
+  {
+    "id": 1713,
+    "title": "Jungle Fever",
+    "relative_position": 0.6980586148963972,
+    "vote_average": 6.0,
+    "score": 3.1406764571712413
+  },
+  {
+    "id": 10479,
+    "title": "Rules of Engagement",
+    "relative_position": 0.798456847738162,
+    "vote_average": 6.0,
+    "score": 4.191259004855062
+  },
+  {
+    "id": 479,
+    "title": "Shaft",
+    "relative_position": 0.8006035716507995,
+    "vote_average": 5.5,
+    "score": 2.2569420901579376
+  },
+  {
+    "id": 19380,
+    "title": "White Sands",
+    "relative_position": 0.7080766598220397,
+    "vote_average": 5.5,
+    "score": 0.9677122395914022
+  },
+  {
+    "id": 9741,
+    "title": "Unbreakable",
+    "relative_position": 0.8053014747059921,
+    "vote_average": 6.9,
+    "score": 8.679247204736043
+  },
+  {
+    "id": 17159,
+    "title": "Eddie Murphy Raw",
+    "relative_position": 0.6579242113123016,
+    "vote_average": 7.4,
+    "score": 7.663971709634593
+  },
+  {
+    "id": 25208,
+    "title": "The Caveman's Valentine",
+    "relative_position": 0.807385974737104,
+    "vote_average": 6.0,
+    "score": 3.670749749312132
+  },
+  {
+    "id": 9602,
+    "title": "Coming to America",
+    "relative_position": 0.6646443905170805,
+    "vote_average": 6.5,
+    "score": 4.011306518487013
+  },
+  {
+    "id": 12150,
+    "title": "Sea of Love",
+    "relative_position": 0.6784580922157925,
+    "vote_average": 6.7,
+    "score": 5.41590981042658
+  },
+  {
+    "id": 37835,
+    "title": "The Exterminator",
+    "relative_position": 0.5760375832244415,
+    "vote_average": 6.1,
+    "score": 1.5339714360087342
+  },
+  {
+    "id": 1537,
+    "title": "Changing Lanes",
+    "relative_position": 0.8211685644950532,
+    "vote_average": 5.9,
+    "score": 3.0234511870596954
+  },
+  {
+    "id": 1894,
+    "title": "Star Wars: Episode II - Attack of the Clones",
+    "relative_position": 0.8223508182440421,
+    "vote_average": 6.4,
+    "score": 6.919824500799029
+  },
+  {
+    "id": 7451,
+    "title": "xXx",
+    "relative_position": 0.8250264451496484,
+    "vote_average": 5.8,
+    "score": 4.652880357573057
+  },
+  {
+    "id": 18913,
+    "title": "Betsy's Wedding",
+    "relative_position": 0.6871694356293946,
+    "vote_average": 5.0,
+    "score": 1.6351696933790665
+  },
+  {
+    "id": 1613,
+    "title": "The 51st State",
+    "relative_position": 0.8174040196627466,
+    "vote_average": 5.9,
+    "score": 2.462623037560281
+  },
+  {
+    "id": 25566,
+    "title": "Ragtime",
+    "relative_position": 0.5896023893970506,
+    "vote_average": 6.7,
+    "score": 3.4003093658495063
+  },
+  {
+    "id": 10782,
+    "title": "Basic",
+    "relative_position": 0.8328666542218903,
+    "vote_average": 6.2,
+    "score": 6.4469434843557485
+  },
+  {
+    "id": 9257,
+    "title": "S.W.A.T.",
+    "relative_position": 0.8363511915873312,
+    "vote_average": 5.8,
+    "score": 4.8769122878790965
+  },
+  {
+    "id": 2017,
+    "title": "No Good Deed",
+    "relative_position": 0.8237197436376081,
+    "vote_average": 5.2,
+    "score": 1.0254955409883262
+  },
+  {
+    "id": 13572,
+    "title": "Twisted",
+    "relative_position": 0.8426669155621928,
+    "vote_average": 5.3,
+    "score": 1.42470519
+  },
+  {
+    "id": 393,
+    "title": "Kill Bill: Vol. 2",
+    "relative_position": 0.8441914006595731,
+    "vote_average": 7.7,
+    "score": 15.671867677839
+  },
+  {
+    "id": 16136,
+    "title": "Juice",
+    "relative_position": 0.7050276896272789,
+    "vote_average": 7.0,
+    "score": 3.38404589236853
+  },
+  {
+    "id": 20876,
+    "title": "A Shock to the System",
+    "relative_position": 0.6843382490199739,
+    "vote_average": 6.7,
+    "score": 1.664087265360471
+  },
+  {
+    "id": 9806,
+    "title": "The Incredibles",
+    "relative_position": 0.8505071246344347,
+    "vote_average": 7.4,
+    "score": 15.115079974926395
+  },
+  {
+    "id": 45145,
+    "title": "Johnny Suede",
+    "relative_position": 0.7002986746313234,
+    "vote_average": 4.8,
+    "score": 0.35648346595030683
+  },
+  {
+    "id": 16635,
+    "title": "In My Country",
+    "relative_position": 0.8447514155933047,
+    "vote_average": 7.1,
+    "score": 0.7174940779694688
+  },
+  {
+    "id": 7214,
+    "title": "Coach Carter",
+    "relative_position": 0.8526849604878353,
+    "vote_average": 7.3,
+    "score": 7.359760513345766
+  },
+  {
+    "id": 11679,
+    "title": "xXx: State of the Union",
+    "relative_position": 0.8558894903864103,
+    "vote_average": 4.7,
+    "score": 3.100503856486081
+  },
+  {
+    "id": 1895,
+    "title": "Star Wars: Episode III - Revenge of the Sith",
+    "relative_position": 0.8565117292016676,
+    "vote_average": 7.1,
+    "score": 8.271841046512034
+  },
+  {
+    "id": 25975,
+    "title": "My Date with Drew",
+    "relative_position": 0.8590006844626967,
+    "vote_average": 6.3,
+    "score": 0.5702661997581414
+  },
+  {
+    "id": 9074,
+    "title": "The Man",
+    "relative_position": 0.8600584904486341,
+    "vote_average": 5.4,
+    "score": 3.1642281784068866
+  },
+  {
+    "id": 9959,
+    "title": "Freedomland",
+    "relative_position": 0.8650986248522183,
+    "vote_average": 5.2,
+    "score": 1.3265508318094408
+  },
+  {
+    "id": 326,
+    "title": "Snakes on a Plane",
+    "relative_position": 0.8703876547819053,
+    "vote_average": 5.1,
+    "score": 1.6910794519918355
+  },
+  {
+    "id": 12486,
+    "title": "Farce of the Penguins",
+    "relative_position": 0.8740277518511604,
+    "vote_average": 3.2,
+    "score": 0.06500756015532846
+  },
+  {
+    "id": 14171,
+    "title": "Home of the Brave",
+    "relative_position": 0.8744633190218406,
+    "vote_average": 5.5,
+    "score": 1.2375061628658344
+  },
+  {
+    "id": 7874,
+    "title": "Black Snake Moan",
+    "relative_position": 0.8742455354365005,
+    "vote_average": 6.6,
+    "score": 3.7548955745582737
+  },
+  {
+    "id": 3021,
+    "title": "1408",
+    "relative_position": 0.8809657146412794,
+    "vote_average": 6.5,
+    "score": 4.711508408395578
+  },
+  {
+    "id": 13074,
+    "title": "Resurrecting the Champ",
+    "relative_position": 0.8800945802999192,
+    "vote_average": 5.9,
+    "score": 2.8814016264462725
+  },
+  {
+    "id": 13252,
+    "title": "Cleaner",
+    "relative_position": 0.8828635430278141,
+    "vote_average": 5.9,
+    "score": 3.229380687092601
+  },
+  {
+    "id": 8247,
+    "title": "Jumper",
+    "relative_position": 0.8875925580237696,
+    "vote_average": 5.9,
+    "score": 4.268756756360632
+  },
+  {
+    "id": 1726,
+    "title": "Iron Man",
+    "relative_position": 0.8900815132847987,
+    "vote_average": 7.4,
+    "score": 15.015006456709544
+  },
+  {
+    "id": 12180,
+    "title": "Star Wars: The Clone Wars",
+    "relative_position": 0.8930993715387966,
+    "vote_average": 5.8,
+    "score": 3.1177449949360243
+  },
+  {
+    "id": 8285,
+    "title": "The Spirit",
+    "relative_position": 0.8975172671271234,
+    "vote_average": 4.7,
+    "score": 0.9331669744343244
+  },
+  {
+    "id": 13279,
+    "title": "Lakeview Terrace",
+    "relative_position": 0.8944994088731255,
+    "vote_average": 5.9,
+    "score": 5.358726953430008
+  },
+  {
+    "id": 14655,
+    "title": "Soul Men",
+    "relative_position": 0.8960238939705059,
+    "vote_average": 6.3,
+    "score": 4.156860683118884
+  },
+  {
+    "id": 14711,
+    "title": "Afro Samurai: Resurrection",
+    "relative_position": 0.8984817372907722,
+    "vote_average": 6.7,
+    "score": 2.4461114707805054
+  },
+  {
+    "id": 16869,
+    "title": "Inglourious Basterds",
+    "relative_position": 0.9048596851471595,
+    "vote_average": 7.9,
+    "score": 12.793388854291004
+  },
+  {
+    "id": 16577,
+    "title": "Astro Boy",
+    "relative_position": 0.9066641777114056,
+    "vote_average": 6.1,
+    "score": 5.701436341636999
+  },
+  {
+    "id": 10138,
+    "title": "Iron Man 2",
+    "relative_position": 0.9127310061601642,
+    "vote_average": 6.6,
+    "score": 10.163385544538828
+  },
+  {
+    "id": 38199,
+    "title": "Unthinkable",
+    "relative_position": 0.9141932673760189,
+    "vote_average": 6.7,
+    "score": 3.858781322339341
+  },
+  {
+    "id": 27581,
+    "title": "The Other Guys",
+    "relative_position": 0.9158422002364508,
+    "vote_average": 6.1,
+    "score": 5.376832992293324
+  },
+  {
+    "id": 37080,
+    "title": "Mother and Child",
+    "relative_position": 0.9073797523489515,
+    "vote_average": 6.7,
+    "score": 1.864194811180951
+  },
+  {
+    "id": 56831,
+    "title": "The Sunset Limited",
+    "relative_position": 0.9217534689813951,
+    "vote_average": 7.1,
+    "score": 2.808586951588406
+  },
+  {
+    "id": 10195,
+    "title": "Thor",
+    "relative_position": 0.9238690809532699,
+    "vote_average": 6.6,
+    "score": 15.529194757648055
+  },
+  {
+    "id": 57586,
+    "title": "African Cats",
+    "relative_position": 0.9239001928940327,
+    "vote_average": 7.1,
+    "score": 2.05267418085772
+  },
+  {
+    "id": 1771,
+    "title": "Captain America: The First Avenger",
+    "relative_position": 0.9267313795034534,
+    "vote_average": 6.6,
+    "score": 10.291331224103633
+  },
+  {
+    "id": 24428,
+    "title": "The Avengers",
+    "relative_position": 0.9353804990355299,
+    "vote_average": 7.4,
+    "score": 61.14518016244275
+  },
+  {
+    "id": 71254,
+    "title": "Arena",
+    "relative_position": 0.9292514467052455,
+    "vote_average": 5.0,
+    "score": 2.096489753854126
+  },
+  {
+    "id": 94204,
+    "title": "Meeting Evil",
+    "relative_position": 0.9356293945616327,
+    "vote_average": 4.7,
+    "score": 0.575728703971722
+  },
+  {
+    "id": 208988,
+    "title": "The War",
+    "relative_position": 0.8832368863169685,
+    "vote_average": 5.3,
+    "score": 0.12918458500000002
+  },
+  {
+    "id": 288421,
+    "title": "Making 'Do the Right Thing'",
+    "relative_position": 0.6799825773131728,
+    "vote_average": 0.0,
+    "score": 0.0
+  },
+  {
+    "id": 68718,
+    "title": "Django Unchained",
+    "relative_position": 0.9429718125816688,
+    "vote_average": 7.8,
+    "score": 14.694803514708374
+  },
+  {
+    "id": 98339,
+    "title": "The Samaritan",
+    "relative_position": 0.9337004542343351,
+    "vote_average": 5.2,
+    "score": 2.8363114589604552
+  },
+  {
+    "id": 86843,
+    "title": "With Great Power: The Stan Lee Story",
+    "relative_position": 0.9154377450065335,
+    "vote_average": 5.3,
+    "score": 0.534595895
+  },
+  {
+    "id": 77950,
+    "title": "Turbo",
+    "relative_position": 0.9491319768527161,
+    "vote_average": 6.1,
+    "score": 3.851327418532072
+  },
+  {
+    "id": 133931,
+    "title": "Zambezia",
+    "relative_position": 0.9366560886068073,
+    "vote_average": 5.3,
+    "score": 2.33869814
+  },
+  {
+    "id": 87516,
+    "title": "Oldboy",
+    "relative_position": 0.953052081388837,
+    "vote_average": 5.9,
+    "score": 3.048096663435945
+  },
+  {
+    "id": 240916,
+    "title": "Reasonable Doubt",
+    "relative_position": 0.9550432455976604,
+    "vote_average": 5.6,
+    "score": 3.5917107184596957
+  },
+  {
+    "id": 97020,
+    "title": "RoboCop",
+    "relative_position": 0.9554477008275776,
+    "vote_average": 5.7,
+    "score": 3.53432309859922
+  },
+  {
+    "id": 100402,
+    "title": "Captain America: The Winter Soldier",
+    "relative_position": 0.956972185924958,
+    "vote_average": 7.6,
+    "score": 13.334986040468356
+  },
+  {
+    "id": 207703,
+    "title": "Kingsman: The Secret Service",
+    "relative_position": 0.9667724472652605,
+    "vote_average": 7.6,
+    "score": 20.107673089777435
+  },
+  {
+    "id": 99861,
+    "title": "Avengers: Age of Ultron",
+    "relative_position": 0.9693547383485782,
+    "vote_average": 7.3,
+    "score": 24.798098181682786
+  },
+  {
+    "id": 173299,
+    "title": "Hail Caesar",
+    "relative_position": 0.7313172795718997,
+    "vote_average": 4.5,
+    "score": 0.12160959301520875
+  },
+  {
+    "id": 273248,
+    "title": "The Hateful Eight",
+    "relative_position": 0.9770393877170058,
+    "vote_average": 7.6,
+    "score": 14.482788999610527
+  },
+  {
+    "id": 230179,
+    "title": "Big Game",
+    "relative_position": 0.9622301039138822,
+    "vote_average": 5.3,
+    "score": 1.831616135
+  },
+  {
+    "id": 192712,
+    "title": "Kite",
+    "relative_position": 0.9596167008898016,
+    "vote_average": 4.2,
+    "score": 0.8179125355977562
+  },
+  {
+    "id": 248574,
+    "title": "Barely Lethal",
+    "relative_position": 0.9696036338746811,
+    "vote_average": 5.5,
+    "score": 3.3488649108727704
+  },
+  {
+    "id": 62931,
+    "title": "Afro Samurai",
+    "relative_position": 0.8750855578370978,
+    "vote_average": 7.3,
+    "score": 2.184029196537115
+  },
+  {
+    "id": 66799,
+    "title": "Assault at West Point: The Court-Martial of Johnson Whittaker",
+    "relative_position": 0.7290149959554477,
+    "vote_average": 6.5,
+    "score": 0.5204543219021696
+  },
+  {
+    "id": 45147,
+    "title": "Strictly Business",
+    "relative_position": 0.7028498537738784,
+    "vote_average": 5.6,
+    "score": 0.272998891394564
+  },
+  {
+    "id": 67083,
+    "title": "BaadAsssss Cinema",
+    "relative_position": 0.8181818181818182,
+    "vote_average": 6.5,
+    "score": 2.1049488981807247
+  },
+  {
+    "id": 168098,
+    "title": "Cell",
+    "relative_position": 0.9830751042250016,
+    "vote_average": 4.4,
+    "score": 1.297521218143438
+  },
+  {
+    "id": 258489,
+    "title": "The Legend of Tarzan",
+    "relative_position": 0.9828573206396615,
+    "vote_average": 5.5,
+    "score": 13.804109900364931
+  },
+  {
+    "id": 283366,
+    "title": "Miss Peregrine's Home for Peculiar Children",
+    "relative_position": 0.9856885072490822,
+    "vote_average": 6.5,
+    "score": 18.57714025133382
+  },
+  {
+    "id": 259910,
+    "title": "Marvel Studios: Assembling a Universe",
+    "relative_position": 0.9569099620434323,
+    "vote_average": 6.6,
+    "score": 3.9079624662518513
+  },
+  {
+    "id": 411019,
+    "title": "I Am Not Your Negro",
+    "relative_position": 0.9896708356667289,
+    "vote_average": 8.0,
+    "score": 9.086872712453886
+  },
+  {
+    "id": 47971,
+    "title": "xXx: Return of Xander Cage",
+    "relative_position": 0.9890174849107087,
+    "vote_average": 5.5,
+    "score": 5.4501875923595575
+  },
+  {
+    "id": 293167,
+    "title": "Kong: Skull Island",
+    "relative_position": 0.9906975297119034,
+    "vote_average": 6.2,
+    "score": 13.24201349445802
+  },
+  {
+    "id": 140465,
+    "title": "Prohibition",
+    "relative_position": 0.9289714392383797,
+    "vote_average": 7.6,
+    "score": 1.0212154784019811
+  }
+]

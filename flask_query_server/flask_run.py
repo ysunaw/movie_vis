@@ -54,6 +54,6 @@ def api_message4():
 if __name__ == '__main__':
 #    app.run(debug=True, threaded = True)
     app.run(host = app.config.get("HOST", "localhost"),
-            port = app.config.get("PORT", 9000)
+            port = app.config.get("PORT", 5000)
             )
 

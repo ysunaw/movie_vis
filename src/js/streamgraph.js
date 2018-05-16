@@ -68,7 +68,7 @@ d3.csv('data3.csv', function(error, data) {
   stack.offset(d3.stackOffsetSilhouette);
 
 
-  // console.log(data);
+  console.log(data);
   
   //console.log(stack(data));
 
@@ -76,7 +76,7 @@ d3.csv('data3.csv', function(error, data) {
       .data(stack(data))
     .enter().append('g')
       .attr('class', function(d){ return 'browser ' + d.key; })
-      .attr('fill-opacity', 0.5);
+      .attr('fill-opacity', 0.75);
 
   browser.append('path')
       .attr('class', 'area')
@@ -85,16 +85,19 @@ d3.csv('data3.csv', function(error, data) {
       
   browser.append('text')
       .datum(function(d) { return d; })
-      .attr('transform', function(d) { return 'translate(' + x(data[86].date) + ',' + y((d[86][1] + d[86][0])/2)  + ')'; })
+      .attr('transform', function(d) { console.log(d);return 'translate(' + x(data[86].date) + ',' + y((d[86][1] + d[86][0])/2)  + ')'; })
       .attr('x', 0) 
       .attr('dy', '.35em')
       .style("text-anchor", "start")
       .text(function(d) { return d.key; })
+      .attr("stroke",function(d) { return d3.rgb(color(d.key)).brighter(1); })
+      //.attr("stroke-width",0.5)
       .attr('fill-opacity', 1);
 
   svg.append('g')
       .attr('class', 'x axis')
       .attr('transform', 'translate(0,' + height + ')')
+      .attr("stroke","white")
       .call(xAxis);
 
   
@@ -104,7 +107,8 @@ d3.csv('data3.csv', function(error, data) {
 
   svg.append ("text")
     .attr("x", 0-margin.left)
-    .text("Number of Movies")
+      .attr("stroke", "white")
+    .text("Genre Trends in Movies")
 
       
 });

@@ -104,7 +104,8 @@ class table_loader():
         DF = pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id],self.metaDataDF)#
         DF.loc[:,'relative_position'] = (DF.release_date - start_d) / (end_d - start_d)
         #DF.loc[:,'circle_size'] = DF['score']/DF['score'].sum()
-        return DF[['id','title','relative_position','vote_average','score']].to_json(orient='index')
+        return json.dumps(DF[['id', 'title', 'relative_position', 'vote_average', 'score']].to_dict(
+            'records'))  # .to_json(orient='index')
         
         
 if __name__ == '__main__':
