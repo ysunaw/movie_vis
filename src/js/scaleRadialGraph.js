@@ -31,30 +31,7 @@
 		 function(error, data) {
 
 		 	if (error) throw error;
-		 	// console.log(data.columns.slice(1));
-		 	data.sort(function(a, b) { return a[data.columns[0]] -  b[data.columns[0]]; });
-		 	//console.log( b[data.columns[6]] -  a[data.columns[6]]);
-		 	x.domain(data.map(function(d) {return d[""]; }));
-		 	y.domain([0, d3.max(data, function(d) { return d.total; })]);
-		 	z.domain(data.columns.slice(1));
-
-		 	g.append("g")
-		 		.selectAll("g")
-   				.data(d3.stack().keys(data.columns.slice(1))(data)) // data key; the category it belongs to 
-     			.enter().append("g")
-     			.attr("fill", function(d) {return z(d); })
-    				.selectAll("path")
-     			.data(function(d) { return d; })
-     			.enter().append("path")
-
-    				.attr("d", d3.arc()
-
-     			.innerRadius(function(d) {return y(d[0]); })
-     			.outerRadius(function(d) { return y(d[1]); })
-     			.startAngle(function(d) { return x(d.data[""]); })
-    			.endAngle(function(d) { return x(d.data[""]) + x.bandwidth(); })
-     			.padAngle(0.01)
-     			.padRadius(innerRadius));
+		 	
       var yAxis = g.append("g")
       .attr("text-anchor", "end");
   });

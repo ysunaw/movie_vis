@@ -54,6 +54,7 @@ ul {
 	padding: 0;
 }
 
+
 /*------------------------
 	Helper css
 --------------------------*/
@@ -245,13 +246,13 @@ ul {
 
 
 /*------------------------
-	Header css
+
 --------------------------*/
 .responsive {
 	display: none;
 }
 
-.header-section {
+.header-section {Header css
 	position: absolute;
 	top: 0;
 	left: 0;

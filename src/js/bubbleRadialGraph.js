@@ -48,22 +48,33 @@
             .attr("xlink:href", function(d) {
             return "crawler/"+d.actor_id+".jpg"
                 }).attr("x", function(d){return -d.radius*0.4})
-                .attr("y", function(d){return  -d.radius*0.0833})
+                .attr("y", function(d){return  -d.radius*0.08})
                 .attr("width", function(d){return d.radius*2.667})
                 .attr("height", function(d){return d.radius*2.667});
 
 
     var node = svg.append("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
-    .selectAll("circle")
-    .data(data)
-    .enter().append("circle")
-    .attr("id","nodeBubbles")
-    .style("fill", function(d) {
-      return "url(#actorbubble-"+d.actor_id+")"
-    })
-    .on("click", showActor)
-    .attr("stroke-width", 2)
-    .attr("stroke", function(d) { return genderColor(d.gender); });
+     .selectAll("circle")
+     .data(data)
+     .enter().append("circle")
+        .style("fill", function(d) {
+            return "url(#actorbubble-"+d.actor_id+")"
+        })
+        .attr("id","nodeBubbles")
+        .on("mouseover", function(d) {
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
+            biographyWindow(d.actor_id);
+        })
+        .on("mouseout", function(d) {
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
+        })
+
+        .on("click", function(d){showActor(d);})
+        //.on("click", showActor)
+        .attr("stroke-width", 2)
+        .attr("stroke", function(d) { return genderColor(d.gender); });
 
     node.append("title")
     .text(function(d) { return d.name; });
