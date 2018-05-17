@@ -1,4 +1,5 @@
 function forceDirectGraph(inputdata){
+    
     var svg = d3.select("#Actorsvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height")

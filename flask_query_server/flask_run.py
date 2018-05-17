@@ -25,7 +25,7 @@ def api_message2():
 @app.route('/getBubbleSizePosition', methods = ['POST'])
 
 def api_message():
-
+    print(request.headers['Content-Type'])
     if request.headers['Content-Type'] == 'application/json':
         req = request.json
         return loader.return_filtered(req['start_t'],req['end_t'],req['max_num'],req['genres'])
@@ -34,7 +34,7 @@ def api_message():
 
 @app.route('/getActorNetwork', methods = ['POST'])
 def api_message3():
-
+    print(request.headers['Content-Type'])
     if request.headers['Content-Type'] == 'application/json':
         req = request.json
         return loader.return_actor_network(req['actor_id'])

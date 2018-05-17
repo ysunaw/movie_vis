@@ -67,10 +67,10 @@
     <div style="height:400px;width:800px;position:absolute;color:#FFF; top:600px;left:1000px; border:1px solid #000;font:16px/26px Georgia, Garamond, Serif;  overflow:scroll;" id="Biodiv"></div>
 
 
+
 	<!-- ---------------------------------------------- -->
 	<!-- ------------ the Movies timeline ------------- -->
 	<!-- ---------------------------------------------- -->
-
 	<script src="//d3plus.org/js/d3.js"></script>
 	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -91,14 +91,17 @@
 	<!-- ---------------------------------------------- -->
 
 
-
-
-
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
+		//GLOBAL VARIABLES DEFINITION HERE
+		var START_T = 0, 
+			END_T = 10, 
+			MAX_NUM = 50,
+			GENRES = "All";
 
-		// initialize function
+		// initialize all graphs
 		function initialize(){
+			console.log("Initialize",MAX_NUM);
 				starPrintFunction()
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
         drawPool();
@@ -106,65 +109,73 @@
             .attr("id","Chartsvg");
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Actorsvg");
-         	//function updateGraph(){console.log("calling updateGraph function") return 0 ; };
-         	function updateGraph(min,max){
-         		// var data = movieData(min,max);
-         		console.log("new slider value",min,max);
-         		postMovieSelectionData(min,max);
-         		//console.log()
-         		//scaleRadialGraph.restart(data);
-
-         	};
-         	var v1 = 3, v2 = 5;
-         	var color = d3.scaleOrdinal(d3.schemeCategory20);
-			for(var i=0;i<11;i++){color(i);}
-
-            // d3.select('body').append('div').attr('width', 100).attr('height', 100).style("position", "absolute").style("top", "600px").style("left", "1000px").attr("overflow","auto")
-            //     .attr("id","Biodiv");
-
+         	
+            let color = d3.scaleOrdinal(d3.schemeCategory20);
+     		for(var i=0;i<11;i++){color(i);}
+         	//attributes for slider
+         	postTimelineData(MAX_NUM);
+         	postMovieSelectionData(START_T/10,END_T/10);
+			setupSlider(START_T,END_T,updateGraph,color);
             biographyWindow();
 			scaleRadialGraph();
-			bubbleRadialGraph();
-			setupSlider(v1,v2,updateGraph,color);
-
-			//setupSlider(v1, v2, updateGraph, color);
-
 
 		}
+		function updateGraph(min,max){
+			d3.selectAll("#nodeBubbles").remove();
+			postMovieSelectionData(min,max);
+		}
 
-		//function updateOverviewGraph(min,max){
-
-		//}
-		//setupSlider(v1, v2, updateGraph, color);
+		// Post request for movies 
 		function postMovieSelectionData(min,max){
 			let movieData= JSON.stringify({
 				start_t:min, 
 				end_t:max,
 				max_num:100,
 				genres:"All"
-			})
-		}
-		axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
-			hearders:{
-				'content-Type':"application/json",
-			}}).then(function(reponse){
-				console.log(response.data);
-				//updateGraph(response.data);
-			})
-			.catch(function(error){
-				console.log(error);
 			});
-		function postActorData(actor){
+			axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
+				headers:{
+					'Content-Type':'application/json'}
+			}).then(function(response){
 
-			let data = JSON.stringify({
-				actor_id:actor
-			});
-			axios.post('http://127.0.0.1:5000/getActorNetwork', data,{
+					console.log(typeof response.data);
+					bubbleRadialGraph(response.data);
+					
+				})
+				.catch(function(error){
+					console.log(error);
+				});
+		}
+
+		//post request for the revenue timeline 
+		function postTimelineData(max_num){
+			let timelineData = JSON.stringify({
+				num_columns:MAX_NUM,
+				Mean:1
+				});
+			axios.post('http://127.0.0.1:5000/getColumnSize', timelineData,{
 				headers: {
 					'content-Type': 'application/json',}
 				}).then(function (response) {
 
 					console.log(response.data);
+					scaleRadialGraph(response.data);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+		}
+		// Post request for getting actors
+		function postActorData(actor){
+
+			let data = JSON.stringify({
+				actor_id:actor
+			});
+
+			axios.post('http://127.0.0.1:5000/getActorNetwork', data,{
+				headers: {
+					'content-Type': 'application/json',}
+				}).then(function (response) {
 					forceDirectGraph(response.data);
 
 				})
@@ -184,16 +195,7 @@
 				.catch(function (error) {
 					console.log(error);
 				});
-			}
-        class State{
-            constructor(start_t, end_t, max_num, genres){
-            this.start_t = start_t;
-            this.end_t = end_t;
-            this.max_num = max_num;
-            this.genres = genres;}
-
-        }
-
+		}
 
 	</script>
 

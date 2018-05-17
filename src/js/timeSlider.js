@@ -1,5 +1,10 @@
 
-function setupSlider(v1, v2, color){
+function updateGraph(min,max){
+        postMovieSelectionData(min,max);
+        postTimelineData(MAX_NUM);
+      }
+
+function setupSlider(v1, v2, updateGraph,color){
 var sliderVals=[v1, v2],
     width = 600,
     svg = d3.select(".slider-holder").append("svg")
@@ -86,7 +91,7 @@ function endDrag(d){
       .attr("x1", 10+x(v1))
       .attr("x2", 10+x(v2))
 
-  updateGraph(v1, v2); 
+  updateGraph(v1/10, v2/10); 
 }
 
 }
