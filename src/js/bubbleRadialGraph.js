@@ -70,7 +70,6 @@
             d3.selectAll("#biosvgpic").remove();
             d3.selectAll("#biosvgbio").remove();
         })
-
         .on("click", function(d){showActor(d);})
         //.on("click", showActor)
         .attr("stroke-width", 2)
@@ -143,17 +142,17 @@
           .attr("r", function(d) { return d.radius; });
         }
 
+      function showActor(d){
 
-    var yAxis = svg.append("g")
+          svg.selectAll('circle').remove();
+          scaleRadialGraph();
+          postActorData(d.actor_id*1);
+          //postActorData(d.actor_id);
+
+      }
+
+      var yAxis = svg.append("g")
         .attr("text-anchor", "end");
-    }
-  function showActor(d){
-
-    svg.selectAll('circle').remove();
-    scaleRadialGraph();
-    postActorData(d.actor_id*1);
-        //postActorData(d.actor_id);
-
     }
 
 

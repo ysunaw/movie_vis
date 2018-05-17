@@ -12,12 +12,12 @@ var sliderVals=[v1, v2],
       .attr('height', 50);
 
 var x = d3.scaleLinear()
-    .domain([0, 10])
+    .domain([0, 1])
     .range([0, width])
     .clamp(true);
 
 var xMin=x(0),
-    xMax=x(10)
+    xMax=x(1)
 
 var slider = svg.append("g")
     .attr("class", "slider")
@@ -80,7 +80,8 @@ function drag(d){
 }
 
 function endDrag(d){
-  var v=Math.round(x.invert(d3.event.x))
+  //var v=Math.round(x.invert(d3.event.x))
+    var v =x.invert(d3.event.x)
   var elem=d3.select(this)
   sliderVals[d] = v
   var v1=Math.min(sliderVals[0], sliderVals[1]),
@@ -91,7 +92,7 @@ function endDrag(d){
       .attr("x1", 10+x(v1))
       .attr("x2", 10+x(v2))
 
-  updateGraph(v1/10, v2/10); 
+  updateGraph(v1, v2);
 }
 
 }

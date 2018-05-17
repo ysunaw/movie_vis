@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92bbcc16-4f3a-4bfe-9d9b-88ee582b6955" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/js/streamgraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/streamgraph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/bubbleRadialGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/bubbleRadialGraph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/timeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/timeSlider.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,28 +19,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bubbleRadialGraph.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="62" column="62" lean-forward="true" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="forceDirectGraph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/forceDirectGraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="37" lean-forward="true" selection-start-column="9" selection-end-column="37" />
+            <state relative-caret-position="125">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="streamgraph.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="streamgraph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/streamgraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
+            <state relative-caret-position="525">
               <caret line="90" column="52" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
             </state>
           </provider>
@@ -46,8 +40,8 @@
       <file leaf-file-name="biographyWindow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/biographyWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="-469">
+              <caret column="24" selection-start-column="9" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -66,11 +60,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="bubbleRadialGraph.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3025">
+              <caret line="151" selection-start-line="151" selection-end-line="151" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="timeSlider.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/timeSlider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-600">
-              <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            <state relative-caret-position="384">
+              <caret line="181" column="36" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#svg#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -106,8 +118,8 @@
       <file leaf-file-name="scaleRadialGraph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/scaleRadialGraph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1450">
-              <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="70" />
+            <state relative-caret-position="-1775">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -124,7 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>consol</find>
       <find>radius</find>
       <find>pythag</find>
       <find>strokeWidth</find>
@@ -147,13 +158,14 @@
       <find>range</find>
       <find>pool</find>
       <find>nextActor</find>
-      <find>postActorData</find>
       <find>for</find>
       <find>style.css</find>
-      <find>rgb</find>
-      <find>color</find>
       <find>image</find>
       <find>movieData</find>
+      <find>biographyWindow</find>
+      <find>postActorData</find>
+      <find>rgb</find>
+      <find>color</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,11 +186,12 @@
         <option value="$PROJECT_DIR$/css/bioBox.css" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/src/js/biographyWindow.js" />
-        <option value="$PROJECT_DIR$/src/js/bubbleRadialGraph.js" />
         <option value="$PROJECT_DIR$/src/js/forceDirectGraph.js" />
-        <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/src/js/scaleRadialGraph.js" />
         <option value="$PROJECT_DIR$/src/js/streamgraph.js" />
+        <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/src/js/bubbleRadialGraph.js" />
+        <option value="$PROJECT_DIR$/src/js/timeSlider.js" />
       </list>
     </option>
   </component>
@@ -279,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108064000" />
+    <option name="totallyTimeSpent" value="110315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-8" width="1862" height="1096" extended-state="6" />
@@ -317,13 +330,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/data.json" />
     <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraphBackup.js" />
     <entry file="file://$PROJECT_DIR$/src/js/forceDirectGraphBackup.js" />
@@ -603,10 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/biographyWindow.js">
+    <entry file="file://$PROJECT_DIR$/src/js/scaleRadialGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        <state relative-caret-position="-1775">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -622,24 +628,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/forceDirectGraph.js">
+    <entry file="file://$PROJECT_DIR$/src/js/streamgraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" lean-forward="true" selection-start-column="9" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/scaleRadialGraph.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1450">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="70" />
+        <state relative-caret-position="525">
+          <caret line="90" column="52" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+        <state relative-caret-position="384">
+          <caret line="181" column="36" selection-start-line="181" selection-start-column="20" selection-end-line="181" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#svg#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -650,17 +649,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph.js">
+    <entry file="file://$PROJECT_DIR$/src/js/biographyWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="62" column="62" lean-forward="true" selection-start-line="62" selection-start-column="62" selection-end-line="62" selection-end-column="62" />
+        <state relative-caret-position="-469">
+          <caret column="24" selection-start-column="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/streamgraph.js">
+    <entry file="file://$PROJECT_DIR$/src/js/forceDirectGraph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="90" column="52" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+        <state relative-caret-position="125">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3025">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/timeSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
         </state>
       </provider>
     </entry>
