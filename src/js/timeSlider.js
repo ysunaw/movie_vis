@@ -80,8 +80,8 @@ function drag(d){
 }
 
 function endDrag(d){
-  //var v=Math.round(x.invert(d3.event.x))
-    var v =x.invert(d3.event.x)
+  var v=Math.round(x.invert(d3.event.x)*100)/100
+    //var v =x.invert(d3.event.x)
   var elem=d3.select(this)
   sliderVals[d] = v
   var v1=Math.min(sliderVals[0], sliderVals[1]),
@@ -93,6 +93,8 @@ function endDrag(d){
       .attr("x2", 10+x(v2))
 
   updateGraph(v1, v2);
+
+  console.log(v1, v2)
 }
 
 }

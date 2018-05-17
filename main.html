@@ -136,6 +136,7 @@
 				max_num:100,
 				genres:"All"
 			});
+            console.log(movieData)
 			axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
 				headers:{
 					'Content-Type':'application/json'}
@@ -179,6 +180,7 @@
 				headers: {
 					'content-Type': 'application/json',}
 				}).then(function (response) {
+
 					forceDirectGraph(response.data);
 
 				})
