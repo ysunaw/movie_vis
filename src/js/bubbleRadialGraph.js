@@ -143,18 +143,19 @@
           .attr("r", function(d) { return d.radius; });
         }
 
-
-    var yAxis = svg.append("g")
-        .attr("text-anchor", "end");
-    }
   function showActor(d){
-
-    svg.selectAll('circle').remove();
-    scaleRadialGraph();
+    console.log("show actor magic!!!");
+    svg.selectAll('#forceDirectNode').remove();
+    //scaleRadialGraph();
     postActorData(d.actor_id*1);
         //postActorData(d.actor_id);
 
     }
+
+    var yAxis = svg.append("g")
+        .attr("text-anchor", "end");
+    }
+  
 
 
     //showActor function in bubble Radial graph

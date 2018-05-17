@@ -70,6 +70,7 @@ function forceDirectGraph(inputdata){
         .filter(function (d, i) { return i === 0;}).append("circle")
         .attr("r", 30)
         .attr("stroke-width", 5)
+        .attr("id","forceDirectNode")
         //.on("click", nextActor)
         .attr("stroke", function(d) { return d3.rgb(genderColor(d.gender)).brighter(0.5); })
         // .on("click", bubbleView)
@@ -107,6 +108,7 @@ function forceDirectGraph(inputdata){
             d3.selectAll("#biosvgbio").remove();
             biographyWindow(graph.actors[0].actor_id);
         })
+        .attr("id","forceDirectNode")
 
         .on("click", function(d){nextActor(d);
             d3.selectAll("#biosvgpic").remove();

@@ -2,23 +2,7 @@ function biographyWindow(actor_id) {
 
 
 
-    // var actordiv = d3.select("#actorPicdiv"),
-    //     actorwidth = +actordiv.attr("width"),
-    //     actorheight = +actordiv.attr("height");
-    //
-    // actordiv.append("svg")
-    //     .attr("width",150)
-    //     .attr("height", 200)
-    //     .append("svg:image")
-    //     .attr("xlink:href", function(d) {
-    //         return "crawler/"+actor_id+".jpg"
-    //     })
-    //     .attr("x", 0)
-    //     .attr("y", 0)
-    //     .attr("width",200)
-    //     .attr("height", 200);
-
-    var div = d3.select("#Biodiv"),
+     var div = d3.select("#Biodiv"),
         width = +div.attr("width"),
         height = +div.attr("height");
     //var div = document.getElementById('Biodiv');

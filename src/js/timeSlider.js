@@ -12,12 +12,12 @@ var sliderVals=[v1, v2],
       .attr('height', 50);
 
 var x = d3.scaleLinear()
-    .domain([0, 10])
+    .domain([0, 1])
     .range([0, width])
     .clamp(true);
 
 var xMin=x(0),
-    xMax=x(10)
+    xMax=x(1)
 
 var slider = svg.append("g")
     .attr("class", "slider")
@@ -46,7 +46,7 @@ slider.insert("g", ".track-overlay")
     .text(function(d) { return d; });
 
 var handle = slider.selectAll("rect")
-  .data([0, 1])
+  .data([0, 10])
   .enter().append("rect", ".track-overlay")
     .attr("class", "handle")
     .attr("y", -8)
@@ -80,7 +80,7 @@ function drag(d){
 }
 
 function endDrag(d){
-  var v=Math.round(x.invert(d3.event.x))
+  var v=x.invert(d3.event.x);
   var elem=d3.select(this)
   sliderVals[d] = v
   var v1=Math.min(sliderVals[0], sliderVals[1]),

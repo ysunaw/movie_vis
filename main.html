@@ -118,13 +118,13 @@
          	postTimelineData(MAX_NUM);
          	postMovieSelectionData(START_T/10,END_T/10);
 			setupSlider(START_T,END_T,updateGraph,color);
-            biographyWindow();
 			scaleRadialGraph();
 			streamGraph();
 
 
 		}
 		function updateGraph(min,max){
+			d3.selectAll("#Actorsvg").remove();
 			d3.selectAll("#nodeBubbles").remove();
 			postMovieSelectionData(min,max);
 		}
