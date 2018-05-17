@@ -72,13 +72,13 @@
             return "url(#actorbubble-"+d.actor_id+")"
         })
         .on("mouseover", function(d) {
-            d3.select("#biosvgpic").remove();
-            d3.select("#biosvgbio").remove();
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
             biographyWindow(d.actor_id);
         })
         .on("mouseout", function(d) {
-            d3.select("#biosvgpic").remove();
-            d3.select("#biosvgbio").remove();
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
         })
 
         .on("click", function(d){showActor(d);})

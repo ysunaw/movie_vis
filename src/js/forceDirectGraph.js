@@ -9,7 +9,7 @@ function forceDirectGraph(inputdata){
         .force("center", d3.forceCenter(width / 2, height / 2));
     //parse input array to JSON format
     //var data = JSON.parse(arraydata);
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    var color = d3.scaleOrdinal(d3.schemeCategory20c);
     //the color for links
     var linkColor = d3.scaleOrdinal()
         .range([]);
@@ -74,8 +74,8 @@ function forceDirectGraph(inputdata){
         // .on("click", bubbleView)
         .on("click", function(d){
             bubbleView(d);
-            d3.select("#biosvgpic").remove();
-            d3.select("#biosvgbio").remove();
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
             })
         //.attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
         .style("fill", function(d) {
@@ -102,14 +102,14 @@ function forceDirectGraph(inputdata){
             biographyWindow(d.actor_id);
         })
         .on("mouseout", function(d) {
-            d3.select("#biosvgpic").remove();
-            d3.select("#biosvgbio").remove();
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
             biographyWindow(graph.actors[0].actor_id);
         })
 
         .on("click", function(d){nextActor(d);
-            d3.select("#biosvgpic").remove();
-            d3.select("#biosvgbio").remove();
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
             biographyWindow(d.actor_id);})
 
         .attr("id","nodes")
@@ -224,7 +224,7 @@ function forceDirectGraph(inputdata){
     //on clicking
     function nextActor(d){
         svg.selectAll("*").remove();
-        scaleRadialGraph();
+
         postActorData(d.actor_id);
 
     }
