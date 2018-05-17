@@ -1,9 +1,3 @@
-
-function updateGraph(min,max){
-        postMovieSelectionData(min,max);
-        postTimelineData(MAX_NUM);
-      }
-
 function setupSlider(v1, v2, updateGraph,color){
 var sliderVals=[v1, v2],
     width = 600,
@@ -80,7 +74,7 @@ function drag(d){
 }
 
 function endDrag(d){
-  var v=x.invert(d3.event.x);
+  var v=Math.round(x.invert(d3.event.x)*100)/100
   var elem=d3.select(this)
   sliderVals[d] = v
   var v1=Math.min(sliderVals[0], sliderVals[1]),
@@ -90,8 +84,8 @@ function endDrag(d){
   selRange
       .attr("x1", 10+x(v1))
       .attr("x2", 10+x(v2))
-
-  updateGraph(v1/10, v2/10); 
-}
+console.log(v2);
+updateGraph(v1, v2); 
+ }
 
 }

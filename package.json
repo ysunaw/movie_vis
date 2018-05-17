@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
+    "convert-csv-to-array": "^1.0.0",
     "d3": "^5.3.0"
   },
   "devDependencies": {},

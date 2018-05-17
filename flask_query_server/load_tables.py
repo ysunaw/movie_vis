@@ -67,15 +67,24 @@ class table_loader():
         return json.dumps(final_table.to_dict('records'))
 
     def return_revenue_chart(self, num_columns, Mean = 1):
+        # self.mean = Mean
+        # if Mean:
+        #     return pd.DataFrame(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0].groupby(
+        #     pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0]["relative_position"],
+        #         np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].mean().reset_index()['revenue']).to_csv()
+        # else:
+        #     return pd.DataFrame(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0].groupby(
+        #     pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0]["relative_position"],
+        #         np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].sum().reset_index()['revenue']).to_csv()
         self.mean = Mean
         if Mean:
-            return pd.DataFrame(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0].groupby(
+            return ','.join(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0].groupby(
             pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0]["relative_position"],
-                np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].mean().reset_index()['revenue']).to_csv()
+                   np.arange(0, 1.0+1/num_columns, 1/num_columns)))['revenue'].mean().values.astype(str))
         else:
-            return pd.DataFrame(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0].groupby(
-            pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue!=0]["relative_position"],
-                np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].sum().reset_index()['revenue']).to_csv()
+            return ','.join(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue != 0].groupby(
+                pd.cut(self.time_contrainedMetaFD[self.time_contrainedMetaFD.revenue != 0]["relative_position"],
+                       np.arange(0, 1.0 + 1 / num_columns, 1 / num_columns)))['revenue'].sum().values.astype(str))
 
     def return_actor_network(self,actor_id):
         pd.merge(pd.merge(self.movie_actorDF[self.movie_actorDF.actor_id == actor_id], self.metaDataDF), self.movie_to_genreDF)
