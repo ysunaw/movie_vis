@@ -1,8 +1,4 @@
 
-function updateGraph(min,max){
-        postMovieSelectionData(min,max);
-        postTimelineData(MAX_NUM);
-      }
 
 function setupSlider(v1, v2, updateGraph,color){
 var sliderVals=[v1, v2],
@@ -95,10 +91,11 @@ function endDrag(d){
   selRange
       .attr("x1", 10+x(v1))
       .attr("x2", 10+x(v2))
+    START_T=v1
+    END_T=v2
+  updateGraph(v1, v2, 50, GENRES);
 
-  updateGraph(v1, v2, 50);
-
-  console.log(v1, v2)
+  //console.log(v1, v2)
 }
 
 }

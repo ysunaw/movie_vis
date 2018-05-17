@@ -9,5 +9,5 @@ function update(nValue) {
     d3.select("#Actorsvg").selectAll("*").remove();
     d3.selectAll("#biosvgpic").remove();
     d3.selectAll("#biosvgbio").remove();
-    updateGraph(START_T,END_T,nValue);
+    updateGraph(START_T,END_T,nValue,GENRES);
 }

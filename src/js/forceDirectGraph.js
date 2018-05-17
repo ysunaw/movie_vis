@@ -1,5 +1,5 @@
 function forceDirectGraph(inputdata){
-    console.log(inputdata)
+    //console.log(inputdata)
     var svg = d3.select("#Actorsvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height")
@@ -12,8 +12,6 @@ function forceDirectGraph(inputdata){
     //var data = JSON.parse(arraydata);
     var color = d3.scaleOrdinal(d3.schemeCategory20c);
     //the color for links
-    var linkColor = d3.scaleOrdinal()
-        .range([]);
     var genderColor = d3.scaleOrdinal()
         .domain([1,2])
         .range(['#9d0107', '#091592']);
@@ -83,7 +81,7 @@ function forceDirectGraph(inputdata){
             return "url(#actor-"+d.actor_id+")"
         });
 
-    console.log(graph.actors[0])
+    //console.log(graph.actors[0])
     //rest of the nodes; can be dragged
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -225,14 +223,14 @@ function forceDirectGraph(inputdata){
     //on clicking
     function nextActor(d){
         svg.selectAll("*").remove();
-
         postActorData(d.actor_id);
 
     }
     function bubbleView(d){
         svg.selectAll("*").remove();
-        scaleRadialGraph();
-        updateGraph(START_T,END_T,MAX_NUM);
+        //scaleRadialGraph();
+        console.log(START_T,END_T)
+        updateGraph(START_T,END_T,MAX_NUM,GENRES);
     }
 
 }
