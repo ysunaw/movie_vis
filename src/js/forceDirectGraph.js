@@ -71,13 +71,18 @@ function forceDirectGraph(inputdata){
         .attr("stroke-width", 5)
         //.on("click", nextActor)
         .attr("stroke", function(d) { return d3.rgb(genderColor(d.gender)).brighter(0.5); })
-        .on("click", bubbleView)
+        // .on("click", bubbleView)
+        .on("click", function(d){
+            bubbleView(d);
+            d3.select("#biosvgpic").remove();
+            d3.select("#biosvgbio").remove();
+            })
         //.attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
         .style("fill", function(d) {
             return "url(#actor-"+d.actor_id+")"
         });
 
-
+    console.log(graph.actors[0])
     //rest of the nodes; can be dragged
     var node = svg.append("g")
         .attr("class", "nodes")
@@ -91,7 +96,22 @@ function forceDirectGraph(inputdata){
         })
         .attr("stroke-width", 2)
         .attr("stroke", function(d) { return genderColor(d.gender); })
-        .on("click", nextActor)
+        .on("mouseover", function(d) {
+            d3.selectAll("#biosvgpic").remove();
+            d3.selectAll("#biosvgbio").remove();
+            biographyWindow(d.actor_id);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#biosvgpic").remove();
+            d3.select("#biosvgbio").remove();
+            biographyWindow(graph.actors[0].actor_id);
+        })
+
+        .on("click", function(d){nextActor(d);
+            d3.select("#biosvgpic").remove();
+            d3.select("#biosvgbio").remove();
+            biographyWindow(d.actor_id);})
+
         .attr("id","nodes")
         .call(d3.drag()
             .on("start", dragstarted)

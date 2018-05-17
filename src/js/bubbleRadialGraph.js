@@ -71,7 +71,18 @@
         .style("fill", function(d) {
             return "url(#actorbubble-"+d.actor_id+")"
         })
-        .on("click", showActor)
+        .on("mouseover", function(d) {
+            d3.select("#biosvgpic").remove();
+            d3.select("#biosvgbio").remove();
+            biographyWindow(d.actor_id);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#biosvgpic").remove();
+            d3.select("#biosvgbio").remove();
+        })
+
+        .on("click", function(d){showActor(d);})
+        //.on("click", showActor)
         .attr("stroke-width", 2)
         .attr("stroke", function(d) { return genderColor(d.gender); });
 

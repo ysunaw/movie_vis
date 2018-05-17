@@ -79,8 +79,8 @@ d3.csv('data3.csv', function(error, data) {
   browser.append('path')
       .attr('class', 'area')
       .attr('d', area)
-      .style('fill', function(d) { return color(d.key); });
-      
+      .style('fill', function(d) { return color(d.key); })
+      .on("click",function(d){console.log(d.key)});
   browser.append('text')
       .datum(function(d) { return d; })
       .attr('transform', function(d) {return 'translate(' + x(data[86].date) + ',' + y((d[86][1] + d[86][0])/2)  + ')'; })

@@ -1,5 +1,5 @@
-function biographyWindow() {
-    actor_id = 2232;
+function biographyWindow(actor_id) {
+
 
 
     // var actordiv = d3.select("#actorPicdiv"),
@@ -29,9 +29,9 @@ function biographyWindow() {
         console.log(width)
 
         div.append("svg")
-            .attr("width",600)
+            .attr("width",698)
             .attr("height", 200)
-
+            .attr("id","biosvgpic")
             .attr("left",300)
             .append("svg:image")
             .attr("xlink:href", function(d) {
@@ -42,6 +42,7 @@ function biographyWindow() {
             .attr("width",200)
             .attr("height", 200);
             div.append("text")
+                .attr("id","biosvgbio")
             .text(text)
 
     })
