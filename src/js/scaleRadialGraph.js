@@ -50,7 +50,7 @@
 
                 if (error) throw error;
                 data.sort(function(a, b) { return a[data.columns[0]] -  b[data.columns[0]]; });
-                x.domain(data.map(function(d) {return d[""]; }));
+                x.domain(data.map(function(d) {console.log(d[""]);return d[""]; }));
                 y.domain([0, d3.max(data, function(d) { return d.total; })]);
                 var array = data.map(function(d){return d.total})	;
                 var max = Math.max.apply(null, array);

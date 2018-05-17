@@ -1,5 +1,5 @@
 function forceDirectGraph(inputdata){
-    
+    console.log(inputdata)
     var svg = d3.select("#Actorsvg"),
         width = +svg.attr("width"),
         height = +svg.attr("height")
@@ -232,7 +232,7 @@ function forceDirectGraph(inputdata){
     function bubbleView(d){
         svg.selectAll("*").remove();
         scaleRadialGraph();
-        bubbleRadialGraph();
+        updateGraph(START_T,END_T,MAX_NUM);
     }
 
 }

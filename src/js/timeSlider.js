@@ -56,7 +56,11 @@ var handle = slider.selectAll("rect")
     .attr("width", 20)
     .call(
         d3.drag()
-          .on("start", startDrag)
+          .on("start", function(d){
+          d3.select("#Actorsvg").selectAll("*").remove();
+          d3.selectAll("#biosvgpic").remove();
+          d3.selectAll("#biosvgbio").remove();
+              startDrag;})
           .on("drag", drag)
           .on("end", endDrag)
     );
@@ -92,7 +96,7 @@ function endDrag(d){
       .attr("x1", 10+x(v1))
       .attr("x2", 10+x(v2))
 
-  updateGraph(v1, v2);
+  updateGraph(v1, v2, 50);
 
   console.log(v1, v2)
 }
