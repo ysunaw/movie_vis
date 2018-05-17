@@ -88,7 +88,7 @@ function streamGraph() {
 
         stack.order(d3.stackOrderNone);
         stack.offset(d3.stackOffsetSilhouette);
-        console.log(keys.map(function(d,i){return {d[i]:false}}));
+        console.log(keys.map(function(d,i){return {d:false}}));
         //console.log(stack(data));
 
         var browser = svg.selectAll('.browser')
