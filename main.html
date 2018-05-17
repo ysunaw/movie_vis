@@ -28,7 +28,7 @@
 	<![endif]-->
 
 </head>
-<body style="position: absolute; height: 1000px; width: 2000px;background-color:#0f020f;">
+<body style="position: absolute; height: 900px; width: 1700px;background-color:#0f020f;">
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader">
@@ -60,7 +60,8 @@
 
 
 
-	<svg width="600" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" onload = "initialize()"></svg>
+
+	<svg width="1800" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" id="Mainsvg" onload = "initialize()"></svg>
 
 
 	<!-- ---------------------------------------------- -->
@@ -73,6 +74,9 @@
 	<script src="src/js/scaleRadialGraph.js"></script>
 	<script src="src/js/bubbleRadialGraph.js"></script>
 	<script src="src/js/streamgraph.js"></script>
+	<script src="src/js/stars.js"></script>
+	<script src="src/js/pool.js"></script>
+	<script src="src/js/movieDensityMap.js"></script>
 
 
 	<!-- ---------------------------------------------- -->
@@ -87,32 +91,64 @@
 	<script>
 		// initialize function
 		function initialize(){
+				starPrintFunction()
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Poolsvg");
+        drawPool();
+		d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Chartsvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Actorsvg");
 			scaleRadialGraph();
 			bubbleRadialGraph();
+
+
 		}
+
 
 
 	// scaleRadialGraph();
 	// bubbleRadialGraph();
 
-	// postActorData(10990);
-	function postActorData(actor){
+		function postActorData(actor){
 
-		let data = JSON.stringify({
-			actor_id:actor
-		});
-		axios.post('http://127.0.0.1:5000/getActorNetwork', data,{
-			headers: {
-				'content-Type': 'application/json',}
+			let data = JSON.stringify({
+				actor_id:actor
+			});
+			axios.post('http://127.0.0.1:5000/getActorNetwork', data,{
+				headers: {
+					'content-Type': 'application/json',}
+				}).then(function (response) {
+
+					console.log(response.data);
+					forceDirectGraph(response.data);
+
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+			axios.post('http://127.0.0.1:5000/getCloudPoints', data,{
+				headers: {
+					'content-Type': 'application/json',}
+
 			}).then(function (response) {
 				console.log("output");
 				console.log(response.data);
-				forceDirectGraph(response.data);
+				movieDensityMap(response.data);
+
 			})
-			.catch(function (error) {
-				console.log(error);
-			});
-		}
+				.catch(function (error) {
+					console.log(error);
+				});
+			}
+        class State{
+            constructor(start_t, end_t, max_num, genres){
+            this.start_t = start_t;
+            this.end_t = end_t;
+            this.max_num = max_num;
+            this.genres = genres;}
+
+        }
 
 	</script>
 

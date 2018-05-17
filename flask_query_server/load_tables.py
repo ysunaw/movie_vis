@@ -54,7 +54,8 @@ class table_loader():
             'actor_id').mean().join(self.actorDF).join(scoreDF).sort_values('final_score', ascending=False).iloc[:max_num]
         final_table = final_table.assign(actor_id=final_table.index)
         #columns_table = self.return_revenue_chart(num_columns,self.Mean)
-        return final_table.to_csv()#.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
+        #return final_table.to_csv()#.to_json(orient='index')#.to_csv()#, ','.join(columns_table.astype(str))) #.to_json(orient='index')
+        return json.dumps(final_table.to_dict('records'))
 
     def return_revenue_chart(self, num_columns, Mean = 1):
         self.mean = Mean
