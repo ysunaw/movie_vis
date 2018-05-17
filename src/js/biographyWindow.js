@@ -1,34 +1,48 @@
 function biographyWindow() {
-    actor_id = 2232
+    actor_id = 2232;
 
-    var svg = d3.select("#Biodiv"),
-        width = +svg.attr("width"),
-        height = +svg.attr("height");
 
+    // var actordiv = d3.select("#actorPicdiv"),
+    //     actorwidth = +actordiv.attr("width"),
+    //     actorheight = +actordiv.attr("height");
+    //
+    // actordiv.append("svg")
+    //     .attr("width",150)
+    //     .attr("height", 200)
+    //     .append("svg:image")
+    //     .attr("xlink:href", function(d) {
+    //         return "crawler/"+actor_id+".jpg"
+    //     })
+    //     .attr("x", 0)
+    //     .attr("y", 0)
+    //     .attr("width",200)
+    //     .attr("height", 200);
+
+    var div = d3.select("#Biodiv"),
+        width = +div.attr("width"),
+        height = +div.attr("height");
+    //var div = document.getElementById('Biodiv');
+    //var node = document.createTextNode("this is a paragraph");
 
     d3.text("crawler/"+actor_id+".txt", function(text) {
-        console.log(text.length)
 
+        console.log(width)
 
-        svg.append("text")
-            .attr("x",0)
-            .attr("y",100)
-            .style("stroke", "white")
+        div.append("svg")
+            .attr("width",600)
+            .attr("height", 200)
+
+            .attr("left",300)
+            .append("svg:image")
+            .attr("xlink:href", function(d) {
+                return "crawler/"+actor_id+".jpg"
+            })
+            .attr("x", 250)
+            .attr("y", 0)
+            .attr("width",200)
+            .attr("height", 200);
+            div.append("text")
             .text(text)
-            // .append("div")
-            // .attr("width",1000)
-            // .attr("height",1000)
-            //.append("svg")
-
-            // .style("stroke", "white")
-            // .attr("width",500)
-            // .attr("height",400)
-            // //.attr("id","ResizeTXT")
-
-
-
-        // Wrap text in a rectangle, and size the text to fit.
-
 
     })
 }
