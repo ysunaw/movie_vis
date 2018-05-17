@@ -20,9 +20,11 @@
     d3.json("data_bubble.json", function(error,graph) {
 
         for (i = 0; i < graph.length; ++i) {
+
           graph[i]["x"] = width / 2 + innerRadius * Math.sin(2 * Math.PI * graph[i].relative_position);
           graph[i]["y"] = height / 2 + innerRadius * (-Math.cos(2 * Math.PI * graph[i].relative_position));
           graph[i]["radius"] = graph[i].final_score * 7.5* (graph.length+400/graph.length);}
+
         data = graph;
 
 

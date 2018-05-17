@@ -62,15 +62,17 @@
 	
 
 
-	<svg width="1800" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" id="Mainsvg" onload = "initialize()"></svg>
+	<svg width="1800" height = "1000"  font-family="sans-serif" font-size="10" style="position: relative" id="Mainsvg" onload = "initialize()"></svg>
     <div class="slider-holder"style="top:900px; left:280px; position:absolute; height: 30px; width: 400px;"></div>
-  
+    <div style="height:400px;width:800px;position:absolute;color:#FFF; top:600px;left:1000px; border:1px solid #000;font:16px/26px Georgia, Garamond, Serif;  overflow:scroll;" id="Biodiv"></div>
+
 
 	<!-- ---------------------------------------------- -->
 	<!-- ------------ the Movies timeline ------------- -->
 	<!-- ---------------------------------------------- -->
 
-
+	<script src="//d3plus.org/js/d3.js"></script>
+	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="src/js/d3-scale-radial.js"></script>
 	<script src="src/js/scaleRadialGraph.js"></script>
@@ -81,6 +83,7 @@
 	<script src="src/js/movieDensityMap.js"></script>
 	<script src="src/js/timeSlider.js"></script>
 	<script src= "src/js/forceDirectGraph.js"></script>
+	<script src="src/js/biographyWindow.js"></script>
 
 
 	<!-- ---------------------------------------------- -->
@@ -93,11 +96,11 @@
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
+
 		// initialize function
 		function initialize(){
 				starPrintFunction()
-        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").
-            .attr("id","Poolsvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
         drawPool();
 		d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Chartsvg");
@@ -114,11 +117,12 @@
          	};
          	var v1 = 3, v2 = 5;
          	var color = d3.scaleOrdinal(d3.schemeCategory20);
-			for(var i=0;i<11;i++){
+			for(var i=0;i<11;i++){color(i);}
 
+            // d3.select('body').append('div').attr('width', 100).attr('height', 100).style("position", "absolute").style("top", "600px").style("left", "1000px").attr("overflow","auto")
+            //     .attr("id","Biodiv");
 
-				color(i);
-			}
+            biographyWindow();
 			scaleRadialGraph();
 			bubbleRadialGraph();
 			setupSlider(v1,v2,updateGraph,color);

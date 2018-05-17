@@ -24,6 +24,14 @@ class table_loader():
         start_t = return_time(0)
         end_t = return_time(1)
         time_contrainedMetaFD = self.metaDataDF[(self.metaDataDF['release_date'] > start_t) & (self.metaDataDF['release_date'] < end_t)]
+        genres = "All"
+        if genres == 'All':
+            pass
+        else:
+            table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
+            table = table[table.name==len(genres)]
+            table['id']= table.index
+            time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)
         scoreDF = pd.merge(self.movie_actorDF, time_contrainedMetaFD)[['actor_id', 'final_score']].groupby('actor_id').sum()
@@ -43,6 +51,7 @@ class table_loader():
             table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
             table = table[table.name==len(genres)]
             table['id']= table.index
+
             time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)
