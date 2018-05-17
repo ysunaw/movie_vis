@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="css/flaticon.css"/>
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
 
 
 	<!--[if lt IE 9]>
@@ -58,11 +59,12 @@
 	<!-- Header section end -->
 	<!-- SVG for the main page-->
 
-
+	
 
 
 	<svg width="1800" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" id="Mainsvg" onload = "initialize()"></svg>
-
+    <div class="slider-holder"style="top:900px; left:280px; position:absolute; height: 30px; width: 400px;"></div>
+  
 
 	<!-- ---------------------------------------------- -->
 	<!-- ------------ the Movies timeline ------------- -->
@@ -77,6 +79,8 @@
 	<script src="src/js/stars.js"></script>
 	<script src="src/js/pool.js"></script>
 	<script src="src/js/movieDensityMap.js"></script>
+	<script src="src/js/timeSlider.js"></script>
+	<script src= "src/js/forceDirectGraph.js"></script>
 
 
 	<!-- ---------------------------------------------- -->
@@ -84,7 +88,7 @@
 	<!-- ---------------------------------------------- -->
 
 
-	<script src= "src/js/forceDirectGraph.js"></script>
+
 
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -92,24 +96,60 @@
 		// initialize function
 		function initialize(){
 				starPrintFunction()
-        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").
             .attr("id","Poolsvg");
         drawPool();
 		d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Chartsvg");
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Actorsvg");
+         	//function updateGraph(){console.log("calling updateGraph function") return 0 ; };
+         	function updateGraph(min,max){
+         		// var data = movieData(min,max);
+         		console.log("new slider value",min,max);
+         		postMovieSelectionData(min,max);
+         		//console.log()
+         		//scaleRadialGraph.restart(data);
+
+         	};
+         	var v1 = 3, v2 = 5;
+         	var color = d3.scaleOrdinal(d3.schemeCategory20);
+			for(var i=0;i<11;i++){
+
+
+				color(i);
+			}
 			scaleRadialGraph();
 			bubbleRadialGraph();
+			setupSlider(v1,v2,updateGraph,color);
+
+			//setupSlider(v1, v2, updateGraph, color);
 
 
 		}
 
+		//function updateOverviewGraph(min,max){
 
-
-	// scaleRadialGraph();
-	// bubbleRadialGraph();
-
+		//}
+		//setupSlider(v1, v2, updateGraph, color);
+		function postMovieSelectionData(min,max){
+			let movieData= JSON.stringify({
+				start_t:min, 
+				end_t:max,
+				max_num:100,
+				genres:"All"
+			})
+		}
+		axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
+			hearders:{
+				'content-Type':"application/json",
+			}}).then(function(reponse){
+				console.log(response.data);
+				//updateGraph(response.data);
+			})
+			.catch(function(error){
+				console.log(error);
+			});
 		function postActorData(actor){
 
 			let data = JSON.stringify({
@@ -149,6 +189,7 @@
             this.genres = genres;}
 
         }
+
 
 	</script>
 

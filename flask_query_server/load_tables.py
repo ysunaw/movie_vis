@@ -42,7 +42,7 @@ class table_loader():
         else:
             table = self.movie_to_genreDF[self.movie_to_genreDF.name.isin(genres)][['id','name']].groupby('id').count()
             table = table[table.name==len(genres)]
-            table = table['id']= table.index
+            table['id']= table.index
             time_contrainedMetaFD = pd.merge(table,time_contrainedMetaFD)
         start_d = pd.to_datetime(start_t)
         end_d = pd.to_datetime(end_t)

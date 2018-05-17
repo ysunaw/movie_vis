@@ -1,5 +1,4 @@
-  function bubbleRadialGraph(){
-    console.log("generate bubble radial graph");
+  function bubbleRadialGraph(input_bubble_data){
 
     var svg = d3.select("#Chartsvg"),
     width = +svg.attr("width"),
@@ -21,9 +20,9 @@
     d3.json("data_bubble.json", function(error,graph) {
 
         for (i = 0; i < graph.length; ++i) {
-        graph[i]["x"] = width / 2 + innerRadius * Math.sin(2 * Math.PI * graph[i].relative_position);
-        graph[i]["y"] = height / 2 + innerRadius * Math.cos(2 * Math.PI * graph[i].relative_position);
-            graph[i]["radius"] = graph[i].final_score * 7.5* (graph.length+400/graph.length);}
+          graph[i]["x"] = width / 2 + innerRadius * Math.sin(2 * Math.PI * graph[i].relative_position);
+          graph[i]["y"] = height / 2 + innerRadius * (-Math.cos(2 * Math.PI * graph[i].relative_position));
+          graph[i]["radius"] = graph[i].final_score * 7.5* (graph.length+400/graph.length);}
         data = graph;
 
 
@@ -33,7 +32,6 @@
     // d3.csv("data_bubble.csv", function(d, i, columns) {
     //
     //   var radius=d.final_score;
-    //     console.log(d)
     //       d.r = radius*1500;
     //       d.x = width/2+innerRadius*Math.sin( 2 * Math.PI*d.relative_position);
     //       d.y = height/2+innerRadius*Math.cos( 2 * Math.PI*d.relative_position);
@@ -148,7 +146,6 @@ function layoutTick(e) {
   });
       function showActor(d){
 
-        console.log("show actor", d);
         svg.selectAll('circle').remove();
         scaleRadialGraph();
         postActorData(d.actor_id*1);

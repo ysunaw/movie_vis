@@ -163,7 +163,6 @@
                 //     .enter().append("path")
                 //     .attr("fill", function(d, i) { return "url(#gradient2-" + i + ")"; })
                 //     .attr("d", arc);
-				console.log(pie(data.map(function(d) { return d.revenue; })));
                 var chart = g.append("g")
                     .selectAll("path")
                     .data(pie(data.map(function(d) { return d.revenue; })))
@@ -180,7 +179,6 @@
                         .padAngle(0.01)
                         .padRadius(innerRadius));
 
-                console.log(chart.node());
             });
 
 
