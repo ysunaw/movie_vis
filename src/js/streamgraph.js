@@ -91,7 +91,7 @@ d3.csv('data3.csv', function(error, data) {
       .style("text-anchor", "start")
       .text(function(d) { return d.key; })
       .attr("stroke",function(d) { return d3.rgb(color(d.key)).brighter(1); })
-      //.attr("stroke-width",0.5)
+      .attr("stroke-width",0.5)
       .attr('fill-opacity', 1);
 
   svg.append('g')
@@ -108,7 +108,7 @@ d3.csv('data3.csv', function(error, data) {
   svg.append ("text")
     .attr("x", 0-margin.left)
       .attr("stroke", "white")
-    .text("Genre Trends in Movies")
+    .text("Genres Trends in the Movie Industry")
 
       
 });

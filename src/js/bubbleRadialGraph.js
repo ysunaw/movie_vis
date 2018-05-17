@@ -1,64 +1,11 @@
   function bubbleRadialGraph(){
     console.log("generate bubble radial graph");
 
-    var svg = d3.select("svg"),
+    var svg = d3.select("#Chartsvg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
     innerRadius = 250,
     outerRadius = Math.min(width, height) * 0.6;
-      var poolGradients = svg.append("defs").append("radialGradient")
-          .attr("id", "gradientpool" )
-          .attr("cx", "50%") //Move the x-center location towards the left
-          .attr("cy", "50%") //Move the y-center location towards the top
-          .attr("r", "50%"); //Increase the size of the "spread" of the gradient
-      poolGradients.append("stop")
-          .attr("offset", "0%")
-          .attr("stop-color", function(d) {
-              return d3.rgb("#281437");
-          });
-//Then the actual color almost halfway
-      poolGradients.append("stop")
-          .attr("offset", "50%")
-
-          .attr("stop-color", function(d) {
-              return d3.rgb("#281437").brighter(2);
-          })
-
-//Finally a darker color at the outside
-      poolGradients.append("stop")
-          .attr("offset",  "100%")
-          .style("opacity", 0)
-          .attr("stop-color", function(d) {
-              //return color(d.vote_average)
-              return d3.rgb("#281437").darker(1);
-          })
-
-    
-    var pool = svg.append('circle')
-    .style('stroke-width', 0)
-    .attr("fill",function(){return "url(#gradientpool)"})//"#281437")
-    .attr("r",innerRadius)
-    .attr("cy", 0.5*height)
-    .attr("cx", 0.5*width);
-    radius = innerRadius;
-
-    // var g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
-    var star = svg.append('svg:image')
-        .attr('x', -50)
-        .attr('y', -50)
-        .attr('width', 100)
-        .attr('height', 100)
-        .attr("xlink:href", "star.png")
-        .attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
-
-    //Outbound
-
-    // .attr({
-    //     class: 'pool',
-    //     r: innerRadius+10,
-    //     cy: 0.5* width,
-    //     cx: 0.5* height
-    //     // transform: 'translate(' + width / 2 + ',' + height / 2 + ')'
     var padding = 1.5; // separation between same-color nodes
 
     var x = d3.scaleBand()
@@ -71,31 +18,39 @@
     var z = d3.scaleOrdinal()
     .range(["#72818B", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
+    d3.json("data_bubble.json", function(error,graph) {
 
-    d3.csv("data_bubble.csv", function(d, i, columns) {
+        for (i = 0; i < graph.length; ++i) {
+        graph[i]["x"] = width / 2 + innerRadius * Math.sin(2 * Math.PI * graph[i].relative_position);
+        graph[i]["y"] = height / 2 + innerRadius * Math.cos(2 * Math.PI * graph[i].relative_position);
+            graph[i]["radius"] = graph[i].final_score * 7.5* (graph.length+400/graph.length);}
+        data = graph;
 
-      var radius=d.final_score;
-          d.r = radius*1500;
-          d.x = width/2+innerRadius*Math.sin( 2 * Math.PI*d.relative_position);
-          d.y = height/2+innerRadius*Math.cos( 2 * Math.PI*d.relative_position);
-      return d;
-      
-    }, function(error, data) {
-      if (error) throw error;
-      data.sort(function(a, b) { return b[data.columns[2]] -  a[data.columns[2]]; });
-      //console.log( b[data.columns[6]] -  a[data.columns[6]]);
-      x.domain(data.map(function(d) { return d.State; }));
-      y.domain([0, d3.max(data, function(d) { return d.total; })]);
-      z.domain(data.columns.slice(1));
 
+
+
+
+    // d3.csv("data_bubble.csv", function(d, i, columns) {
+    //
+    //   var radius=d.final_score;
+    //     console.log(d)
+    //       d.r = radius*1500;
+    //       d.x = width/2+innerRadius*Math.sin( 2 * Math.PI*d.relative_position);
+    //       d.y = height/2+innerRadius*Math.cos( 2 * Math.PI*d.relative_position);
+    //       // var data=d
+    //
+    //   return d;
+
+    // }, function(data) {
+      // if (error) throw error;
     var genderColor = d3.scaleOrdinal()
     .domain([1,2])
     .range(['#9d0107', '#091592']);
 
         var defs = svg.append("defs");
         defs.selectAll(".patterns")
-            .data(data, function(d) {
-                return d})
+            .data(data)//, function(d) {
+                // return d})
             .enter().append("pattern")
             .attr("id", function(d) {return "actorbubble-" + (d.actor_id)})
             .attr("width", 1)
@@ -103,10 +58,10 @@
             .append("svg:image")
             .attr("xlink:href", function(d) {
                 return "crawler/"+d.actor_id+".jpg"
-            }).attr("x", function(d){return -d.r*0.4})
-            .attr("y", function(d){return -d.r*0.0833})
-            .attr("width", function(d){return d.r*2.667})
-            .attr("height", function(d){return d.r*2.667});
+            }).attr("x", function(d){return -d.radius*0.4})
+            .attr("y", function(d){return  -d.radius*0.0833})
+            .attr("width", function(d){return d.radius*2.667})
+            .attr("height", function(d){return d.radius*2.667});
 
 
     var node = svg.append("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
@@ -131,15 +86,15 @@
 
 
   var force = d3.forceSimulation()
-    .force('collide', d3.forceCollide(d => d.r + padding)
+    .force('collide', d3.forceCollide(d => d.radius + padding)
     .strength(1))
     .on('tick', boundTick)
    .nodes(data);
   
   function boundTick(e) {
-    node.attr("cx", function (d) { return d.x = pythagx(d.r, d.y, d.x); })
-        .attr("cy", function (d) { return d.y = pythagy(d.r, d.x, d.y); })
-        .attr("r", function(d) { return d.r; });
+    node.attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
+        .attr("cy", function (d) { return d.y = pythagy(d.radius, d.x, d.y); })
+        .attr("r", function(d) { return d.radius; });
   }
 
         function pythagx(r, b, coord) {
@@ -182,7 +137,7 @@ function layoutTick(e) {
   node
       .attr("cx", function(d) {  return d.x ; })
       .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return d.r; });
+      .attr("r", function(d) { return d.radius; });
 }
 
 
