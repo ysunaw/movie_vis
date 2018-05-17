@@ -11,13 +11,20 @@ function biographyWindow() {
 
 
         svg.append("text")
-            //.attr("width",width)
-            //.attr("height",height)
-            //.attr("id","ResizeTXT")
-            //.attr("x",0)
-            //.attr("y",100)
-            .attr("stroke", "white")
+            .attr("x",0)
+            .attr("y",100)
+            .style("stroke", "white")
             .text(text)
+            // .append("div")
+            // .attr("width",1000)
+            // .attr("height",1000)
+            //.append("svg")
+
+            // .style("stroke", "white")
+            // .attr("width",500)
+            // .attr("height",400)
+            // //.attr("id","ResizeTXT")
+
 
 
         // Wrap text in a rectangle, and size the text to fit.
