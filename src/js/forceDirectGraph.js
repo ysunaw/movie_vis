@@ -70,6 +70,7 @@ function forceDirectGraph(inputdata){
         .attr("r", 30)
         .attr("stroke-width", 5)
         .attr("stroke", function(d) { return d3.rgb(genderColor(d.gender)).brighter(0.5); })
+        .on("click", bubbleView)
         //.attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
         .style("fill", function(d) {
             return "url(#actor-"+d.actor_id+")"
@@ -205,6 +206,11 @@ function forceDirectGraph(inputdata){
         scaleRadialGraph();
         postActorData(d.actor_id);
 
+    }
+    function bubbleView(d){
+        svg.selectAll("*").remove();
+        scaleRadialGraph();
+        bubbleRadialGraph();
     }
 
 }

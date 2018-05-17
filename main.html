@@ -60,7 +60,7 @@
 
 
 
-	<svg width="600" height = "1000" font-family="sans-serif" font-size="10" style="position: relative"></svg>
+	<svg width="600" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" onload = "initialize()"></svg>
 
 
 	<!-- ---------------------------------------------- -->
@@ -85,11 +85,17 @@
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
+		// initialize function
+		function initialize(){
+			scaleRadialGraph();
+			bubbleRadialGraph();
+		}
 
-	scaleRadialGraph();
-	bubbleRadialGraph();
 
-	postActorData(10990);
+	// scaleRadialGraph();
+	// bubbleRadialGraph();
+
+	// postActorData(10990);
 	function postActorData(actor){
 
 		let data = JSON.stringify({
@@ -99,7 +105,7 @@
 			headers: {
 				'content-Type': 'application/json',}
 			}).then(function (response) {
-
+				console.log("output");
 				console.log(response.data);
 				forceDirectGraph(response.data);
 			})

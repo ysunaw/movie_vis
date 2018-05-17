@@ -116,9 +116,11 @@
         .style("fill", function(d) {
             return "url(#actorbubble-"+d.actor_id+")"
         })
+        .on("click", showActor)
         .attr("stroke-width", 2)
         .attr("stroke", function(d) { return genderColor(d.gender); });
-        node.append("title")
+
+    node.append("title")
             .text(function(d) { return d.name; });
 
   // bound force
@@ -189,8 +191,19 @@ function layoutTick(e) {
       var yAxis = svg.append("g")
       .attr("text-anchor", "end");
   });
+      function showActor(d){
+
+        console.log("show actor", d);
+        svg.selectAll('circle').remove();
+        scaleRadialGraph();
+        postActorData(d.actor_id*1);
+        //postActorData(d.actor_id);
+
+    }
 
 }
+
+    //showActor function in bubble Radial graph
 
 
 
