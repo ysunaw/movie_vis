@@ -111,31 +111,31 @@ function streamGraph() {
                 d3.selectAll("#biosvgpic").remove();
                 d3.selectAll("#biosvgbio").remove();
                 if(d.key != "other"){
-                GENRES[d.key] = !GENRES[d.key];};
-                    var anySelected = 0;
+                    GENRES[d.key] = !GENRES[d.key];};
+                var anySelected = 0;
                 for( var el in GENRES ) {
                     if (GENRES[el] == true){
                         anySelected = 1;
                         break;
                     }};
-                    if (!anySelected){
-                        d3.selectAll("#genres")
-                            .style("fill", function(d){
-                        return d3.rgb(color(d.key))});
-                    }else{
+                if (!anySelected){
                     d3.selectAll("#genres")
-                    .style("fill", function(d){
-                        if (GENRES[d.key]==0){
-                            return d3.rgb(color(d.key)).darker(3)
-                        }else{
-                            console.log(d.key);
-                        return d3.rgb(color(d.key))}
+                        .style("fill", function(d){
+                            return d3.rgb(color(d.key))});
+                }else{
+                    d3.selectAll("#genres")
+                        .style("fill", function(d){
+                            if (GENRES[d.key]==0){
+                                return d3.rgb(color(d.key)).darker(3)
+                            }else{
+                                console.log(d.key);
+                                return d3.rgb(color(d.key))}
 
-                    })
+                        })
 
-                    };
+                };
                 if(d.key != "other"){
-                fiterBubbleGraph()};
+                    fiterBubbleGraph()};
             })
             .on('mouseover', function (d) {
                 d3.select(this)
@@ -149,20 +149,20 @@ function streamGraph() {
                     .style('fill', function (d) {
                         // d3.selectAll("#genres")
                         //     .style("fill", function(d){
-                                var anySelected = 0;
-                                for( var el in GENRES ) {
-                                    if (GENRES[el] == true){
-                                        anySelected = 1;
-                                        break;
-                                    }};
-                                if (!anySelected){
-                                    return d3.rgb(color(d.key))
-                                }else{
-                                if (GENRES[d.key]==0){
-                                    return d3.rgb(color(d.key)).darker(2)
-                                }else{
-                                    console.log(d.key);
-                                    return d3.rgb(color(d.key))}}
+                        var anySelected = 0;
+                        for( var el in GENRES ) {
+                            if (GENRES[el] == true){
+                                anySelected = 1;
+                                break;
+                            }};
+                        if (!anySelected){
+                            return d3.rgb(color(d.key))
+                        }else{
+                            if (GENRES[d.key]==0){
+                                return d3.rgb(color(d.key)).darker(2)
+                            }else{
+                                console.log(d.key);
+                                return d3.rgb(color(d.key))}}
                         //console.log(d.key);
                         //return color(d.key);
                     })
@@ -201,10 +201,7 @@ function streamGraph() {
             .attr('class', 'y axis')
             .call(yAxis);
 
-        // svg.append("text")
-        //     .attr("x", 0 - margin.left)
-        //     .attr("stroke", "white")
-        //     .text("Genres Trends in the Movie Industry")
+        // svgads in the Movie Industry")
 
         function fiterBubbleGraph(d){
             d3.select("#Chartsvg").selectAll("*").remove();
