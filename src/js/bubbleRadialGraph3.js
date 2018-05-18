@@ -216,8 +216,10 @@ function bubbleRadialGraph(input_bubble_data){
     function showActor(d){
 
         svg.selectAll('circle').remove();
-        d3.selectAll("#scaleRadialGraph").remove()
-        d3.selectAll("#actorPics").remove()
+        d3.selectAll("#scaleRadialGraph").remove();
+        d3.selectAll("#actorPics").remove();
+        d3.selectAll("#Timesvg").selectAll("*").remove();
+        timeLabelGraph(0,1);
         scaleRadialGraph(COLUMN_ARRAY);
         // console.log(d.actor_id*1)
         postActorData(d.actor_id*1);

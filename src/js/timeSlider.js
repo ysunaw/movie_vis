@@ -39,7 +39,7 @@ function setupSlider(v1, v2, updateGraph,color){
         .attr("text-anchor", "middle")
         .style("font-weight", "bold")
         .style("fill", function(x){return color(x);})
-        .text(function(d) { return d; });
+        .text(function(d) { return Math.round(1930+87*d); });
 
     var handle = slider.selectAll("rect")
         .data([0, 1])

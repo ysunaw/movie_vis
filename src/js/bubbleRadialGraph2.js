@@ -1,7 +1,5 @@
 function bubbleRadialGraph(input_bubble_data){
 
-    console.log(typeof input_bubble_data);
-    console.log(input_bubble_data);
     //var graph = JSON.parse(input_bubble_data);
     //console.log(typeof graph);
     var svg = d3.select("#Bubblesvg"),
@@ -51,7 +49,7 @@ function bubbleRadialGraph(input_bubble_data){
     var defs = svg.select("defs");
     //console.log(svg.selectAll(".patterns"));
     defs.selectAll(".patterns")
-        .data(data, function(d){console.log(d);return d.actor_id})//, function(d) {
+        .data(data, function(d){return d.actor_id})//, function(d) {
         // return d})
         .enter().append("pattern")
         .attr("class","actorPics")
@@ -71,12 +69,12 @@ function bubbleRadialGraph(input_bubble_data){
             .duration(720);
 
     defs.selectAll(".patterns")
-        .data(data, function(d){console.log(d);return d.actor_id}).exit().remove()
+        .data(data, function(d){return d.actor_id}).exit().remove()
 
 
 
     defs.selectAll(".patterns")
-        .data(data, function(d){console.log(d);return d.actor_id})
+        .data(data, function(d){return d.actor_id})
         .attr("class", "update")
         .attr("y", 0)
         .style("fill-opacity", 1)
@@ -201,8 +199,10 @@ function bubbleRadialGraph(input_bubble_data){
     function showActor(d){
 
         svg.selectAll('circle').remove();
-        d3.selectAll("#scaleRadialGraph").remove()
-        d3.selectAll("#actorPics").remove()
+        d3.selectAll("#scaleRadialGraph").remove();
+        d3.selectAll("#actorPics").remove();
+        d3.selectAll("#Timesvg").selectAll("*").remove();
+        timeLabelGraph(0,1);
         scaleRadialGraph(COLUMN_ARRAY);
         // console.log(d.actor_id*1)
         postActorData(d.actor_id*1);

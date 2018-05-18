@@ -98,6 +98,7 @@
 <script src= "src/js/forceDirectGraph.js"></script>
 <script src="src/js/biographyWindow.js"></script>
 <script src="src/js/maxNumSelector.js"></script>
+<script src="src/js/timeLabel.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <!-- ---------------------------------------------- -->
@@ -120,11 +121,14 @@
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
         drawPool();
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Timesvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Chartsvg");
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Actorsvg");
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
             .attr("id","Bubblesvg");
+
         d3.selectAll("#Bubblesvg").append("defs");
         d3.selectAll("#Bubblesvg").append("g");
         let color = d3.scaleOrdinal(d3.schemeCategory20);
@@ -132,6 +136,7 @@
         //attributes for slider
         //postTimelineData(MAX_NUM);
         //updateGraph(START_T,END_T,MAX_NUM,GENRES)
+        timeLabelGraph(0,1);
         postMovieSelectionData(START_T,END_T,MAX_NUM,GENRES);
         setupSlider(START_T,END_T,updateGraph,color);
         streamGraph();
@@ -145,7 +150,9 @@
 		//d3.select("#Bubblesvg").select("g").selectAll("*").remove();
         //d3.select("#Bubblesvg").select("defs").selectAll("*").remove();
         d3.selectAll("#scaleRadialGraph").remove();
+        d3.selectAll("#Timesvg").selectAll("*").remove();
         postMovieSelectionData(min,max,max_num, genres);
+        timeLabelGraph(min,max)
         //postTimelineData(50)
 
     }
