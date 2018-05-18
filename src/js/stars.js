@@ -11,6 +11,7 @@ function starPrintFunction() {
     var stars = svg.append("g").selectAll("g").data(starsSize).enter().append("svg:image").attr("xlink:href", "Four_points_star.png").attr("x", function (d) {
         return Math.random() * width
     })
+
         .attr("y", function (d) {
             return Math.random() * height
         })

@@ -204,7 +204,7 @@ function streamGraph() {
         // svgads in the Movie Industry")
 
         function fiterBubbleGraph(d){
-            d3.select("#Chartsvg").selectAll("*").remove();
+            //d3.select("#Chartsvg").selectAll("*").remove();
             //scaleRadialGraph();
             console.log(START_T,END_T)
             updateGraph(START_T,END_T,MAX_NUM,GENRES);
