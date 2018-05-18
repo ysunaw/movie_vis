@@ -1,3 +1,4 @@
+
 function scaleRadialGraph(inputdata){
         var svg = d3.select("#Chartsvg"),
             //svg = Mainsvg.append(svg)
@@ -22,6 +23,59 @@ function scaleRadialGraph(inputdata){
                 //data.sort(function(a, b) { return a[data.columns[0]] -  b[data.columns[0]]; });
 
                 x.domain(data.map(function(d,i) {console.log(d);return d; }));
+	// function scaleRadialGraph(inputdata){
+	// 	var svg = d3.select("#Chartsvg"),
+	// 		//svg = Mainsvg.append(svg)
+	// 	width = +svg.attr("width"),
+	// 	height = +svg.attr("height"),
+	// 	innerRadius = 250,
+	// 	outerRadius = innerRadius+125//Math.min(width, height) * 0.6,
+	// 	g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height /2 + ")");
+
+	// 	var x = d3.scaleBand()
+	// 	.range([0, 2 * Math.PI])
+	// 	.align(0);
+
+	// 	var y = d3.scaleRadial()
+	// 	.range([innerRadius, outerRadius]);
+
+	// 	var z = d3.scaleOrdinal()
+	// 	.range(["#72818B", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+	// 	//CONVERT INPUT DATA TO CSV
+
+	// 	d3.csv("data_columns.csv", function(d, i, columns) {
+	// 		// console.log(d.relative_position);
+
+	// 		for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+	// 		 	d.total = t;
+	// 		 return d;
+	// 		return d;
+		
+
+	// 	}, 
+	// 	 function(error, data) {
+
+	// 	 	if (error) throw error;
+		 	
+ //      var yAxis = g.append("g")
+ //      .attr("text-anchor", "end");
+ //  });
+ //        d3.csv("data_columns.csv", function(d, i, columns) {
+
+ //                for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+ //                d.total = t;
+ //                return d;
+
+ //                return d;
+
+
+ //            },
+
+ //            function(error, data) {
+
+ //                if (error) throw error;
+ //                data.sort(function(a, b) { return a[data.columns[0]] -  b[data.columns[0]]; });
+ //                x.domain(data.map(function(d) {console.log(d[""]);return d[""]; }));
                 y.domain([0, d3.max(data, function(d) { return d.total; })]);
                 var array = data.map(function(d){return d.total})   ;
                 var max = Math.max.apply(null, array);

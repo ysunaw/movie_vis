@@ -47,14 +47,19 @@
             .append("svg:image")
             .attr("xlink:href", function(d) {
             return "crawler/"+d.actor_id+".jpg"
-                }).attr("x", function(d){return -d.radius*0.4})
-                .attr("y", function(d){return  -d.radius*0.08})
-                .attr("width", function(d){return d.radius*2.667})
-                .attr("height", function(d){return d.radius*2.667});
+                })
+
+          //.attr("preserveAspectRatio", "xMinYMin meet")
+          //.attr("preserveAspectRatio", "none")
+          //.attr("x", function(d){return -d.radius*0.4})
+                //.attr("y", function(d){return  -d.radius*0.08})
+                .attr("width", function(d){return 30})//d.radius*2.667})
+                .attr("height", function(d){return 30});//d.radius*2.667});
 
 
-    var node = svg.append("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
+    var node = svg.append("svg")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
      .selectAll("circle")
+        .attr("viewBox", function(d){console.log("hiiiiiiiiiiiiiii"); return "0 0 200 200"})
      .data(data)
      .enter().append("circle")
         .style("fill", function(d) {
@@ -89,7 +94,7 @@
 
   var force = d3.forceSimulation()
   .force('collide', d3.forceCollide(d => d.radius + padding)
-    .strength(1))
+    .strength(3))
   .on('tick', boundTick)
   .nodes(data);
   
@@ -154,6 +159,7 @@
 
           svg.selectAll('circle').remove();
           scaleRadialGraph();
+          console.log(d.actor_id*1)
           postActorData(d.actor_id*1);
           //postActorData(d.actor_id);
 

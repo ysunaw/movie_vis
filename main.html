@@ -66,11 +66,21 @@
 
 
 	<svg width="1800" height = "1000" font-family="sans-serif" font-size="10" style="position: relative" id="Mainsvg" onload = "initialize()"></svg>
-	<div class="slider-holder"style="top:900px; left:280px; position:absolute; height: 30px; width: 400px;"></div>
+	<div class="slider-holder"style="top:1000px; left:400px; position:absolute; height: 30px; width: 400px;"></div>
 	<div class="bioBox" style="height:500px;width:700px;position:absolute; top:500px;left:1000px; border:0px; color:#ccc;font:16px/26px Georgia, Garamond, Serif;solid-color:white;overflow:auto;" id="Biodiv">
 	</div>
 	<div style="height:150px;width:150px;position:absolute; top:500px;left:1050px; border:0px;" id="actorPicdiv">
 	</div>
+	<div class="block-holder"style="top:1000px; left:15px; position:absolute; height: 30px; width: 400px;">
+	<p>
+		<label for="nValue"
+			   style="display: inline-block; width: 240px; text-align: right">
+			Number of Nodes = <span id="nValue-value"></span>
+		</label>
+		<input type="number" min="10" max="500" step="10" value="50" id="nValue">
+	</p>
+	</div>
+
 	<!-- ---------------------------------------------- -->
 	<!-- ------------ the Movies timeline ------------- -->
 	<!-- ---------------------------------------------- -->
@@ -87,6 +97,7 @@
 	<script src="src/js/timeSlider.js"></script>
 	<script src= "src/js/forceDirectGraph.js"></script>
 	<script src="src/js/biographyWindow.js"></script>
+	<script src="src/js/maxNumSlider.js"></script>
 
 
 	<!-- ---------------------------------------------- -->
@@ -104,7 +115,7 @@
 
 		// initialize all graphs
 		function initialize(){
-		starPrintFunction()
+				starPrintFunction();
         d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
         drawPool();
 		d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
@@ -115,28 +126,30 @@
      		for(var i=0;i<11;i++){color(i);}
          	//attributes for slider
          	postTimelineData(MAX_NUM);
-         	postMovieSelectionData(START_T,END_T);
+            postMovieSelectionData(START_T,END_T,MAX_NUM);
 			setupSlider(START_T,END_T,updateGraph,color);
-			//scaleRadialGraph();
+            // setupSlider2(1,color);
 			streamGraph();
 
 
 		}
-		function updateGraph(min,max){
-			d3.selectAll("#Actorsvg").remove();
+
+		function updateGraph(min,max,max_num){
 			d3.selectAll("#nodeBubbles").remove();
-			postMovieSelectionData(min,max);
+			postMovieSelectionData(min,max,max_num);
 		}
 
 
 		// Post request for movies 
-		function postMovieSelectionData(min,max){
+		function postMovieSelectionData(min,max, max_num){
 			let movieData= JSON.stringify({
 				start_t:min, 
 				end_t:max,
-				max_num:100,
+				max_num:max_num,
 				genres:"All"
 			});
+			console.log(movieData)
+
 			axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
 				headers:{
 					'Content-Type':'application/json'}
@@ -177,10 +190,13 @@
 				actor_id:actor
 			});
 
+
 			axios.post('http://127.0.0.1:5000/getActorNetwork', data,{
 				headers: {
 					'content-Type': 'application/json',}
 				}).then(function (response) {
+                console.log("output");
+                console.log(response.data);
 					forceDirectGraph(response.data);
 
 				})
