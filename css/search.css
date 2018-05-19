@@ -142,7 +142,7 @@ input {
     top: 50%;
     right: 10px;
     margin-top: -9px;
-    background: url("http://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;
+/*    background: url("http://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;*/
 }
 
 .search .results a:hover {
@@ -157,11 +157,11 @@ input {
     background-image: -ms-linear-gradient(top, #59aaf4, #338cdf);
     background-image: -o-linear-gradient(top, #59aaf4, #338cdf);
     background-image: linear-gradient(top, #59aaf4, #338cdf);
-    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+/*    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
     -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
     -ms-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
     -o-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
-    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);*/
 }
 
 :-moz-placeholder {
@@ -174,4 +174,4 @@ input {
     font-weight: 200;
 }
 
-.lt-ie9 .search input { line-height: 26px }
+/*.lt-ie9 .search input { line-height: 26px }*/
