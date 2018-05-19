@@ -56,7 +56,7 @@ function streamGraph() {
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-    d3.csv('data3.csv', function (error, data) {
+    d3.csv('stream_data.csv', function (error, data) {
         color.domain(d3.keys(data[0]).filter(function (key) {
             return key !== 'date';
         }));
@@ -88,7 +88,7 @@ function streamGraph() {
 
         stack.order(d3.stackOrderNone);
         stack.offset(d3.stackOffsetSilhouette);
-        console.log(keys.map(function(d,i){return {d:false}}));
+        //console.log(keys.map(function(d,i){return {d:false}}));
         //console.log(stack(data));
 
         var browser = svg.selectAll('.browser')
@@ -101,12 +101,41 @@ function streamGraph() {
 
         browser.append('path')
             .attr('class', 'area')
+            .attr("id","genres")
             .attr('d', area)
             .style('fill', function (d) {
                 return color(d.key);
             })
             .on("click", function (d) {
-                console.log(d.key)
+                d3.select("#Actorsvg").selectAll("*").remove();
+                d3.selectAll("#biosvgpic").remove();
+                d3.selectAll("#biosvgbio").remove();
+                if(d.key != "other"){
+                GENRES[d.key] = !GENRES[d.key];};
+                    var anySelected = 0;
+                for( var el in GENRES ) {
+                    if (GENRES[el] == true){
+                        anySelected = 1;
+                        break;
+                    }};
+                    if (!anySelected){
+                        d3.selectAll("#genres")
+                            .style("fill", function(d){
+                        return d3.rgb(color(d.key))});
+                    }else{
+                    d3.selectAll("#genres")
+                    .style("fill", function(d){
+                        if (GENRES[d.key]==0){
+                            return d3.rgb(color(d.key)).darker(3)
+                        }else{
+                            console.log(d.key);
+                        return d3.rgb(color(d.key))}
+
+                    })
+
+                    };
+                if(d.key != "other"){
+                fiterBubbleGraph()};
             })
             .on('mouseover', function (d) {
                 d3.select(this)
@@ -118,8 +147,24 @@ function streamGraph() {
             .on('mouseout', function (d) {
                 d3.select(this)
                     .style('fill', function (d) {
-                        console.log(color(d.key));
-                        return color(d.key);
+                        // d3.selectAll("#genres")
+                        //     .style("fill", function(d){
+                                var anySelected = 0;
+                                for( var el in GENRES ) {
+                                    if (GENRES[el] == true){
+                                        anySelected = 1;
+                                        break;
+                                    }};
+                                if (!anySelected){
+                                    return d3.rgb(color(d.key))
+                                }else{
+                                if (GENRES[d.key]==0){
+                                    return d3.rgb(color(d.key)).darker(2)
+                                }else{
+                                    console.log(d.key);
+                                    return d3.rgb(color(d.key))}}
+                        //console.log(d.key);
+                        //return color(d.key);
                     })
             });
 
@@ -156,11 +201,17 @@ function streamGraph() {
             .attr('class', 'y axis')
             .call(yAxis);
 
-        svg.append("text")
-            .attr("x", 0 - margin.left)
-            .attr("stroke", "white")
-            .text("Genres Trends in the Movie Industry")
+        // svg.append("text")
+        //     .attr("x", 0 - margin.left)
+        //     .attr("stroke", "white")
+        //     .text("Genres Trends in the Movie Industry")
 
+        function fiterBubbleGraph(d){
+            d3.select("#Chartsvg").selectAll("*").remove();
+            //scaleRadialGraph();
+            console.log(START_T,END_T)
+            updateGraph(START_T,END_T,MAX_NUM,GENRES);
+        }
 
     });
 }

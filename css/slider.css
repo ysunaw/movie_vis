@@ -34,12 +34,12 @@
 }
 
 .sel-range{
-  stroke: #9CCC65;
+  stroke: #5371A3;
   stroke-width: 8px;
 }
 
 .handle {
-  fill: #E0F7FA;
+  fill: #F0F0F0;
   stroke: #000;
   stroke-opacity: 0.5;
   stroke-width: 1.25px;

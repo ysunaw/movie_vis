@@ -11,6 +11,8 @@
 /*----------------------------------------*/
 html,
 body {
+/*	color:black;*/
+	background-color:black;
 	height: 100%;
 	font-family: "Roboto", sans-serif;
 }
@@ -25,6 +27,7 @@ h3,
 h4,
 h5,
 h6 {
+	color:black;
 	font-family: "Oswald", sans-serif;
 	padding: 0;
 	margin: 0;
@@ -32,9 +35,11 @@ h6 {
 
 h2 {
 	font-size: 36px;
+	color:black;
 }
 
 p {
+	f
 	font-size: 15px;
 	color: #6c6e7e;
 	line-height: 30px;
@@ -200,7 +205,7 @@ ul {
 	top: 0;
 	left: 0;
 	z-index: 999999;
-	background: #f1f1f1;
+	background: #1D2731;
 	display: table;
 }
 
@@ -259,7 +264,7 @@ ul {
 	width: 100%;
 	z-index: 999;
 	padding: 0 50px;
-	background: white;
+	color:white;
 	-webkit-transition: all 0.4s ease 0s;
 	-o-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
@@ -382,7 +387,7 @@ ul {
 	width: 0%;
 	max-width: 100%;
 	height: 4px;
-	background: #2be6ab;
+	background: #1D2731;
 }
 
 .owl-carousel #progressBar {
@@ -392,244 +397,6 @@ ul {
 	z-index: 1;
 }
 
-
-/*------------------------
-	About section
---------------------------*/
-.about-section,
-.team-section {
-	background: #6a23b5;
-	position: relative;
-	z-index: 2;
-}
-
-.overlay {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	z-index: 3;
-	background-image: url("../img/overlay.png");
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-/*Card Section*/
-.card-section {
-	position: relative;
-	padding-bottom: 100px;
-	z-index: 5;
-}
-
-.lab-card {
-	position: relative;
-	margin-top: -50px;
-	padding: 50px 25px;
-	text-align: center;
-	background: #f5faf8;
-	-webkit-box-shadow: 0 0 8px rgba(74, 74, 74, 0.1);
-	        box-shadow: 0 0 8px rgba(74, 74, 74, 0.1);
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.lab-card .icon {
-	margin-bottom: 30px;
-	font-size: 70px;
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.lab-card h2 {
-	text-transform: uppercase;
-	font-size: 18px;
-	color: #2b1640;
-	margin-bottom: 30px;
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.lab-card p {
-	color: #6c6e7e;
-	line-height: 30px;
-	-webkit-transition: all 0.4s ease 0s;
-	-o-transition: all 0.4s ease 0s;
-	transition: all 0.4s ease 0s;
-}
-
-.lab-card:hover {
-	background: #2be6ab;
-}
-
-.lab-card:hover h2,
-.lab-card:hover p,
-.lab-card:hover .icon {
-	color: #fff;
-}
-
-/* About contant */
-.about-contant {
-	position: relative;
-	z-index: 5;
-}
-
-.about-contant p {
-	color: #fff;
-}
-
-.intro-video {
-	-webkit-transform: translateY(50%);
-	    -ms-transform: translateY(50%);
-	        transform: translateY(50%);
-	margin-top: -90px;
-}
-
-.intro-video img {
-	-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
-	        box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
-}
-
-.intro-video a {
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	left: 50%;
-	top: 50%;
-	margin-left: -30px;
-	margin-top: -30px;
-	color: #6a23b5;
-	background: #2be6ab;
-	border-radius: 50%;
-	text-align: center;
-	padding-top: 20px;
-	padding-left: 5px;
-}
-
-
-/*------------------------
-  Testimonial section
---------------------------*/
-.testimonial-section {
-	padding-top: 320px;
-	background: #220c3b;
-	position: relative;
-}
-
-.test-overlay {
-	position: absolute;
-	background-image: url("../img/test-man.png");
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	background-size: contain;
-	bottom: 0;
-	height: 78%;
-	left: 50px;
-}
-
-.testimonial span {
-	display: block;
-	font-family: "Roboto", sans-serif;
-	font-size: 48px;
-	color: #6a23b5;
-}
-
-.testimonial p {
-	font-style: italic;
-	color: #fff;
-	font-weight: 400;
-	line-height: 36px;
-}
-
-.testimonial .avatar {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	overflow: hidden;
-	float: left;
-	margin-right: 20px;
-}
-
-.testimonial .client-info {
-	margin-top: 40px;
-}
-
-.testimonial .client-name {
-	float: left;
-	padding-top: 20px;
-}
-
-.testimonial .client-name h2 {
-	font-size: 18px;
-	color: #fff;
-	font-weight: 400;
-}
-
-.testimonial .client-name p {
-	font-style: normal;
-	font-size: 12px;
-	color: #969696;
-}
-
-/* Testimonial carousel */
-#testimonial-slide {
-	position: relative;
-}
-
-#testimonial-slide .owl-dots {
-	position: absolute;
-	width: 8px;
-	top: 100px;
-}
-
-#testimonial-slide .owl-dots .owl-dot {
-	width: 8px;
-	height: 8px;
-	background: #fff;
-	border-radius: 15px;
-	display: block;
-	margin-bottom: 15px;
-	position: relative;
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	transition: all 0.4s;
-}
-
-#testimonial-slide .owl-dots .owl-dot:after {
-	position: absolute;
-	content: "";
-	width: 28px;
-	height: 28px;
-	border: 2px solid #6a23b5;
-	border-radius: 40px;
-	left: -10px;
-	top: -10px;
-	-webkit-transition: all 0.4s;
-	-o-transition: all 0.4s;
-	transition: all 0.4s;
-	-webkit-transform: scale(0);
-	    -ms-transform: scale(0);
-	        transform: scale(0);
-}
-
-#testimonial-slide .owl-dots .owl-dot.active {
-	background: #6a23b5;
-	margin-bottom: 25px;
-	margin-top: 25px;
-}
-
-#testimonial-slide .owl-dots .owl-dot.active:after {
-	-webkit-transform: scale(1);
-	    -ms-transform: scale(1);
-	        transform: scale(1);
-}
-
-#testimonial-slide .owl-dots .owl-dot:first-child.active {
-	margin-top: 15px;
-}
 
 
 /*----------------------------------
@@ -689,64 +456,6 @@ ul {
 	margin-right: 0;
 }
 
-
-/*------------------------
-	Team section
---------------------------*/
-.team-section .container {
-	position: relative;
-	z-index: 5;
-}
-
-.member {
-	text-align: center;
-}
-
-.member img {
-	margin-bottom: 60px;
-}
-
-.member h2 {
-	font-size: 24px;
-	font-weight: 400;
-	margin-bottom: 20px;
-	color: #fff;
-}
-
-.member h3 {
-	font-size: 14px;
-	color: #2be6ab;
-	font-weight: 400;
-	text-transform: uppercase;
-}
-
-
-/*------------------------
-	Promotion section
---------------------------*/
-.promotion-section {
-	background: #2be6ab;
-	padding: 115px 0;
-}
-
-.promotion-section h2 {
-	font-weight: 400;
-	color: #fff;
-	font-size: 48px;
-	margin-bottom: 18px;
-}
-
-.promotion-section p {
-	color: #fff;
-	font-size: 24px;
-	margin-bottom: 0;
-	font-weight: 300;
-}
-
-.promotion-section .promo-btn-area {
-	text-align: right;
-	padding-top: 15px;
-}
 
 
 /*------------------------
@@ -862,7 +571,7 @@ ul {
 .page-top-section {
 	position: relative;
 	height: 405px;
-	background: #6a23b5;
+	background: #0E0816;
 }
 
 .page-top-section .container {
@@ -903,7 +612,7 @@ ul {
 .page-top-section .page-info .page-links span {
 	margin-right: 0;
 	padding-right: 0;
-	color: #2be6ab;
+	color: #0E0816;
 }
 
 .page-top-section .page-info .page-links span:after {
@@ -915,7 +624,7 @@ ul {
 	Features Section
 --------------------------*/
 .features .icon-box .icon {
-	color: #2be6ab;
+	color: #0E0816;
 	margin-top: -10px;
 }
 
@@ -971,6 +680,7 @@ ul {
 	text-transform: uppercase;
 	font-size: 18px;
 	margin-bottom: 28px;
+	color:black;
 }
 
 .sv-card .card-text p {

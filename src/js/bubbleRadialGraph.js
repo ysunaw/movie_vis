@@ -1,5 +1,5 @@
   function bubbleRadialGraph(input_bubble_data){
-    
+
     console.log(typeof input_bubble_data);
     console.log(input_bubble_data);
     //var graph = JSON.parse(input_bubble_data);
@@ -41,31 +41,34 @@
             .data(data)//, function(d) {
                 // return d})
             .enter().append("pattern")
+          .attr("class","actorPics")
             .attr("id", function(d) {return "actorbubble-" + (d.actor_id)})
             .attr("width", 1)
             .attr("height", 1)
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .attr("viewBox", "0 0 225 225")
             .append("svg:image")
             .attr("xlink:href", function(d) {
             return "crawler/"+d.actor_id+".jpg"
-                })
-
-          //.attr("preserveAspectRatio", "xMinYMin meet")
-          //.attr("preserveAspectRatio", "none")
-          //.attr("x", function(d){return -d.radius*0.4})
-                //.attr("y", function(d){return  -d.radius*0.08})
-                .attr("width", function(d){return 30})//d.radius*2.667})
-                .attr("height", function(d){return 30});//d.radius*2.667});
+                });
+                // .attr("width", function(d){console.log(d.radius);return d.radius*10})
+                // .attr("height", function(d){return d.radius*1000});
 
 
     var node = svg.append("svg")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
      .selectAll("circle")
-        .attr("viewBox", function(d){console.log("hiiiiiiiiiiiiiii"); return "0 0 200 200"})
+        //.attr("viewBox", function(d){console.log("hiiiiiiiiiiiiiii"); return "0 0 200 200"})
      .data(data)
      .enter().append("circle")
         .style("fill", function(d) {
             return "url(#actorbubble-"+d.actor_id+")"
         })
-        .attr("id","nodeBubbles")
+        .attr("x", function(d){return -10})
+        .attr("y", function(d){return  -10})
+        .attr("width", function(d){console.log(d.radius);return 0.001})
+        .attr("height", function(d){return 0.1})
+
+  .attr("id","nodeBubbles")
         .on("mouseover", function(d) {
             d3.selectAll("#biosvgpic").remove();
             d3.selectAll("#biosvgbio").remove();
@@ -94,10 +97,10 @@
 
   var force = d3.forceSimulation()
   .force('collide', d3.forceCollide(d => d.radius + padding)
-    .strength(3))
+    .strength(1))
   .on('tick', boundTick)
   .nodes(data);
-  
+
   function boundTick(e) {
     node.attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
     .attr("cy", function (d) { return d.y = pythagy(d.radius, d.x, d.y); })
@@ -147,19 +150,20 @@
           .attr("r", function(d) { return d.radius; });
         }
 
-// <<<<<<< HEAD
 //   function showActor(d){
 //     console.log("show actor magic!!!");
 //     svg.selectAll('#forceDirectNode').remove();
 //     //scaleRadialGraph();
 //     postActorData(d.actor_id*1);
 //         //postActorData(d.actor_id);
-// =======
+
       function showActor(d){
 
           svg.selectAll('circle').remove();
-          scaleRadialGraph();
-          console.log(d.actor_id*1)
+          d3.selectAll("#scaleRadialGraph").remove()
+          d3.selectAll("#actorPics").remove()
+          scaleRadialGraph(COLUMN_ARRAY);
+          // console.log(d.actor_id*1)
           postActorData(d.actor_id*1);
           //postActorData(d.actor_id);
 

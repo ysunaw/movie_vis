@@ -1,12 +1,10 @@
 function biographyWindow(actor_id) {
 
 
+    var div = d3.select("#Biodiv"),
 
-     var div = d3.select("#Biodiv"),
         width = +div.attr("width"),
         height = +div.attr("height");
-    //var div = document.getElementById('Biodiv');
-    //var node = document.createTextNode("this is a paragraph");
 
     d3.text("crawler/"+actor_id+".txt", function(text) {
 
