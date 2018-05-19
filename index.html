@@ -130,7 +130,7 @@
     $.each(content_data, function(key, val){
         output += "<div class='values'>";
         // output += '<h5 class="value-id">' + val.id + '</h5>';
-        output += '<p class="value-name" onclick="postActor(val.id)">' + val.name + '</p>';
+        output += '<p class="value-name" onclick="val.id">' + val.name + '</p>';
         output += "</div>";
     });
     $('#content').html(output);
