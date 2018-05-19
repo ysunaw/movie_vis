@@ -21,6 +21,7 @@
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css"></link>
 
 
 
@@ -47,9 +48,11 @@
 		</div>
 		
 		<div class="responsive"><i class="fa fa-bars"></i></div>
- 		<nav>
-			<ul class="menu-list" >
-				<li><a href="about.html" style="left:700px">About</a></li>
+
+		<nav>
+			<ul class="menu-list">
+				<li class="active"><a href="index.html">Main</a></li>
+				<li><a href="about.html">About</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -76,12 +79,92 @@
 	</p>
 	</div>
 
-	<!-- ---------------------------------------------- -->
-	<!-- ------------ the Movies timeline ------------- -->
-	<!-- ---------------------------------------------- -->
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="//d3plus.org/js/d3.js"></script>
 	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<div class="search-bar" style="top:800px; left:600px; position:absolute; height: 100px; width: 400px;">
+		<input type="text" id="seeker" placeholder ="Input an actor" onkeyup="toggle_visibility('content')">
+		<!--<button onkeyup="toggle_visibility('content');">Search</button>-->
+		<div id="content" class= "mostly-customized-scrollbar" style="display:none;" onclick="toggle_visibility('content')"></div>
+	</div>
+
+	<script>
+		//var content_data = require("actorid.json");
+	//console.log(content_data)
+		d3.json("actorID.json", function(error, json) {
+            var content_data = JSON.parse(json);
+
+		    console.log(content_data.length); // this will show the info it in firebug console
+            console.log(typeof content_data);
+
+		// [
+    //     {
+    //         "id":198,
+    //         "name":"Aaron Garo",
+    //     },
+    //     {
+    //         "id":345,
+    //         "name":"Michael Stines",
+    //     },
+    //     {
+    //         "id":545,
+    //         "name":"Ully Heiz",
+    //     },
+    //     {
+    //         "id":678,
+    //         "name":"Asgaf Torino",
+    //     },
+    //     {
+    //         "id":628,
+    //         "name":"Asgaf Totno",
+    //     },
+    //     {
+    //         "id":63,
+    //         "name":"Asgaf Toeewino",
+    //     }
+    // ]
+    //
+    output = "";
+    $.each(content_data, function(key, val){
+        output += "<div class='values'>";
+        // output += '<h5 class="value-id">' + val.id + '</h5>';
+        output += '<p class="value-name" onclick="postActor(val.id)">' + val.name + '</p>';
+        output += "</div>";
+    });
+    $('#content').html(output);
+
+    /* SEEKER FUNCTION */
+    if (!RegExp.escape) {
+        RegExp.escape = function (s) {
+            return s.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&")
+        };
+    }
+
+    jQuery(function(){
+        var $rows = $('.values');
+        $('#seeker').keyup(function () {
+            var regex =  new RegExp(RegExp.escape($.trim(this.value).replace(/\s+/g, ' ')), 'i')
+            $rows.hide().filter(function () {
+                var text = $(this).children(".value-name").text().replace(/\s+/g, ' ');
+                return regex.test(text)
+            }).show();
+        });
+    });
+    });
+	</script>
+
+	<script
+			src="https://code.jquery.com/jquery-3.2.1.min.js"
+			integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous"></script>
+
+
+	<!-- ---------------------------------------------- -->
+	<!-- ------------ the Movies timeline ------------- -->
+	<!-- ---------------------------------------------- -->
+
 	<script src="src/js/d3-scale-radial.js"></script>
 	<script src="src/js/scaleRadialGraph2.js"></script>
 	<script src="src/js/bubbleRadialGraph2.js"></script>
@@ -94,6 +177,9 @@
 	<script src="src/js/biographyWindow.js"></script>
 	<script src="src/js/maxNumSelector.js"></script>
 	<script src="src/js/timeLabel.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<script src="src/js/search.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
@@ -252,12 +338,11 @@
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<h2>HKUST Data Visualization Project by ActiVizts
-		<div>credits</div>
 		</h2>
 		<!-- <h2>2018. HTML template by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2> -->
 	</footer>
 	<!-- Footer section end -->
-	<script src="src/js/credits.js"></script>
+<!-- 	<script src="src/js/credits.js"></script> -->
 
 
 
