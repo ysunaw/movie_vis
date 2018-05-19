@@ -20,7 +20,6 @@
 	<link rel="stylesheet" href="css/flaticon.css"/>
 	<link rel="stylesheet" href="css/owl.carousel.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/search.css"/>
 	<link rel="stylesheet" type="text/css" href="css/slider.css">
 
 
@@ -30,122 +29,57 @@
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<body>
-		<!-- Page Preloder -->
+<body>
+	<!-- Page Preloder -->
 
-		<div id="preloder">
-			<div class="loader">
-				<img src="img/logo.png" alt="">
-				<h2>Loading.....</h2>
-			</div>
+	<div id="preloder">
+		<div class="loader">
+			<img src="img/logo.png" alt="">
+			<h2 style="color:white">Loading.....</h2>
 		</div>
+	</div>
 
 
-		<!-- Header section -->
-		<header class="header-section">
-			<div class="logo" >
-				<h3 style="color: #6e52a2">Movie Data Visualization</h3>
-			</div>
-
-			<div class="responsive"><i class="fa fa-bars"></i></div>
+	<!-- Header section -->
+	<header class="header-section">
+		<div class="logo" >
+			<h3 style="color: #6e52a2">Movie Stars Visualization</h3>
+		</div>
+		
+		<div class="responsive"><i class="fa fa-bars"></i></div>
+		<nav>
+			<ul class="menu-list">
+				<li class="active"><a href="index.html">Main</a></li>
+				<li><a href="about.html">About</a></li>
+			</ul>
+		</nav>
 	</header>
 	<!-- Header section end -->
-
-
-
-
-
 	<!-- SVG for the main page-->
-	<svg width="1800" height = "1000" font-size="10" font-family="Roboto", sans-serif;"style="position: relative" id="Mainsvg" onload = "initialize()" color ="black"></svg>
-
-	<!-- holder of the timeline slider -->
-	<div class="slider-holder"style="top:500px; left:1000px; position:absolute; height: 30px; width: 700px;"></div>
-
-	<!-- Actor 's individual Biography box  -->
-		<div class="bioBox mostly-customized-scrollbar" style="height:400px;width:700px;position:absolute; top:600px;left:1000px; border:0px; color:#ccc;font:16px/26px Georgia, Garamond, Serif;solid-color:white;overflow:auto;" id="Biodiv">
-		</div>
-	<!-- Block builder for inputting the node number  -->
-		<div class="block-holder"style="top:950px; left:300px; position:absolute; height: 30px; width: 400px;">
-			<p>
-				<label for="nValue"
-				style="display: inline-block; width: 240px; text-align: right; color:#5371A3">
-				Number of Nodes = <span id="nValue-value"></span>
-			</label>
-			<input type="number" min="10" max="500" step="10" value="50" id="nValue" style = " border: 1px solid #5371A3;border-radius: 10px; background-color:black;color:#5371A3">
-			</p>
-
-		</div>
-	<!-- Search Button -->
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<div class="search-bar" style="top:950px; left:600px; position:absolute; height: 100px; width: 400px;">
-<!--   			<input type="text" id="seeker" placeholder ="Input a actor">
-  			<button onclick="toggle_visibility('content');">Search</button>
-  			<div id="content" class= "mostly-customized-scrollbar" style="display:none;" onclick="toggle_visibility('content')"></div>
-		</div> -->
-		<form class="search">
-		 	<input type="text" name="q" placeholder="Search..." />
-			<ul class = "results"><div id = "content" class= "results" mostly-customized-scrollbar"></div>
-			</ul>
-		</form>
-		</div>
-
-		<script>
-			//Visibility for the result list
-  			function toggle_visibility(id) {
-      			var e = document.getElementById(id);// get the text div
-       			if(e.style.display == 'block') e.style.display = 'none';
-     		 	else e.style.display = 'block';
-  			}
-
-			var content_data = [  
-			{  
-				"id":198,
-				"name":"Aaron Garo",
-			},
-			{  
-				"id":345,
-				"name":"Michael Stines",
-			},
-			{  
-				"id":545,
-				"name":"Ully Heiz",
-			},
-			{  
-				"id":678,
-				"name":"Asgaf Torino",
-			}
-			]
-
-			output = "";
-			$.each(content_data, function(key, val){
-				output += "<div class='values'>";
-  				// output += '<h5 class="value-id">' + val.id + '</h5>';
-  				output += '<p class="value-name">' + val.name + '</p>';
-  				output += "</div>";
-  			});
-			$('#content').html(output);
-
-			/* SEEKER FUNCTION */
-			if (!RegExp.escape) {
-				RegExp.escape = function (s) {
-					return s.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&")
-				};
-			}
-
-			jQuery(function(){
-				var $rows = $('.values');
-				$('#seeker').keyup(function () {
-					var regex =  new RegExp(RegExp.escape($.trim(this.value).replace(/\s+/g, ' ')), 'i')
-					$rows.hide().filter(function () {
-						var text = $(this).children(".value-name").text().replace(/\s+/g, ' ');
-						return regex.test(text)
-					}).show();
-				});
-			});
-	</script>
 
 	
 
+
+	<svg width="1800" height = "1000" font-size="10" font-family="Roboto", sans-serif;"style="position: relative" id="Mainsvg" onload = "initialize()" color ="black"></svg>
+	<div class="slider-holder"style="top:500px; left:1000px; position:absolute; height: 30px; width: 700px;"></div>
+<!-- 	<div class = "invisible-scrollbar"> -->
+	<div class="bioBox mostly-customized-scrollbar" style="height:400px;width:700px;position:absolute; top:600px;left:1000px; border:0px; color:#ccc;font:16px/26px Georgia, Garamond, Serif;solid-color:white;overflow:auto;" id="Biodiv">
+	</div>
+<!-- 	</div> -->
+
+	<div class="block-holder"style="top:950px; left:300px; position:absolute; height: 30px; width: 400px;">
+	<p>
+		<label for="nValue"
+			   style="display: inline-block; width: 240px; text-align: right; color:#5371A3">
+			Number of Nodes = <span id="nValue-value"></span>
+		</label>
+		<input type="number" min="10" max="500" step="10" value="50" id="nValue" style = " border: 1px solid #5371A3;border-radius: 10px; background-color:black;color:#5371A3">
+	</p>
+	</div>
+
+	<!-- ---------------------------------------------- -->
+	<!-- ------------ the Movies timeline ------------- -->
+	<!-- ---------------------------------------------- -->
 	<script src="//d3plus.org/js/d3.js"></script>
 	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -164,45 +98,63 @@
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
+	<!-- ---------------------------------------------- -->
+	<!-- the Relationship Network for a selected actor --->
+	<!-- ---------------------------------------------- -->
+
+
+
 	<script>
 		//GLOBAL VARIABLES DEFINITION HERE
 		var START_T = 0, 
-		END_T = 1, 
-		MAX_NUM = 50,
-		COLUMN_ARRAY = [2259827.5, 4392447.222222222, 2500600.0, 2950530.090909091, 40098704.6, 67435522.875, 17352395.444444444, 37953409.25, 5941666.666666667, 15050906.5, 3042281.1818181816, 27937435.90909091, 41744789.88235294, 14833138.57142857, 12008973.0, 16895999.42857143, 15284872.083333334, 25407139.46153846, 18424354.214285713, 37386477.11111111, 23849786.772727273, 31120216.864864863, 21767278.18604651, 35443322.258064516, 46461008.5, 45741256.461538464, 57104227.488372095, 43478834.06349207, 41793550.38297872, 41145145.906542055, 36099637.13888889, 29616286.13375796, 31870650.792746115, 39761869.36057692, 54277852.941176474, 47324504.133004926, 57425954.62962963, 62292045.959349595, 72820491.08745247, 70305362.14590748, 77504203.04067796, 84408921.95548962, 82026111.11325967, 66330294.702083334, 74347212.96458334, 83448020.45, 79945958.02597402, 84135915.81508079, 88221932.75855856, 120544648.53939395]
-		GENRES={"Thriller":0, "Romance":0,"Horror":0, "Drama":0, "Documentary":0, "Crime":0, "Comedy":0,"Action":0, "other":0};
+			END_T = 1, 
+			MAX_NUM = 50,
+            COLUMN_ARRAY = [2259827.5, 4392447.222222222, 2500600.0, 2950530.090909091, 40098704.6, 67435522.875, 17352395.444444444, 37953409.25, 5941666.666666667, 15050906.5, 3042281.1818181816, 27937435.90909091, 41744789.88235294, 14833138.57142857, 12008973.0, 16895999.42857143, 15284872.083333334, 25407139.46153846, 18424354.214285713, 37386477.11111111, 23849786.772727273, 31120216.864864863, 21767278.18604651, 35443322.258064516, 46461008.5, 45741256.461538464, 57104227.488372095, 43478834.06349207, 41793550.38297872, 41145145.906542055, 36099637.13888889, 29616286.13375796, 31870650.792746115, 39761869.36057692, 54277852.941176474, 47324504.133004926, 57425954.62962963, 62292045.959349595, 72820491.08745247, 70305362.14590748, 77504203.04067796, 84408921.95548962, 82026111.11325967, 66330294.702083334, 74347212.96458334, 83448020.45, 79945958.02597402, 84135915.81508079, 88221932.75855856, 120544648.53939395]
+        GENRES={"Thriller":0, "Romance":0,"Horror":0, "Drama":0, "Documentary":0, "Crime":0, "Comedy":0,"Action":0, "other":0};
 		// initialize all graphs
 		var INITIALIZED = false
 		function initialize(){
-			starPrintFunction();
-			d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
+				starPrintFunction();
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute").attr("id","Poolsvg");
 
-			drawPool();
-			d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
-			.attr("id","Timesvg");
-			d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
-			.attr("id","Chartsvg");
-			d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
-			.attr("id","Actorsvg");
-			d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
-			.attr("id","Bubblesvg");
+        drawPool();
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Timesvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Chartsvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Actorsvg");
+        d3.select('#Mainsvg').append('svg').attr('width', 1000).attr('height', 1000).style("position", "absolute")
+            .attr("id","Bubblesvg");
 
 
-			d3.selectAll("#Bubblesvg").append("defs");
-			d3.selectAll("#Bubblesvg").append("g");
-			//time slider attributes for initialization
-			let color = d3.scaleOrdinal(d3.schemeCategory20b);
-			for(var i=0;i<11;i++){color(i);}
+        d3.selectAll("#Bubblesvg").append("defs");
+        d3.selectAll("#Bubblesvg").append("g");
+            let color = d3.scaleOrdinal(d3.schemeCategory20b);
+     		for(var i=0;i<11;i++){color(i);}
+         	//attributes for slider
+         	//postTimelineData(MAX_NUM);
          	timeLabelGraph(0,1);
-         	postMovieSelectionData(START_T,END_T,MAX_NUM,GENRES);
-         	streamGraph();
+            postMovieSelectionData(START_T,END_T,MAX_NUM,GENRES);
+            streamGraph();
 
-         	setupSlider(START_T,END_T,updateGraph,color);}
-         function updateGraph(min,max,max_num, genres){
+			setupSlider(START_T,END_T,updateGraph,color);
+            // setupSlider2(1,color);
 
-			d3.selectAll("#Timesvg").selectAll("*").remove();
-			postMovieSelectionData(min,max,max_num, genres);
-			timeLabelGraph(min,max)
+            			//scaleRadialGraph();
+
+
+
+		}
+		function updateGraph(min,max,max_num, genres){
+
+			// d3.selectAll("#nodeBubbles").remove();
+   //          d3.selectAll("#scaleRadialGraph").remove();
+			// postMovieSelectionData(min,max,max_num, genres);
+			        d3.selectAll("#Timesvg").selectAll("*").remove();
+        postMovieSelectionData(min,max,max_num, genres);
+        timeLabelGraph(min,max)
+			//postTimelineData(50)
 
 		}
 
@@ -220,26 +172,45 @@
 			axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
 				headers:{
 					'Content-Type':'application/json'}
-				}).then(function(response){
+			}).then(function(response){
 
 					console.log(typeof response.data.columnList);
-					if (INITIALIZED==true) {console.log("called"); ScaleRadialGraphUpdate(response.data.columnList)}
-					else{ console.log("called")
-						scaleRadialGraphInitialize(response.data.columnList);
-					INITIALIZED =true};
+            if (INITIALIZED==true) {console.log("called"); ScaleRadialGraphUpdate(response.data.columnList)}
+            else{ console.log("called")
+            scaleRadialGraphInitialize(response.data.columnList);
+                INITIALIZED =true};
 
-					bubbleRadialGraph(response.data.actorsDatajson);
+            bubbleRadialGraph(response.data.actorsDatajson);
 
-
-
+           
+            
                    // scaleRadialGraph(response.data.columnList);
-
-               })
+					
+				})
 				.catch(function(error){
 					console.log(error);
 				});
-			}
+		}
+		//post request for the revenue timeline 
+		// function postTimelineData(max_num){
+		// 	let timelineData = JSON.stringify({
+		// 		num_columns:50,
+		// 		Mean:1
+		// 		});
+		// 	axios.post('http://127.0.0.1:5000/getColumnSize', timelineData,{
+		// 		headers: {
+		// 			'content-Type': 'application/json',}
+		// 		}).then(function (response) {
+        //
+		// 			console.log(response.data);
+		// 			scaleRadialGraph(response.data);
+		// 		})
+		// 		.catch(function (error) {
+		// 			console.log(error);
+		// 		});
+		// }
 
+		// Post request for getting actors
 		function postActorData(actor){
 
 			let data = JSON.stringify({
@@ -251,53 +222,55 @@
 				headers: {
 					'content-Type': 'application/json',}
 				}).then(function (response) {
-					console.log("output");
-					console.log(response.data);
+                console.log("output");
+                console.log(response.data);
 					forceDirectGraph(response.data);
 
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
-				axios.post('http://127.0.0.1:5000/getCloudPoints', data,{
-					headers: {
-						'content-Type': 'application/json',}
+			axios.post('http://127.0.0.1:5000/getCloudPoints', data,{
+				headers: {
+					'content-Type': 'application/json',}
 
-					}).then(function (response) {
-						console.log("output");
-						console.log(response.data);
-						movieDensityMap(response.data);
+			}).then(function (response) {
+				console.log("output");
+				console.log(response.data);
+				movieDensityMap(response.data);
 
-					})
-					.catch(function (error) {
-						console.log(error);
-					});
-				}
+			})
+				.catch(function (error) {
+					console.log(error);
+				});
+		}
 
-			</script>
-
-
-
-
-			<!-- Footer section -->
-			<footer class="footer-section">
-				<h2>HKUST Data Visualization Project by Vizitors</h2>
-				<!-- <h2>2018. HTML template by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2> -->
-			</footer>
-			<!-- Footer section end -->
+	</script>
 
 
 
 
-			<!--====== Javascripts & Jquery ======-->
-			<script src="src/js/jquery-2.1.4.min.js"></script>
-			<script src="src/js/bootstrap.min.js"></script>
-			<script src="src/js/magnific-popup.min.js"></script>
-			<script src="src/js/owl.carousel.min.js"></script>
-			<script src="src/js/circle-progress.min.js"></script>
-			<script src="src/js/main.js"></script>
-			<script src="src/js/jquery-csv.js"></script>
-			<script src="src/js/jquery-csv.min.js"></script>
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<h2>HKUST Data Visualization Project by ActiVizts
+		</h2>
+		<!-- <h2>2018. HTML template by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2> -->
+	</footer>
+	<!-- Footer section end -->
+<!-- 	<script src="src/js/credits.js"></script> -->
 
-		</body>
-		</html>
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="src/js/jquery-2.1.4.min.js"></script>
+	<script src="src/js/bootstrap.min.js"></script>
+	<script src="src/js/magnific-popup.min.js"></script>
+	<script src="src/js/owl.carousel.min.js"></script>
+	<script src="src/js/circle-progress.min.js"></script>
+	<script src="src/js/main.js"></script>
+	<script src="src/js/jquery-csv.js"></script>
+	<script src="src/js/jquery-csv.min.js"></script>
+
+</body>
+</html>
