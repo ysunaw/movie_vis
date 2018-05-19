@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Movie Stars Visualization</title>
 	<meta charset="UTF-8">
@@ -34,13 +35,14 @@
 	<div id="preloder">
 		<div class="loader">
 			<img src="img/logo.png" alt="">
-			<h2>Loading.....</h2>
+			<h2 style="color:white">Loading.....</h2>
 		</div>
 	</div>
 
 
 <body>
-
+<div class="m-scene" id="main">
+  <div class="m-aside scene_element scene_element--fadein">
 	<!-- Header section -->
 	<header class="header-section" background-color = "#000">
 		<div class="logo">
@@ -154,15 +156,15 @@
 	<h2>Credits</h2>
 	<p><br/></p>
 		<h3>Victor Maurer</h3>
-		<p>Data pre-processing, front end + back end scripting, connectivity to front end & system integration.<br/></p>
+		<p>Data pre-processing, front end, back end scripting, connectivity to front end & system integration.<br/></p>
 		<h3>Yimeng Sun</h3>
-		<p>Front end scripting, connectivity to back end & CSS Styling & system integration.<br/></p>
+		<p>Front end scripting, connectivity to back end, CSS Styling & system integration.<br/></p>
 		<h3>Jiaxin Bai</h3>
 		<p>Actors picture & descriptions crawling.<br/></p>
 		<h3>Cheng Liu</h3>
-		<p>Data pre-processing, static implementation of the streamgraph.<br/></p>
+		<p>Data pre-processing & static implementation of the streamgraph.<br/></p>
 		<h3>External Sources & Libraries</h3>
-		<p>Built with D3JS library for front end; Back end using Flask_RESTful and Pandas. Data from TMDB and WikiPedia, Website template from https://colorlib.com </p>
+		<p>Built with D3JS library for front end; Back end using Flask_RESTful and Pandas. Data from TMDB and Wikipedia, Website template from https://colorlib.com </p>
 		<p></p>
 <!-- 		<h5>Victor</h5>
 		<p>Data pre-processing, front end + back end scripting, connectivity to front end & system integration.</p>
@@ -176,7 +178,7 @@
 	</div>
 
 	</div>
-</div>
+
 
 	<!-- services card section end-->
 
@@ -186,7 +188,7 @@
 
 	<!-- Footer section -->
 	<footer class="footer-section">
-		<h2>HKUST Data Visualization Project by Vizitors</h2>
+		<h2>HKUST Data Visualization Project by ActiVizts</h2>
 	</footer>
 	<!-- Footer section end -->
 
@@ -200,5 +202,7 @@
 	<script src="src/js/owl.carousel.min.js"></script>
 	<script src="src/js/circle-progress.min.js"></script>
 	<script src="src/js/main.js"></script>
+</div>
+</div>
 </body>
 </html>
