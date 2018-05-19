@@ -21,7 +21,7 @@ function drawPool() {
         .attr("offset", "50%")
 
         .attr("stop-color", function (d) {
-            return d3.rgb("#281437").brighter(2);
+            return d3.rgb("#281437").brighter(1);
         });
 
 //Finally a darker color at the outside
