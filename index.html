@@ -69,7 +69,7 @@
 	</div>
 <!-- 	</div> -->
 
-	<div class="block-holder"style="top:950px; left:300px; position:absolute; height: 30px; width: 400px;">
+	<div class="block-holder"style="top:950px; left:200px; position:absolute; height: 30px; width: 400px;">
 	<p>
 		<label for="nValue"
 			   style="display: inline-block; width: 240px; text-align: right; color:#5371A3">
@@ -84,10 +84,19 @@
 	<script src="//d3plus.org/js/d3.js"></script>
 	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<div class="search-bar" style="top:800px; left:600px; position:absolute; height: 100px; width: 400px;">
-		<input type="text" id="seeker" placeholder ="Input an actor" onkeyup="toggle_visibility('content')">
+	<script>
+		    function testing_var_id(id){
+    	console.log(id);
+    };
+</script>
+	<div class="search-bar" style="top:950px; left:500px; position:absolute; height: 100px; width: 200px;">
+
+		<input type="text" id="seeker" style="width: 200px; height:35px;  border: 1px solid #5371A3;border-radius: 10px; background-color:black;color:#5371A3;padding: 0 5px 0 20px;" placeholder ="Input an actor..." onkeyup="toggle_visibility('content')">
+
 		<!--<button onkeyup="toggle_visibility('content');">Search</button>-->
-		<div id="content" class= "mostly-customized-scrollbar" style="display:none;" onclick="toggle_visibility('content')"></div>
+
+		<div id="content" class= "mostly-customized-scrollbar" style="display:none;height:100px;width:200px" onclick="toggle_visibility('content')"></div>
+
 	</div>
 
 	<script>
@@ -127,10 +136,11 @@
     // ]
     //
     output = "";
+
     $.each(content_data, function(key, val){
         output += "<div class='values'>";
         // output += '<h5 class="value-id">' + val.id + '</h5>';
-        output += '<p class="value-name" onclick="val.id">' + val.name + '</p>';
+        output += '<p class="value-name" onclick="showActorGlobal('+ val.id+ ')">' + val.name + '</p>';
         output += "</div>";
     });
     $('#content').html(output);
@@ -242,6 +252,17 @@
 			//postTimelineData(50)
 
 		}
+		    function showActorGlobal(d){
+		d3.select("#Bubblesvg").selectAll('circle').remove();
+        d3.select("#Actorsvg").selectAll("*").remove();
+        //d3.selectAll("#scaleRadialGraph").remove();
+        d3.selectAll("#actorPics").remove();
+        d3.selectAll("#Timesvg").selectAll("*").remove();
+        timeLabelGraph(0,1);
+        ScaleRadialGraphUpdate(COLUMN_ARRAY);
+
+        // console.log(d.actor_id*1)
+        postActorData(d*1);}
 
 
 		// Post request for movies 
