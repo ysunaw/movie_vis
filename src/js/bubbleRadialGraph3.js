@@ -36,13 +36,16 @@ function bubbleRadialGraph(input_bubble_data){
         .domain([1,2])
         .range(['#9d0107', '#091592']);
 
-    var defs = svg.append("defs");
+
+
+    var defs = svg.select("defs");
+    //console.log(svg.selectAll(".patterns"));
     defs.selectAll(".patterns")
-        .data(data)//, function(d) {
+        .data(data, function(d){console.log(d);return d.actor_id})//, function(d) {
         // return d})
         .enter().append("pattern")
         .attr("class","actorPics")
-        .attr("id", function(d) {return "actorbubble-" + (d.actor_id)})
+        .attr("id", function(d) { return "actorbubble-" + (d.actor_id)})
         .attr("width", 1)
         .attr("height", 1)
         .attr("preserveAspectRatio", "xMinYMin meet")
@@ -54,18 +57,43 @@ function bubbleRadialGraph(input_bubble_data){
     // .attr("width", function(d){console.log(d.radius);return d.radius*10})
     // .attr("height", function(d){return d.radius*1000});
 
-    var node = svg.append("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
-        .selectAll("circle")
-        //.attr("viewBox", function(d){console.log("hiiiiiiiiiiiiiii"); return "0 0 200 200"})
-        .data(data)
+    var t = d3.transition()
+        .duration(720);
+
+    defs.selectAll(".patterns")
+        .data(data, function(d){console.log(d);return d.actor_id}).exit().remove()
+
+
+
+    defs.selectAll(".patterns")
+        .data(data, function(d){console.log(d);return d.actor_id})
+        .attr("class", "update")
+        .attr("y", 0)
+        .style("fill-opacity", 1)
+        .transition(t)
+        .attr("x", function(d, i) { return i * 32; });
+
+    svg.select("g").selectAll("circle").data(data, function(d){return d.actor_id})
+        .attr("class", "update")
+        //.attr("y", 0)
+        //.style("fill-opacity", 1)
+        .transition(t)
+        .attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
+        .attr("cy", function (d) { return d.y = pythagy(d.radius, d.x, d.y); })
+        .attr("r", function(d) { return d.radius; });
+
+    svg.select("g").selectAll("circle").data(data, function(d){return d.actor_id})
+        .exit()
+        .attr("class", "exit")
+        .transition(t)
+        .attr("r", 0)
+        .style("fill-opacity", 1e-6).remove()
+
+    svg.select("g").selectAll("circle").data(data, function(d){return d.actor_id})
         .enter().append("circle")
         .style("fill", function(d) {
             return "url(#actorbubble-"+d.actor_id+")"
         })
-        // .attr("x", function(d){return -10})
-        // .attr("y", function(d){return  -10})
-        // .attr("width", function(d){console.log(d.radius);return 0.001})
-        // .attr("height", function(d){return 0.1})
         .attr("id","nodeBubbles")
         .on("mouseover", function(d) {
             d3.selectAll("#biosvgpic").remove();
@@ -79,10 +107,51 @@ function bubbleRadialGraph(input_bubble_data){
         .on("click", function(d){showActor(d);})
         //.on("click", showActor)
         .attr("stroke-width", 2)
-        .attr("stroke", function(d) { return genderColor(d.gender); });
+        .attr("stroke", function(d) { return genderColor(d.gender); })
+    // .attr("r", function(d) { return d.radius; })
+    // .transition(t)
+    // .attr("r", function(d){return d.radius})
+    // .style("fill-opacity", 1)
+    // .attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
+    // .attr("cy", function (d) { return d.y = pythagy(d.radius, d.x, d.y); })
+    // .attr("r", function(d) { return d.radius; });
+    // var node = svg.select("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
+    //     .selectAll("circle")
+    //     .data(data, function(d){return d.actor_id})
+    //     .enter().append("circle")
+    //     .style("fill", function(d) {
+    //         return "url(#actorbubble-"+d.actor_id+")"
+    //     })
+    //     .attr("id","nodeBubbles")
+    //     .on("mouseover", function(d) {
+    //         d3.selectAll("#biosvgpic").remove();
+    //         d3.selectAll("#biosvgbio").remove();
+    //         biographyWindow(d.actor_id);
+    //     })
+    //     .on("mouseout", function(d) {
+    //         d3.selectAll("#biosvgpic").remove();
+    //         d3.selectAll("#biosvgbio").remove();
+    //     })
+    //     .on("click", function(d){showActor(d);})
+    //     //.on("click", showActor)
+    //     .attr("stroke-width", 2)
+    //     .attr("stroke", function(d) { return genderColor(d.gender); })
+    // .transition(t)
+    // .attr("r", function(d){return d.radius})
+    // .style("fill-opacity", 1)
+    // .transition(t)
+    // .attr("r", function(d) { return d.radius; })
+    var node =  svg.select("g").selectAll("circle").data(data, function(d){return d.actor_id})
+    var force = d3.forceSimulation()
+        .force('collide', d3.forceCollide(d => d.radius + padding)
+            .strength(1))
+        .on('tick', boundTick)
+        .nodes(data);
+    // node.append("title")
+    //     .text(function(d) { return d.name; });
 
-    node.append("title")
-        .text(function(d) { return d.name; });
+
+    //.attr("x", function(d, i) { return i * 32; });
 
     // bound force
     // var bound_force =  d3.forceSimulation()
@@ -93,11 +162,7 @@ function bubbleRadialGraph(input_bubble_data){
     //   .nodes(data);
 
 
-    var force = d3.forceSimulation()
-        .force('collide', d3.forceCollide(d => d.radius + padding)
-            .strength(1))
-        .on('tick', boundTick)
-        .nodes(data);
+
 
     function boundTick(e) {
         node.attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
@@ -112,12 +177,12 @@ function bubbleRadialGraph(input_bubble_data){
             var angle = Math.acos((coord-width/2)/length);
             if (b-height/2<0){
                 if (coord-width/2<0){
-                    return width/2 - (radius-r-10) * Math.cos(angle+Math.PI) }
-                else{return width/2 + (radius-r-10) * Math.cos(angle) }
+                    return width/2 - (radius-r-Math.random()*100) * Math.cos(angle+Math.PI) }
+                else{return width/2 + (radius-r-Math.random()*100) * Math.cos(angle) }
             }else{
                 if (coord-width/2>0){
-                    return width/2 + (radius-r-10) * Math.cos(angle) }
-                else{return width/2 + (radius-r-10) * Math.cos(angle) }}
+                    return width/2 + (radius-r-Math.random()*100) * Math.cos(angle) }
+                else{return width/2 + (radius-r-Math.random()*100) * Math.cos(angle) }}
         }
         return coord;
     }
@@ -129,12 +194,12 @@ function bubbleRadialGraph(input_bubble_data){
             var angle = Math.acos((b-width/2)/length);
             if (b-width/2<0){
                 if (coord-height/2<0){
-                    return height/2 - (radius-r-10) * (Math.sin(angle)) }
-                else{return height/2 + (radius-r-10) * (Math.sin(angle)) }
+                    return height/2 - (radius-r-Math.random()*100) * (Math.sin(angle)) }
+                else{return height/2 + (radius-r-Math.random()*100) * (Math.sin(angle)) }
             }else{
                 if (coord-height/2>0){
-                    return height/2 + (radius-r-10) * (Math.sin(angle)) }
-                else{return height/2 - (radius-r-10) * (Math.sin(angle)) }
+                    return height/2 + (radius-r-Math.random()*100) * (Math.sin(angle)) }
+                else{return height/2 - (radius-r-Math.random()*100) * (Math.sin(angle)) }
             }
         }
         return coord;
@@ -150,7 +215,6 @@ function bubbleRadialGraph(input_bubble_data){
 
     function showActor(d){
 
-
         svg.selectAll('circle').remove();
         d3.selectAll("#scaleRadialGraph").remove();
         d3.selectAll("#actorPics").remove();
@@ -163,11 +227,9 @@ function bubbleRadialGraph(input_bubble_data){
 
     }
 
-
-    var yAxis = svg.append("g")
+    var yAxis = svg.select("g")
         .attr("text-anchor", "end");
 }
-
 
 
 //showActor function in bubble Radial graph

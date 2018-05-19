@@ -21,7 +21,10 @@ function streamGraph() {
     var y = d3.scaleLinear()
         .range([height, 0]);
 
-    var color = d3.scaleOrdinal(d3.schemeCategory20);
+    // var color = d3.scaleOrdinal()
+    //     .range(["#96D2A8", "#B362C5", "#C25B45", "#C9A960", "#A0D160", "#BF6288", "#AAB6BF","#7980C6","#5D7340","#583A60"]);
+   var color = d3.scaleOrdinal()
+        .range(["#e7cb72", "#843c39", "#ad494a", "#d6616b", "#e7969c", "#584173", "#a55194","#ce6dbd","#d19ed6","#2b42a3"]);
 
     var xAxis = d3.axisBottom()
         .scale(x);
@@ -111,31 +114,31 @@ function streamGraph() {
                 d3.selectAll("#biosvgpic").remove();
                 d3.selectAll("#biosvgbio").remove();
                 if(d.key != "other"){
-                GENRES[d.key] = !GENRES[d.key];};
-                    var anySelected = 0;
+                    GENRES[d.key] = !GENRES[d.key];};
+                var anySelected = 0;
                 for( var el in GENRES ) {
                     if (GENRES[el] == true){
                         anySelected = 1;
                         break;
                     }};
-                    if (!anySelected){
-                        d3.selectAll("#genres")
-                            .style("fill", function(d){
-                        return d3.rgb(color(d.key))});
-                    }else{
+                if (!anySelected){
                     d3.selectAll("#genres")
-                    .style("fill", function(d){
-                        if (GENRES[d.key]==0){
-                            return d3.rgb(color(d.key)).darker(3)
-                        }else{
-                            console.log(d.key);
-                        return d3.rgb(color(d.key))}
+                        .style("fill", function(d){
+                            return d3.rgb(color(d.key))});
+                }else{
+                    d3.selectAll("#genres")
+                        .style("fill", function(d){
+                            if (GENRES[d.key]==0){
+                                return d3.rgb(color(d.key)).darker(3)
+                            }else{
+                                console.log(d.key);
+                                return d3.rgb(color(d.key))}
 
-                    })
+                        })
 
-                    };
+                };
                 if(d.key != "other"){
-                fiterBubbleGraph()};
+                    fiterBubbleGraph()};
             })
             .on('mouseover', function (d) {
                 d3.select(this)
@@ -149,20 +152,20 @@ function streamGraph() {
                     .style('fill', function (d) {
                         // d3.selectAll("#genres")
                         //     .style("fill", function(d){
-                                var anySelected = 0;
-                                for( var el in GENRES ) {
-                                    if (GENRES[el] == true){
-                                        anySelected = 1;
-                                        break;
-                                    }};
-                                if (!anySelected){
-                                    return d3.rgb(color(d.key))
-                                }else{
-                                if (GENRES[d.key]==0){
-                                    return d3.rgb(color(d.key)).darker(2)
-                                }else{
-                                    console.log(d.key);
-                                    return d3.rgb(color(d.key))}}
+                        var anySelected = 0;
+                        for( var el in GENRES ) {
+                            if (GENRES[el] == true){
+                                anySelected = 1;
+                                break;
+                            }};
+                        if (!anySelected){
+                            return d3.rgb(color(d.key))
+                        }else{
+                            if (GENRES[d.key]==0){
+                                return d3.rgb(color(d.key)).darker(2)
+                            }else{
+                                console.log(d.key);
+                                return d3.rgb(color(d.key))}}
                         //console.log(d.key);
                         //return color(d.key);
                     })
@@ -187,27 +190,24 @@ function streamGraph() {
             })
 
 
-            .attr("stroke-width", 0.5)
-            .attr('fill-opacity', 1);
+        //     .attr("stroke-width", 0.5)
+        //     .attr('fill-opacity', 1);
 
-        svg.append('g')
-            .attr('class', 'x axis')
-            .attr('transform', 'translate(0,' + height + ')')
-            .attr("stroke", "white")
-            .call(xAxis);
-
-
-        svg.append('g')
-            .attr('class', 'y axis')
-            .call(yAxis);
-
-        // svg.append("text")
-        //     .attr("x", 0 - margin.left)
+        // svg.append('g')
+        //     .attr('class', 'x axis')
+        //     .attr('transform', 'translate(0,' + height + ')')
         //     .attr("stroke", "white")
-        //     .text("Genres Trends in the Movie Industry")
+        //     .call(xAxis);
+
+
+        // svg.append('g')
+        //     .attr('class', 'y axis')
+        //     .call(yAxis);
+
+        // svgads in the Movie Industry")
 
         function fiterBubbleGraph(d){
-            d3.select("#Chartsvg").selectAll("*").remove();
+            //d3.select("#Chartsvg").selectAll("*").remove();
             //scaleRadialGraph();
             console.log(START_T,END_T)
             updateGraph(START_T,END_T,MAX_NUM,GENRES);

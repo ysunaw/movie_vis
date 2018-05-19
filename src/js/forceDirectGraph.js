@@ -76,7 +76,7 @@ function forceDirectGraph(inputdata){
             bubbleView(d);
             d3.selectAll("#biosvgpic").remove();
             d3.selectAll("#biosvgbio").remove();
-            })
+        })
         //.attr("fill", function(d) { return genderColor(d.gender); }) // gender: 2 if male, 2 if female
         .style("fill", function(d) {
             return "url(#actor-"+d.actor_id+")"
