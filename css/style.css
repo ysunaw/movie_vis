@@ -702,8 +702,9 @@ ul {
 }
 
 .sv-card .card-text {
-	padding: 70px 45px;
-	padding-right: 15px;
+	padding: 45px 45px;
+	padding-left: 25px;
+	padding-right: 25px;
 	background: #f5f9f8;
 
 }
