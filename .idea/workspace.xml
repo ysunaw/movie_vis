@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92bbcc16-4f3a-4bfe-9d9b-88ee582b6955" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/biographyWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/biographyWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/forceDirectGraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/forceDirectGraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/movieDensityMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/movieDensityMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/scaleRadialGraph2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/scaleRadialGraph2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/streamgraph.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/streamgraph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/timeLabel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/timeLabel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bubbleRadialGraph2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bubbleRadialGraph2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph2.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
@@ -41,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
+            <state relative-caret-position="475">
+              <caret line="113" column="64" selection-start-line="113" selection-start-column="64" selection-end-line="113" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -154,8 +147,8 @@
       <find>mostly</find>
       <find>card-text</find>
       <find>cons</find>
-      <find>console</find>
       <find>conso</find>
+      <find>console</find>
     </findStrings>
     <replaceStrings>
       <replace>bubbleSVG</replace>
@@ -190,7 +183,6 @@
         <option value="$PROJECT_DIR$/css/search.css" />
         <option value="$PROJECT_DIR$/actorid.json" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/src/js/bubbleRadialGraph2.js" />
         <option value="$PROJECT_DIR$/src/js/search.js" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -200,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/js/biographyWindow.js" />
         <option value="$PROJECT_DIR$/src/js/movieDensityMap.js" />
         <option value="$PROJECT_DIR$/src/js/forceDirectGraph.js" />
+        <option value="$PROJECT_DIR$/about.html" />
       </list>
     </option>
   </component>
@@ -343,12 +336,12 @@
       <workItem from="1526634883218" duration="8092000" />
       <workItem from="1526664955665" duration="14768000" />
       <workItem from="1526717320168" duration="15718000" />
-      <workItem from="1526807629925" duration="1711000" />
+      <workItem from="1526807629925" duration="1747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192843000" />
+    <option name="totallyTimeSpent" value="192879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-8" width="1862" height="1096" extended-state="6" />
@@ -645,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -705,6 +691,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="183" column="18" lean-forward="true" selection-start-line="183" selection-start-column="18" selection-end-line="183" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="113" column="64" selection-start-line="113" selection-start-column="64" selection-end-line="113" selection-end-column="64" />
         </state>
       </provider>
     </entry>
