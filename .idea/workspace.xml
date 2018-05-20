@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="92bbcc16-4f3a-4bfe-9d9b-88ee582b6955" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/bubbleRadialGraph2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/bubbleRadialGraph2.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,17 +20,17 @@
       <file leaf-file-name="bubbleRadialGraph3.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph3.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
+            <state relative-caret-position="4150">
               <caret line="166" column="22" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bubbleRadialGraph2.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bubbleRadialGraph2.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="173" column="13" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="13" />
+            <state relative-caret-position="860">
+              <caret line="222" column="51" selection-start-line="222" selection-start-column="51" selection-end-line="222" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -41,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/data_bubble.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -49,7 +47,7 @@
       <file leaf-file-name="actorID.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actorID.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="1125">
               <caret column="45504" selection-start-column="45504" selection-end-column="45504" />
             </state>
           </provider>
@@ -76,7 +74,7 @@
       <file leaf-file-name="flare.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flare.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
+            <state relative-caret-position="9475">
               <caret line="379" column="1" selection-start-line="379" selection-start-column="1" selection-end-line="379" selection-end-column="1" />
             </state>
           </provider>
@@ -85,24 +83,17 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="707" column="24" lean-forward="true" selection-start-line="707" selection-start-column="24" selection-end-line="707" selection-end-column="24" />
+            <state relative-caret-position="17675">
+              <caret line="777" column="24" selection-start-line="777" selection-start-column="24" selection-end-line="777" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="111" column="85" selection-start-line="111" selection-start-column="85" selection-end-line="111" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#svg#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="2225">
+              <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -110,11 +101,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2150">
-              <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="3350">
+              <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -203,9 +191,9 @@
         <option value="$PROJECT_DIR$/src/js/search.js" />
         <option value="$PROJECT_DIR$/actorid.json" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/src/js/bubbleRadialGraph2.js" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/about.html" />
+        <option value="$PROJECT_DIR$/src/js/bubbleRadialGraph2.js" />
       </list>
     </option>
   </component>
@@ -216,7 +204,51 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/node_modules/axios/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/convert-csv-to-array/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/convert-string-to-number/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-array/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-axis/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-brush/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-chord/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-collection/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-color/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-contour/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-dispatch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-drag/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-dsv/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-ease/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-fetch/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-force/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-format/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-geo/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-hierarchy/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-interpolate/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-path/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-polygon/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-quadtree/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-random/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-scale-chromatic/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-scale/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-selection/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-shape/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-time-format/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-time/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-timer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-transition/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-voronoi/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3-zoom/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/d3/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/rw/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/safer-buffer/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="398" />
@@ -229,6 +261,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,8 +294,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -306,44 +337,36 @@
       <workItem from="1526634883218" duration="8092000" />
       <workItem from="1526664955665" duration="14768000" />
       <workItem from="1526717320168" duration="15718000" />
+      <workItem from="1526807629925" duration="335000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189824000" />
+    <option name="totallyTimeSpent" value="191467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="66" y="-8" width="1862" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24945176" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24972914" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,9 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-start-column="3" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -607,7 +627,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flare.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
+        <state relative-caret-position="9475">
           <caret line="379" column="1" selection-start-line="379" selection-start-column="1" selection-end-line="379" selection-end-column="1" />
         </state>
       </provider>
@@ -621,7 +641,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph3.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
+        <state relative-caret-position="4150">
           <caret line="166" column="22" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="22" />
         </state>
       </provider>
@@ -635,7 +655,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/actorID.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="1125">
           <caret column="45504" selection-start-column="45504" selection-end-column="45504" />
         </state>
       </provider>
@@ -643,7 +663,7 @@
     <entry file="file://$PROJECT_DIR$/data_bubble.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="11" column="24" lean-forward="true" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -654,41 +674,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="173" column="13" selection-start-line="173" selection-start-column="13" selection-end-line="173" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2150">
-          <caret line="135" column="8" lean-forward="true" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-          <folding>
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="3350">
+          <caret line="134" column="8" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="707" column="24" lean-forward="true" selection-start-line="707" selection-start-column="24" selection-end-line="707" selection-end-column="24" />
+        <state relative-caret-position="17675">
+          <caret line="777" column="24" selection-start-line="777" selection-start-column="24" selection-end-line="777" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="111" column="85" selection-start-line="111" selection-start-column="85" selection-end-line="111" selection-end-column="85" />
-          <folding>
-            <element signature="n#style#0;n#svg#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="2225">
+          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/bubbleRadialGraph2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="222" column="51" selection-start-line="222" selection-start-column="51" selection-end-line="222" selection-end-column="51" />
         </state>
       </provider>
     </entry>
