@@ -13,7 +13,7 @@ function movieDensityMap(inputdata) {
     // var node_movies = d3.json('data.json', function (error, data) {
 
     var data = inputdata;
-    console.log(data)
+
     var planetGradients = svg.append("defs").selectAll("radialGradient")
         .data(data)
         .enter().append("radialGradient")

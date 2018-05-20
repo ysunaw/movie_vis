@@ -1,6 +1,6 @@
 function toggle_visibility(id) {
     var e = document.getElementById(id);// get the text div
-    console.log(document.getElementById('seeker').value)
+    //console.log(document.getElementById('seeker').value)
     if (document.getElementById('seeker').value == ""){e.style.display = 'none';}else{e.style.display = 'block';}
     // if(e.style.display == 'block') e.style.display = 'none';
     // else e.style.display = 'block';

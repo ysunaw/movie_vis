@@ -1,7 +1,7 @@
 
 
 function scaleRadialGraphInitialize(inputdata) {
-    console.log(START_T,END_T,inputdata);
+    //console.log(START_T,END_T,inputdata);
 
     var svg = d3.select("#Chartsvg"),
         //svg = Mainsvg.append(svg)
@@ -103,7 +103,7 @@ function scaleRadialGraphInitialize(inputdata) {
 }
 
 function ScaleRadialGraphUpdate(inputdata) {
-    console.log(inputdata)
+    //console.log(inputdata)
     var svg = d3.select("#Chartsvg");
     var innerRadius = 250,
         outerRadius = innerRadius + 125//Math.min(width, height) * 0.6,
@@ -140,7 +140,7 @@ function ScaleRadialGraphUpdate(inputdata) {
         .duration(720);
     svg.select("g").selectAll("path")
         .data(pie(data.map(function(d) { return d; })))
-        .attr("fill", function(d) {console.log(d);return "url(#grad" + d.index + ")"; })
+        .attr("fill", function(d) {return "url(#grad" + d.index + ")"; })
         //.transition(t)
 
 

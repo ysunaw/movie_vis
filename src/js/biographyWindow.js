@@ -8,7 +8,7 @@ function biographyWindow(actor_id) {
 
     d3.text("crawler/"+actor_id+".txt", function(text) {
 
-        console.log(width)
+
 
         div.append("svg")
             .attr("width",698)
