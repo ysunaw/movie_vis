@@ -84,9 +84,7 @@
 	<script src="//d3plus.org/js/d3plus.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script>
-		    function testing_var_id(id){
-    	console.log(id);
-    };
+
 </script>
 	<div class="search-bar" style="top:950px; left:500px; position:absolute; height: 100px; width: 200px;">
 
@@ -104,8 +102,8 @@
 		d3.json("actorID.json", function(error, json) {
             var content_data = JSON.parse(json);
 
-		    console.log(content_data.length); // this will show the info it in firebug console
-            console.log(typeof content_data);
+            // console.log(content_data.length); // this will show the info it in firebug console
+            // console.log(typeof content_data);
 
 		// [
     //     {
@@ -275,16 +273,16 @@
 				max_num:max_num,
 				genres:genres
 			});
-			console.log(movieData)
+			//console.log(movieData)
 
 			axios.post('http://127.0.0.1:5000/getBubbleSizePosition',movieData,{
 				headers:{
 					'Content-Type':'application/json'}
 			}).then(function(response){
 
-					console.log(typeof response.data.columnList);
-            if (INITIALIZED==true) {console.log("called"); ScaleRadialGraphUpdate(response.data.columnList)}
-            else{ console.log("called")
+					//console.log(typeof response.data.columnList);
+            if (INITIALIZED==true) {ScaleRadialGraphUpdate(response.data.columnList)}
+            else{
             scaleRadialGraphInitialize(response.data.columnList);
                 INITIALIZED =true};
 
@@ -330,8 +328,8 @@
 				headers: {
 					'content-Type': 'application/json',}
 				}).then(function (response) {
-                console.log("output");
-                console.log(response.data);
+                // console.log("output");
+                // console.log(response.data);
 					forceDirectGraph(response.data);
 
 				})
@@ -343,8 +341,8 @@
 					'content-Type': 'application/json',}
 
 			}).then(function (response) {
-				console.log("output");
-				console.log(response.data);
+				// console.log("output");
+				// console.log(response.data);
 				movieDensityMap(response.data);
 
 			})

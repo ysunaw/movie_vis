@@ -231,7 +231,7 @@ function forceDirectGraph(inputdata){
     function bubbleView(d){
         svg.selectAll("*").remove();
         //scaleRadialGraph();
-        console.log(START_T,END_T)
+
         updateGraph(START_T,END_T,MAX_NUM,GENRES);
     }
 

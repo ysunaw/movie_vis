@@ -10,7 +10,7 @@ function timeLabelGraph(start_t, end_t) {
         if (start_time == end_time){return }
         for (var i = start_time+1; i <= end_time; i++){
             if (( ((i-1930)%binSize) == 0 && (i+binSize<end_time)) || i==end_time ){
-                console.log(i+binSize);
+                //console.log(i+binSize);
                 smallArray.push(i)
                 mainArray.push(""+smallArray[0]+"-"+smallArray[1]+"")
                 if((i+1)<=end_time){

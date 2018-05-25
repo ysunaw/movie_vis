@@ -92,8 +92,8 @@ function bubbleRadialGraph(input_bubble_data){
         //.attr("y", 0)
         //.style("fill-opacity", 1)
         .transition(t)
-        .attr("cx", function (d) { return d.x = pythagx(d.radius, d.y, d.x); })
-        .attr("cy", function (d) { return d.y = pythagy(d.radius, d.x, d.y); })
+        .attr("cx", function (d) { return d.x = pythagUpdatex(d.radius, d.y, d.x, Math.sqrt(Math.pow(this.cx.baseVal.value-width/2,2)+Math.pow(this.cy.baseVal.value-height/2,2))); })
+        .attr("cy", function (d) { return d.y = pythagUpdatey(d.radius, d.x, d.y, Math.sqrt(Math.pow(this.cx.baseVal.value-width/2,2)+Math.pow(this.cy.baseVal.value-height/2,2))); })
         .attr("r", function(d) { if (d.radius>innerRadius/2){return innerRadius/2.5} else{return d.radius}; });
 
     var node = svg.select("g")//.attr("transform", "translate(" + width / 2 + "," + height /2 + ")")
@@ -185,6 +185,42 @@ function bubbleRadialGraph(input_bubble_data){
                 if (coord-height/2>0){
                     return height/2 + (radius-r-Math.random()*100) * (Math.sin(angle)) }
                 else{return height/2 - (radius-r-Math.random()*100) * (Math.sin(angle)) }
+            }
+        }
+        return coord;
+    }
+    function pythagUpdatex(r, b, coord, length_init) {
+        if (r>innerRadius/2){r = innerRadius/2.5};
+        var length = Math.sqrt(Math.pow(Math.abs(b-height/2)+r,2)+Math.pow(Math.abs(coord-width/2)+r,2));
+
+        if (length>radius){
+            var angle = Math.acos((coord-width/2)/length);
+            if (b-height/2<0){
+                if (coord-width/2<0){
+                    return width/2 - (length_init) * Math.cos(angle+Math.PI) }
+                else{return width/2 + (length_init) * Math.cos(angle) }
+            }else{
+                if (coord-width/2>0){
+                    return width/2 + (length_init) * Math.cos(angle) }
+                else{return width/2 + (length_init) * Math.cos(angle) }}
+        }
+        return coord;
+    }
+    function pythagUpdatey(r, b, coord, length_init) {
+        if (r>innerRadius/2){r = innerRadius/2.5};
+        var length = Math.sqrt(Math.pow(Math.abs(b-width/2)+r,2)+Math.pow(Math.abs(coord-height/2)+r,2));
+
+        if (length>radius){
+
+            var angle = Math.acos((b-width/2)/length);
+            if (b-width/2<0){
+                if (coord-height/2<0){
+                    return height/2 - (length_init) * (Math.sin(angle)) }
+                else{return height/2 + (length_init) * (Math.sin(angle)) }
+            }else{
+                if (coord-height/2>0){
+                    return height/2 + (length_init) * (Math.sin(angle)) }
+                else{return height/2 - (length_init) * (Math.sin(angle)) }
             }
         }
         return coord;

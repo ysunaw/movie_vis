@@ -97,7 +97,7 @@ function streamGraph() {
         var browser = svg.selectAll('.browser')
             .data(stack(data))
             .enter().append('g')
-            .attr('class', function (d) {console.log(d.key);
+            .attr('class', function (d) {
                 return 'browser ' + d.key;
             })
             .attr('fill-opacity', 0.75);
@@ -131,7 +131,7 @@ function streamGraph() {
                             if (GENRES[d.key]==0){
                                 return d3.rgb(color(d.key)).darker(3)
                             }else{
-                                console.log(d.key);
+
                                 return d3.rgb(color(d.key))}
 
                         })
@@ -164,7 +164,7 @@ function streamGraph() {
                             if (GENRES[d.key]==0){
                                 return d3.rgb(color(d.key)).darker(2)
                             }else{
-                                console.log(d.key);
+
                                 return d3.rgb(color(d.key))}}
                         //console.log(d.key);
                         //return color(d.key);
@@ -209,7 +209,7 @@ function streamGraph() {
         function fiterBubbleGraph(d){
             //d3.select("#Chartsvg").selectAll("*").remove();
             //scaleRadialGraph();
-            console.log(START_T,END_T)
+            //console.log(START_T,END_T)
             updateGraph(START_T,END_T,MAX_NUM,GENRES);
         }
 
