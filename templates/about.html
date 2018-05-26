@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Movie Stars Visualization</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="COMP4901 Project by Vizitors">
+	<meta name="keywords" content="lab, onepage, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/magnific-popup.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	  <svg width=1800 height = 1000 font-size=10 font-family=Roboto style="position: relative" id=Mainsvg onload = initialize() color =black"></svg>
+	  <script src="src/js/stars.js"></script>
+	<![endif]-->
+
+</head>
+
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader">
+			<img src="img/logo.png" alt="">
+			<h2 style="color:white">Loading.....</h2>
+		</div>
+	</div>
+
+
+<body>
+<div class="m-scene" id="main">
+  <div class="m-aside scene_element scene_element--fadein">
+	<!-- Header section -->
+	<header class="header-section" background-color = "#000">
+		<div class="logo">
+			<h3>Movie Data Visualization</h3>
+			<!-- <img src="img/logo.png" alt=""> -->
+			<!-- Logo -->
+		</div>
+		<!-- Navigation -->
+		<div class="responsive"><i class="fa fa-bars"></i></div>
+		<nav>
+			<ul class="menu-list">
+				<li ><a href="index.html">Home</a></li>
+				<li class="active"><a href="about.html">About</a></li>
+			</ul>
+		</nav>
+	</header>
+	<!-- Header section end -->
+
+	
+	<div class="services-card-section spad">
+		<div class="container" >
+
+
+
+							<h2>Our Tasks</h2>
+							<p><br/></p>
+
+
+							<div class="col-md-4 col-sm-12">
+								<div class="sv-card">
+
+								<div class="card-text">
+									<h2>OverView</h2>
+									<p>A whole picture for movie lovers who would want to dive into how movie industry looks like. Gives the revenue and actors.</p>
+								</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-12">
+								<div class="sv-card">
+
+								<div class="card-text">
+									<h2>Specific Genre & Time</h2>
+									<p>Find out about actors of a specific genre and from a time period undiscovered yet by the user.</p>
+								</div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-12">
+								<div class="sv-card">
+
+								<div class="card-text">
+									<h2>Actor Profile</h2>
+									<p>Whenever the user knows about an actor and would like to have a summary of the movies she/he has been in.</p>
+								</div>
+								</div>
+							</div>
+		</div>
+		<div class="container" >
+							<p><br/></p>
+		<h2>About Us</h2>
+							<p><br/></p>
+			<div class="col-md-3 col-sm-12">
+
+					<div class="sv-card">
+						<div class="card-img">
+							<img src="img/victor.jpg" alt="">
+						</div>
+						<div class="card-text" style="height: 300px">
+							<h2>Victor</h2>
+							<p>I love group projects that allow me to show off my skillz.</p>
+						</div>
+					</div>
+				</div>
+
+			<div class="col-md-3 col-sm-12">
+					<div class="sv-card">
+						<div class="card-img">
+							<img src="img/yimeng.jpg" alt="">
+						</div>
+						<div class="card-text" style="height: 300px;">
+							<h2> Yimeng</h2>
+							<p>I love group projects too. </p>
+						</div>
+					</div>
+			</div> 
+			<div class="col-md-3 col-sm-12">
+					<div class="sv-card">
+						<div class="card-img">
+							<img src="img/jiaxin.jpg" alt="">
+						</div>
+						<div class="card-text" style="height: 300px;">
+							<h2> Jiaxin</h2>
+							<p>I love my girlfriend.</p>
+						</div>
+					</div>
+				</div>
+			<div class="col-md-3 col-sm-12">
+					<div class="sv-card">
+						<div class="card-img">
+							<img src="img/cheng.jpg" alt="">
+						</div>
+						<div class="card-text"	style="height: 300px;">
+							<h2>Cheng</h2>
+							<p>I love computer games.</p>
+
+						</div>
+					</div>
+			</div> 
+	</div>
+	<div class= "container">
+	<p><br/></p>
+	<h2>Credits</h2>
+	<p><br/></p>
+		<h3>Victor Maurer</h3>
+		<p>Data pre-processing, front end, back end scripting, connectivity to front end & system integration.<br/></p>
+		<h3>Yimeng Sun</h3>
+		<p>Front end scripting, connectivity to back end, CSS Styling & system integration.<br/></p>
+		<h3>Jiaxin Bai</h3>
+		<p>Actors picture & descriptions crawling.<br/></p>
+		<h3>Cheng Liu</h3>
+		<p>Data pre-processing & static implementation of the streamgraph.<br/></p>
+		<h3>External Sources & Libraries</h3>
+		<p>Built with D3JS library for front end; Back end using Flask_RESTful and Pandas. Data from TMDB and Wikipedia, Website template from https://colorlib.com </p>
+		<p></p>
+<!-- 		<h5>Victor</h5>
+		<p>Data pre-processing, front end + back end scripting, connectivity to front end & system integration.</p>
+		<h5>Yimeng</h5>
+		<p>Front end scripting + connectivity to back end & CSS Styling & system integration.</p>
+		<h5>Marc</h5>
+		<p>Data pre-processing, static implementation of the streamgraph.</p>
+		<h5>Andrew</h5>
+		<p>Actors picture & descriptions crawling.</p>
+ -->
+	</div>
+
+	</div>
+
+
+	<!-- services card section end-->
+
+
+
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<h2>HKUST Data Visualization Project by ActiVizts</h2>
+	</footer>
+	<!-- Footer section end -->
+
+
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="src/js/jquery-2.1.4.min.js"></script>
+	<script src="src/js/bootstrap.min.js"></script>
+	<script src="src/js/magnific-popup.min.js"></script>
+	<script src="src/js/owl.carousel.min.js"></script>
+	<script src="src/js/circle-progress.min.js"></script>
+	<script src="src/js/main.js"></script>
+</div>
+</div>
+</body>
+</html>
