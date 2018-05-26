@@ -10,7 +10,9 @@ api = Api(app)
 CORS(app)
 
 loader = table_loader()
-
+@app.route("/")
+def renderIndex():
+		return render_template("index.html")
 #
 # @app.route('/getColumnSize', methods = ['POST'])
 # def api_message2():
