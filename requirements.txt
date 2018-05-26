@@ -6,6 +6,7 @@ Flask-RESTful==0.3.6
 jsonschema==2.6.0
 numpy==1.12.1
 numpydoc==0.7.0
-packaging==16.8
+gunicorn==19.3.0
 pandas==0.20.3
+
 
