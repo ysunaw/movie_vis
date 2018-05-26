@@ -13,8 +13,8 @@ CORS(app)
 loader = table_loader()
 @app.route("/")
 def renderIndex():
-        message = "render index page"
-		return render_template("index.html",message = message)
+    message = "render index page"
+    return render_template("index.html",message = message)
 #
 # @app.route('/getColumnSize', methods = ['POST'])
 # def api_message2():
