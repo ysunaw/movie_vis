@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask_restful import Resource, Api
 from flask_cors import CORS
 from load_tables2 import table_loader
+from flask import render_template
 import json
 from flask import json
 
@@ -12,7 +13,8 @@ CORS(app)
 loader = table_loader()
 @app.route("/")
 def renderIndex():
-		return render_template("index.html")
+        message = "render index page"
+		return render_template("index.html",message = message)
 #
 # @app.route('/getColumnSize', methods = ['POST'])
 # def api_message2():
